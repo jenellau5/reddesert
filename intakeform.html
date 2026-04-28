@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red Desert Check-In | Client Intake Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f3ed;
+            color: #2b2118;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 24px;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin-bottom: 0;
+            color: #8a3f24;
+        }
+
+        h2 {
+            margin-top: 5px;
+            font-weight: normal;
+        }
+
+        h3 {
+            margin-top: 28px;
+            color: #8a3f24;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 6px;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            border: 1px solid #cfc6bc;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            min-height: 80px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .small {
+            font-size: 13px;
+            color: #6b5f57;
+        }
+
+        .notice {
+            background: #fbfaf8;
+            border: 1px solid #d8cec4;
+            padding: 14px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        button {
+            background: #8a3f24;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button.secondary {
+            background: #3e332b;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #summaryBox {
+            margin-top: 30px;
+            background: #fbfaf8;
+            border: 1px solid #d8cec4;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        #summary {
+            white-space: pre-wrap;
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 700px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Red Desert Check-In</h1>
+        <h2>Client Intake Form</h2>
+        <p class="small">Use this form before visits begin so expectations, contacts, access instructions, and visit
+            needs are clear.</p>
+
+        <div class="notice">
+            Red Desert Check-In provides scheduled check-ins, home checks, and peace-of-mind updates. This is not
+            emergency response, nursing care, medication management, transportation, housekeeping, or 24/7 supervision.
+        </div>
+
+        <div class="section">
+            <h3>1. Client Information</h3>
+
+            <div class="grid">
+                <label>Client Name:
+                    <input id="clientName" type="text" />
+                </label>
+
+                <label>Date of Birth:
+                    <input id="dob" type="date" />
+                </label>
+
+                <label>Client Phone:
+                    <input id="clientPhone" type="tel" />
+                </label>
+
+                <label>Client Email:
+                    <input id="clientEmail" type="email" />
+                </label>
+            </div>
+
+            <label>Client Address:
+                <input id="clientAddress" type="text" />
+            </label>
+
+            <label>Current Living Situation:
+                <select id="livingSituation">
+                    <option value="">Select one</option>
+                    <option>Lives alone</option>
+                    <option>Lives with spouse</option>
+                    <option>Lives with family</option>
+                    <option>Independent living</option>
+                    <option>55+ community</option>
+                    <option>Other</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="section">
+            <h3>2. Primary Contact</h3>
+
+            <div class="grid">
+                <label>Name:
+                    <input id="primaryName" type="text" />
+                </label>
+
+                <label>Relationship:
+                    <input id="primaryRelationship" type="text" />
+                </label>
+
+                <label>Phone:
+                    <input id="primaryPhone" type="tel" />
+                </label>
+
+                <label>Email:
+                    <input id="primaryEmail" type="email" />
+                </label>
+            </div>
+
+            <label>Preferred Update Method:
+                <select id="preferredUpdate">
+                    <option value="">Select one</option>
+                    <option>Text</option>
+                    <option>Call</option>
+                    <option>Email</option>
+                    <option>Text and email</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="section">
+            <h3>3. Emergency Contact</h3>
+
+            <div class="grid">
+                <label>Name:
+                    <input id="emergencyName" type="text" />
+                </label>
+
+                <label>Relationship:
+                    <input id="emergencyRelationship" type="text" />
+                </label>
+
+                <label>Phone:
+                    <input id="emergencyPhone" type="tel" />
+                </label>
+
+                <label>Email:
+                    <input id="emergencyEmail" type="email" />
+                </label>
+            </div>
+        </div>
+
+        <div class="section" id="serviceSection">
+            <h3>4. Service Requested</h3>
+
+            <label><input type="checkbox" value="Weekly check-ins"> Weekly check-ins</label>
+            <label><input type="checkbox" value="Multiple check-ins per week"> Multiple check-ins per week</label>
+            <label><input type="checkbox" value="On-demand check-ins"> On-demand check-ins</label>
+            <label><input type="checkbox" value="Home check while away"> Home check while away</label>
+            <label><input type="checkbox" value="Short-term support"> Short-term support</label>
+            <label><input type="checkbox" value="Other"> Other</label>
+
+            <label>Preferred Visit Days / Times:
+                <textarea id="preferredTimes"></textarea>
+            </label>
+
+            <label>Main reason for requesting Red Desert Check-In:
+                <textarea id="reasonForService"></textarea>
+            </label>
+        </div>
+
+        <div class="section" id="checkItemsSection">
+            <h3>5. What Should Be Checked During Visits?</h3>
+
+            <label><input type="checkbox" value="General wellness"> General wellness</label>
+            <label><input type="checkbox" value="Mood or conversation"> Mood or conversation</label>
+            <label><input type="checkbox" value="Mobility or fall risks"> Mobility or fall risks</label>
+            <label><input type="checkbox" value="Home safety"> Home safety</label>
+            <label><input type="checkbox" value="Food or fridge concerns"> Food or fridge concerns</label>
+            <label><input type="checkbox" value="Mail or packages"> Mail or packages</label>
+            <label><input type="checkbox" value="Trash concerns"> Trash concerns</label>
+            <label><input type="checkbox" value="Pets"> Pets</label>
+            <label><input type="checkbox" value="Technology or phone issues"> Technology or phone issues</label>
+            <label><input type="checkbox" value="Medical alert device present or worn"> Medical alert device present or
+                worn</label>
+            <label><input type="checkbox" value="Other"> Other</label>
+
+            <label>Other specific requests:
+                <textarea id="specificRequests"></textarea>
+            </label>
+        </div>
+
+        <div class="section">
+            <h3>6. Health / Safety Awareness</h3>
+            <p class="small">This is for awareness only. Red Desert Check-In does not provide medical care.</p>
+
+            <label>Known medical conditions or concerns:
+                <textarea id="medicalConcerns"></textarea>
+            </label>
+
+            <label>Mobility:
+                <select id="mobility">
+                    <option value="">Select one</option>
+                    <option>Walks independently</option>
+                    <option>Uses cane</option>
+                    <option>Uses walker</option>
+                    <option>Uses wheelchair</option>
+                    <option>Varies by day</option>
+                    <option>Other</option>
+                </select>
+            </label>
+
+            <label>Recent Falls:
+                <textarea id="falls"></textarea>
+            </label>
+
+            <label>Cognitive / Memory Concerns:
+                <textarea id="cognitiveConcerns"></textarea>
+            </label>
+
+            <label>Medication Awareness:
+                <textarea id="medicationAwareness"
+                    placeholder="Example: manages own medication, family manages medication, visual concern only, do not touch medications, etc."></textarea>
+            </label>
+        </div>
+
+        <div class="section">
+            <h3>7. Home Access</h3>
+
+            <label>Access Instructions:
+                <select id="accessType">
+                    <option value="">Select one</option>
+                    <option>Knock only</option>
+                    <option>Door code</option>
+                    <option>Key location</option>
+                    <option>Lockbox</option>
+                    <option>Family must be present</option>
+                    <option>Other</option>
+                </select>
+            </label>
+
+            <label>Access Details:
+                <textarea id="accessDetails"></textarea>
+            </label>
+
+            <label>Areas I should not enter or access:
+                <textarea id="restrictedAreas"></textarea>
+            </label>
+
+            <label>Pets in the Home:
+                <textarea id="pets"></textarea>
+            </label>
+        </div>
+
+        <div class="section">
+            <h3>8. When Should Family Be Contacted Immediately?</h3>
+
+            <label><input type="checkbox" value="No answer at door"> No answer at door</label>
+            <label><input type="checkbox" value="Visible fall risk"> Visible fall risk</label>
+            <label><input type="checkbox" value="Confusion or unusual behavior"> Confusion or unusual behavior</label>
+            <label><input type="checkbox" value="Food or fridge concern"> Food or fridge concern</label>
+            <label><input type="checkbox" value="Unsafe home condition"> Unsafe home condition</label>
+            <label><input type="checkbox" value="Client appears ill or distressed"> Client appears ill or
+                distressed</label>
+            <label><input type="checkbox" value="Home access issue"> Home access issue</label>
+            <label><input type="checkbox" value="Other"> Other</label>
+
+            <label>Additional contact instructions:
+                <textarea id="contactInstructions"></textarea>
+            </label>
+        </div>
+
+        <div class="section">
+            <h3>9. Update Preferences</h3>
+
+            <label>What should be included in updates?
+                <textarea id="updatePreferences"
+                    placeholder="Example: brief text summary, full checklist summary, photos if needed, concerns only, etc."></textarea>
+            </label>
+
+            <label>Are photos allowed when useful?
+                <select id="photosAllowed">
+                    <option value="">Select one</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Ask first</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="section">
+            <h3>10. Boundaries Acknowledgment</h3>
+
+            <label><input id="boundary1" type="checkbox" value="Acknowledged"> I understand Red Desert Check-In is not
+                emergency response.</label>
+            <label><input id="boundary2" type="checkbox" value="Acknowledged"> I understand Red Desert Check-In does not
+                provide nursing care or medical care.</label>
+            <label><input id="boundary3" type="checkbox" value="Acknowledged"> I understand Red Desert Check-In does not
+                administer, organize, or manage medications.</label>
+            <label><input id="boundary4" type="checkbox" value="Acknowledged"> I understand Red Desert Check-In is not
+                24/7 supervision.</label>
+            <label><input id="boundary5" type="checkbox" value="Acknowledged"> I understand concerns may be communicated
+                to family, but family is responsible for arranging additional care or services if needed.</label>
+        </div>
+
+        <div class="section">
+            <h3>11. Signature</h3>
+
+            <div class="grid">
+                <label>Name of Person Completing Form:
+                    <input id="formCompletedBy" type="text" />
+                </label>
+
+                <label>Relationship to Client:
+                    <input id="formRelationship" type="text" />
+                </label>
+
+                <label>Date:
+                    <input id="signatureDate" type="date" />
+                </label>
+            </div>
+
+            <label>Typed Signature:
+                <input id="typedSignature" type="text" />
+            </label>
+        </div>
+
+        <div class="buttons">
+            <button onclick="generateIntake()">Generate Intake Summary</button>
+            <button class="secondary" onclick="copySummary()">Copy Summary</button>
+            <button class="secondary" onclick="emailSummary()">Email Summary</button>
+            <button class="secondary" onclick="printPage()">Print / Save as PDF</button>
+            <button class="secondary" onclick="clearForm()">Clear Form</button>
+        </div>
+
+        <div id="summaryBox">
+            <h3>Generated Intake Summary</h3>
+            <div id="summary">Your generated intake summary will appear here.</div>
+        </div>
+
+    </div>
+
+    <script>
+        function getChecked(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return "";
+            return Array.from(section.querySelectorAll("input[type='checkbox']:checked"))
+                .map(input => input.value)
+                .join(", ");
+        }
+
+        function getCheckedBySelector(selector) {
+            return Array.from(document.querySelectorAll(selector + ":checked"))
+                .map(input => input.value)
+                .join(", ");
+        }
+
+        function clean(value, fallback = "Not provided.") {
+            return value && value.trim() !== "" ? value.trim() : fallback;
+        }
+
+        function generateIntake() {
+            const boundaryAcknowledged = [
+                document.getElementById("boundary1").checked ? "Emergency response boundary acknowledged" : "",
+                document.getElementById("boundary2").checked ? "Medical/nursing care boundary acknowledged" : "",
+                document.getElementById("boundary3").checked ? "Medication management boundary acknowledged" : "",
+                document.getElementById("boundary4").checked ? "24/7 supervision boundary acknowledged" : "",
+                document.getElementById("boundary5").checked ? "Family responsibility boundary acknowledged" : ""
+            ].filter(Boolean).join(", ");
+
+            const summary = `
+RED DESERT CHECK-IN
+Client Intake Summary
+
+━━━━━━━━━━━━━━━━━━━━
+CLIENT INFORMATION
+━━━━━━━━━━━━━━━━━━━━
+
+Client Name: ${clean(document.getElementById("clientName").value)}
+Date of Birth: ${clean(document.getElementById("dob").value)}
+Phone: ${clean(document.getElementById("clientPhone").value)}
+Email: ${clean(document.getElementById("clientEmail").value)}
+Address: ${clean(document.getElementById("clientAddress").value)}
+Living Situation: ${clean(document.getElementById("livingSituation").value)}
+
+━━━━━━━━━━━━━━━━━━━━
+PRIMARY CONTACT
+━━━━━━━━━━━━━━━━━━━━
+
+Name: ${clean(document.getElementById("primaryName").value)}
+Relationship: ${clean(document.getElementById("primaryRelationship").value)}
+Phone: ${clean(document.getElementById("primaryPhone").value)}
+Email: ${clean(document.getElementById("primaryEmail").value)}
+Preferred Update Method: ${clean(document.getElementById("preferredUpdate").value)}
+
+━━━━━━━━━━━━━━━━━━━━
+EMERGENCY CONTACT
+━━━━━━━━━━━━━━━━━━━━
+
+Name: ${clean(document.getElementById("emergencyName").value)}
+Relationship: ${clean(document.getElementById("emergencyRelationship").value)}
+Phone: ${clean(document.getElementById("emergencyPhone").value)}
+Email: ${clean(document.getElementById("emergencyEmail").value)}
+
+━━━━━━━━━━━━━━━━━━━━
+SERVICE REQUESTED
+━━━━━━━━━━━━━━━━━━━━
+
+Requested Service:
+${getChecked("serviceSection") || "Not marked."}
+
+Preferred Visit Days / Times:
+${clean(document.getElementById("preferredTimes").value)}
+
+Reason for Service:
+${clean(document.getElementById("reasonForService").value)}
+
+━━━━━━━━━━━━━━━━━━━━
+VISIT CHECK PRIORITIES
+━━━━━━━━━━━━━━━━━━━━
+
+Items to Check:
+${getChecked("checkItemsSection") || "Not marked."}
+
+Specific Requests:
+${clean(document.getElementById("specificRequests").value)}
+
+━━━━━━━━━━━━━━━━━━━━
+HEALTH / SAFETY AWARENESS
+━━━━━━━━━━━━━━━━━━━━
+
+Known Medical Conditions or Concerns:
+${clean(document.getElementById("medicalConcerns").value)}
+
+Mobility:
+${clean(document.getElementById("mobility").value)}
+
+Recent Falls:
+${clean(document.getElementById("falls").value)}
+
+Cognitive / Memory Concerns:
+${clean(document.getElementById("cognitiveConcerns").value)}
+
+Medication Awareness:
+${clean(document.getElementById("medicationAwareness").value)}
+
+━━━━━━━━━━━━━━━━━━━━
+HOME ACCESS
+━━━━━━━━━━━━━━━━━━━━
+
+Access Type:
+${clean(document.getElementById("accessType").value)}
+
+Access Details:
+${clean(document.getElementById("accessDetails").value)}
+
+Restricted Areas:
+${clean(document.getElementById("restrictedAreas").value)}
+
+Pets:
+${clean(document.getElementById("pets").value)}
+
+━━━━━━━━━━━━━━━━━━━━
+WHEN TO CONTACT FAMILY
+━━━━━━━━━━━━━━━━━━━━
+
+Immediate Contact Reasons:
+${getCheckedBySelector(".section input[type='checkbox']")}
+
+Additional Contact Instructions:
+${clean(document.getElementById("contactInstructions").value)}
+
+━━━━━━━━━━━━━━━━━━━━
+UPDATE PREFERENCES
+━━━━━━━━━━━━━━━━━━━━
+
+Update Preferences:
+${clean(document.getElementById("updatePreferences").value)}
+
+Photos Allowed:
+${clean(document.getElementById("photosAllowed").value)}
+
+━━━━━━━━━━━━━━━━━━━━
+BOUNDARIES ACKNOWLEDGED
+━━━━━━━━━━━━━━━━━━━━
+
+${boundaryAcknowledged || "Not fully acknowledged."}
+
+━━━━━━━━━━━━━━━━━━━━
+FORM COMPLETED BY
+━━━━━━━━━━━━━━━━━━━━
+
+Completed By: ${clean(document.getElementById("formCompletedBy").value)}
+Relationship: ${clean(document.getElementById("formRelationship").value)}
+Date: ${clean(document.getElementById("signatureDate").value)}
+Typed Signature: ${clean(document.getElementById("typedSignature").value)}
+
+Red Desert Check-In
+Scheduled check-ins, home checks, and peace-of-mind updates.
+`.trim();
+
+            document.getElementById("summary").innerText = summary;
+        }
+
+        function copySummary() {
+            const summary = document.getElementById("summary").innerText;
+            navigator.clipboard.writeText(summary).then(() => {
+                alert("Intake summary copied.");
+            });
+        }
+
+        function emailSummary() {
+            const summary = document.getElementById("summary").innerText;
+            const subject = encodeURIComponent("Red Desert Check-In Intake Summary");
+            const body = encodeURIComponent(summary);
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+
+        function printPage() {
+            window.print();
+        }
+
+        function clearForm() {
+            if (!confirm("Clear the entire intake form?")) return;
+
+            document.querySelectorAll("input[type='text'], input[type='email'], input[type='tel'], input[type='date'], textarea").forEach(field => {
+                field.value = "";
+            });
+
+            document.querySelectorAll("input[type='checkbox']").forEach(field => {
+                field.checked = false;
+            });
+
+            document.querySelectorAll("select").forEach(field => {
+                field.selectedIndex = 0;
+            });
+
+            document.getElementById("summary").innerText = "Your generated intake summary will appear here.";
+        }
+    </script>
+
+</body>
+
+</html>

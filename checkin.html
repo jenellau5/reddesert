@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red Desert Check-In | Visit Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f3ed;
+            color: #2b2118;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 24px;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin-bottom: 0;
+            color: #8a3f24;
+        }
+
+        h2 {
+            margin-top: 5px;
+            font-weight: normal;
+        }
+
+        h3 {
+            margin-top: 28px;
+            color: #8a3f24;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 6px;
+        }
+
+        label {
+            display: block;
+            margin: 7px 0;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            border: 1px solid #cfc6bc;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            min-height: 75px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        button {
+            background: #8a3f24;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button.secondary {
+            background: #3e332b;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #summaryBox {
+            margin-top: 30px;
+            background: #fbfaf8;
+            border: 1px solid #d8cec4;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        #summary {
+            white-space: pre-wrap;
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .small {
+            font-size: 13px;
+            color: #6b5f57;
+        }
+
+        @media (max-width: 700px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Red Desert Check-In</h1>
+        <h2>Visit Check-In Form</h2>
+        <p class="small">Use this form for each visit. Generate the summary at the bottom to copy, text, or email to
+            family.</p>
+
+        <div class="grid">
+            <div>
+                <label>Client Name:
+                    <input id="clientName" type="text" />
+                </label>
+            </div>
+
+            <div>
+                <label>Date:
+                    <input id="visitDate" type="date" />
+                </label>
+            </div>
+
+            <div>
+                <label>Arrival Time:
+                    <input id="arrivalTime" type="time" />
+                </label>
+            </div>
+
+            <div>
+                <label>Departure Time:
+                    <input id="departureTime" type="time" />
+                </label>
+            </div>
+
+            <div>
+                <label>Visit Completed By:
+                    <input id="completedByTop" type="text" />
+                </label>
+            </div>
+
+            <div>
+                <label>Visit Type:
+                    <select id="visitType">
+                        <option value="">Select one</option>
+                        <option>Scheduled</option>
+                        <option>On-demand</option>
+                        <option>Home check</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <div class="section" id="contactSection">
+            <h3>1. Contact Made</h3>
+            <label><input type="checkbox" value="Answered door"> Answered door</label>
+            <label><input type="checkbox" value="No answer"> No answer</label>
+            <label><input type="checkbox" value="Family present"> Family present</label>
+            <label><input type="checkbox" value="Other"> Other</label>
+            <textarea id="contactNotes" placeholder="Notes"></textarea>
+        </div>
+
+        <div class="section" id="appearanceSection">
+            <h3>2. General Appearance</h3>
+            <label><input type="checkbox" value="Normal for client"> Normal for client</label>
+            <label><input type="checkbox" value="Noticeable change"> Noticeable change</label>
+            <label><input type="checkbox" value="Concerns observed"> Concerns observed</label>
+            <textarea id="appearanceNotes" placeholder="Notes"></textarea>
+        </div>
+
+        <div class="section" id="moodSection">
+            <h3>3. Mood / Conversation</h3>
+            <label><input type="checkbox" value="Good spirits"> Good spirits</label>
+            <label><input type="checkbox" value="Quiet or withdrawn"> Quiet or withdrawn</label>
+            <label><input type="checkbox" value="Confused"> Confused</label>
+            <label><input type="checkbox" value="Upset"> Upset</label>
+            <label><input type="checkbox" value="Other"> Other</label>
+            <textarea id="moodNotes" placeholder="Notes"></textarea>
+        </div>
+
+        <div class="section" id="mobilitySection">
+            <h3>4. Mobility / Fall Risk</h3>
+            <label><input type="checkbox" value="Moving normally"> Moving normally</label>
+            <label><input type="checkbox" value="More unsteady than usual"> More unsteady than usual</label>
+            <label><input type="checkbox" value="Using walker/cane"> Using walker/cane</label>
+            <label><input type="checkbox" value="Fall hazards noticed"> Fall hazards noticed</label>
+            <label><input type="checkbox" value="Recent fall reported"> Recent fall reported</label>
+            <textarea id="mobilityNotes" placeholder="Notes"></textarea>
+        </div>
+
+        <div class="section" id="safetySection">
+            <h3>5. Home Safety Scan</h3>
+            <label><input type="checkbox" value="Clear walkways"> Clear walkways</label>
+            <label><input type="checkbox" value="Trip hazards"> Trip hazards</label>
+            <label><input type="checkbox" value="Lighting concern"> Lighting concern</label>
+            <label><input type="checkbox" value="Oxygen tubing concern"> Oxygen tubing concern</label>
+            <label><input type="checkbox" value="Clutter concern"> Clutter concern</label>
+            <label><input type="checkbox" value="Spills"> Spills</label>
+            <label><input type="checkbox" value="Other"> Other</label>
+            <textarea id="safetyNotes" placeholder="Notes"></textarea>
+        </div>
+
+        <div class="section" id="foodSection">
+            <h3>6. Food / Kitchen Check</h3>
+            <label><input type="checkbox" value="Food present"> Food present</label>
+            <label><input type="checkbox" value="Fridge appears okay"> Fridge appears okay</label>
+            <label><input type="checkbox" value="Expired/spoiled food concern"> Expired/spoiled food concern</label>
+            <label><input type="checkbox" value="Dishes/trash concern"> Dishes/trash concern</label>
+            <label><input type="checkbox" value="Client reports eating okay"> Client reports eating okay</label>
+            <label><input type="checkbox" value="Other"> Other</label>
+            <textarea id="foodNotes" placeholder="Notes"></textarea>
+        </div>
+
+        <div class="section" id="needsSection">
+            <h3>7. Basic Needs</h3>
+            <label><input type="checkbox" value="Water available"> Water available</label>
+            <label><input type="checkbox" value="Phone accessible"> Phone accessible</label>
+            <label><input type="checkbox" value="Medical alert device present/worn if applicable"> Medical alert device
+                present/worn if applicable</label>
+            <label><input type="checkbox" value="Mail/packages checked"> Mail/packages checked</label>
+            <label><input type="checkbox" value="Trash concern"> Trash concern</label>
+            <label><input type="checkbox" value="Pet concern"> Pet concern</label>
+            <label><input type="checkbox" value="Other"> Other</label>
+            <textarea id="needsNotes" placeholder="Notes"></textarea>
+        </div>
+
+        <div class="section" id="socialSection">
+            <h3>8. Social Interaction / Activity</h3>
+            <label><input type="checkbox" value="Sat and talked"> Sat and talked</label>
+            <label><input type="checkbox" value="Short walk"> Short walk</label>
+            <label><input type="checkbox" value="Puzzle/game/activity"> Puzzle/game/activity</label>
+            <label><input type="checkbox" value="Helped with simple task"> Helped with simple task</label>
+            <label><input type="checkbox" value="Other"> Other</label>
+            <textarea id="socialNotes" placeholder="Notes"></textarea>
+        </div>
+
+        <div class="section" id="concernsSection">
+            <h3>9. Concerns Noticed Today</h3>
+            <label><input type="checkbox" value="None"> None</label>
+            <label><input type="checkbox" value="Minor concern"> Minor concern</label>
+            <label><input type="checkbox" value="Needs family follow-up"> Needs family follow-up</label>
+            <label><input type="checkbox" value="Needs outside service"> Needs outside service</label>
+            <label><input type="checkbox" value="Possible urgent concern"> Possible urgent concern</label>
+            <textarea id="concernDetails" placeholder="Details"></textarea>
+        </div>
+
+        <div class="section">
+            <h3>10. Photos Sent</h3>
+            <select id="photosSent">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+            <textarea id="photoReason" placeholder="Reason or photo details"></textarea>
+        </div>
+
+        <div class="section">
+            <h3>11. Family Update Sent</h3>
+            <select id="familyUpdateSent">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+
+            <label>Method:</label>
+            <label><input name="updateMethod" type="radio" value="Text"> Text</label>
+            <label><input name="updateMethod" type="radio" value="Call"> Call</label>
+            <label><input name="updateMethod" type="radio" value="Email"> Email</label>
+
+            <textarea id="summarySent" placeholder="Summary sent"></textarea>
+        </div>
+
+        <div class="section" id="followUpSection">
+            <h3>12. Follow-Up Needed</h3>
+            <label><input type="checkbox" value="No follow-up needed"> No follow-up needed</label>
+            <label><input type="checkbox" value="Check again next visit"> Check again next visit</label>
+            <label><input type="checkbox" value="Family should call client"> Family should call client</label>
+            <label><input type="checkbox" value="Family should visit"> Family should visit</label>
+            <label><input type="checkbox" value="Recommend caregiver/cleaner/placement/nurse discussion"> Recommend
+                caregiver/cleaner/placement/nurse discussion</label>
+            <label><input type="checkbox" value="Other"> Other</label>
+            <textarea id="followUpNotes" placeholder="Follow-up notes"></textarea>
+        </div>
+
+        <div class="section">
+            <h3>Visit Notes</h3>
+            <textarea id="visitNotes" placeholder="Additional visit notes"></textarea>
+
+            <label>Completed By:
+                <input id="completedByBottom" type="text" />
+            </label>
+
+            <label>Time Update Sent:
+                <input id="timeUpdateSent" type="time" />
+            </label>
+        </div>
+
+        <div class="buttons">
+            <button onclick="generateSummary()">Generate Summary</button>
+            <button class="secondary" onclick="copySummary()">Copy Summary</button>
+            <button class="secondary" onclick="emailSummary()">Email Summary</button>
+            <button class="secondary" onclick="clearForm()">Clear Form</button>
+        </div>
+
+        <div id="summaryBox">
+            <h3>Generated Family Update</h3>
+            <div id="summary">Your generated summary will appear here.</div>
+        </div>
+
+    </div>
+
+    <script>
+        function getChecked(sectionId) {
+            const section = document.getElementById(sectionId);
+            return Array.from(section.querySelectorAll("input[type='checkbox']:checked"))
+                .map(input => input.value)
+                .join(", ");
+        }
+
+        function getRadioValue(name) {
+            const selected = document.querySelector(`input[name="${name}"]:checked`);
+            return selected ? selected.value : "";
+        }
+
+        function clean(value, fallback = "No concerns noted.") {
+            return value && value.trim() !== "" ? value.trim() : fallback;
+        }
+
+        function sectionLine(title, checked, notes) {
+            let output = `${title}\n`;
+            output += checked ? `Observed: ${checked}\n` : `Observed: Not marked\n`;
+            output += notes && notes.trim() !== "" ? `Notes: ${notes.trim()}\n` : `Notes: No additional notes.\n`;
+            return output;
+        }
+
+        function generateSummary() {
+            const client = document.getElementById("clientName").value || "N/A";
+            const date = document.getElementById("visitDate").value || "N/A";
+            const arrival = document.getElementById("arrivalTime").value || "N/A";
+            const departure = document.getElementById("departureTime").value || "N/A";
+            const visitType = document.getElementById("visitType").value || "N/A";
+            const completedBy = document.getElementById("completedByBottom").value || document.getElementById("completedByTop").value || "N/A";
+
+            const updateMethod = getRadioValue("updateMethod") || "N/A";
+
+            const summary = `
+RED DESERT CHECK-IN
+Visit Update
+
+Client: ${client}
+Date: ${date}
+Visit Time: ${arrival} - ${departure}
+Visit Type: ${visitType}
+Completed By: ${completedBy}
+
+━━━━━━━━━━━━━━━━━━━━
+QUICK OVERVIEW
+━━━━━━━━━━━━━━━━━━━━
+
+Contact Made:
+${getChecked("contactSection") || "Not marked"}
+${clean(document.getElementById("contactNotes").value, "No additional contact notes.")}
+
+General Appearance:
+${getChecked("appearanceSection") || "Not marked"}
+${clean(document.getElementById("appearanceNotes").value)}
+
+Mood / Conversation:
+${getChecked("moodSection") || "Not marked"}
+${clean(document.getElementById("moodNotes").value)}
+
+Mobility / Fall Risk:
+${getChecked("mobilitySection") || "Not marked"}
+${clean(document.getElementById("mobilityNotes").value)}
+
+━━━━━━━━━━━━━━━━━━━━
+HOME & DAILY LIVING
+━━━━━━━━━━━━━━━━━━━━
+
+Home Safety:
+${getChecked("safetySection") || "Not marked"}
+${clean(document.getElementById("safetyNotes").value)}
+
+Food / Kitchen:
+${getChecked("foodSection") || "Not marked"}
+${clean(document.getElementById("foodNotes").value)}
+
+Basic Needs:
+${getChecked("needsSection") || "Not marked"}
+${clean(document.getElementById("needsNotes").value)}
+
+━━━━━━━━━━━━━━━━━━━━
+SOCIAL INTERACTION
+━━━━━━━━━━━━━━━━━━━━
+
+Activity:
+${getChecked("socialSection") || "Not marked"}
+${clean(document.getElementById("socialNotes").value, "No additional social notes.")}
+
+━━━━━━━━━━━━━━━━━━━━
+CONCERNS
+━━━━━━━━━━━━━━━━━━━━
+
+Concern Level:
+${getChecked("concernsSection") || "Not marked"}
+
+Details:
+${clean(document.getElementById("concernDetails").value, "No concerns reported during this visit.")}
+
+━━━━━━━━━━━━━━━━━━━━
+PHOTOS & FAMILY UPDATE
+━━━━━━━━━━━━━━━━━━━━
+
+Photos Sent: ${document.getElementById("photosSent").value || "N/A"}
+Photo Notes:
+${clean(document.getElementById("photoReason").value, "No photo notes.")}
+
+Family Update Sent: ${document.getElementById("familyUpdateSent").value || "N/A"}
+Update Method: ${updateMethod}
+
+Summary Sent:
+${clean(document.getElementById("summarySent").value, "No separate summary entered.")}
+
+━━━━━━━━━━━━━━━━━━━━
+FOLLOW-UP
+━━━━━━━━━━━━━━━━━━━━
+
+Follow-Up Needed:
+${getChecked("followUpSection") || "Not marked"}
+
+Follow-Up Notes:
+${clean(document.getElementById("followUpNotes").value, "No follow-up needed at this time.")}
+
+━━━━━━━━━━━━━━━━━━━━
+ADDITIONAL VISIT NOTES
+━━━━━━━━━━━━━━━━━━━━
+
+${clean(document.getElementById("visitNotes").value, "No additional visit notes.")}
+
+Update Sent At: ${document.getElementById("timeUpdateSent").value || "N/A"}
+
+Red Desert Check-In
+Scheduled check-ins, home checks, and peace-of-mind updates.
+`.trim();
+
+            document.getElementById("summary").innerText = summary;
+        }
+
+        function copySummary() {
+            const summary = document.getElementById("summary").innerText;
+            navigator.clipboard.writeText(summary).then(() => {
+                alert("Summary copied.");
+            });
+        }
+
+        function emailSummary() {
+            const summary = document.getElementById("summary").innerText;
+            const subject = encodeURIComponent("Red Desert Check-In Visit Update");
+            const body = encodeURIComponent(summary);
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+
+        function clearForm() {
+            if (!confirm("Clear the entire form?")) return;
+
+            document.querySelectorAll("input[type='text'], input[type='date'], input[type='time'], textarea").forEach(field => {
+                field.value = "";
+            });
+
+            document.querySelectorAll("input[type='checkbox'], input[type='radio']").forEach(field => {
+                field.checked = false;
+            });
+
+            document.querySelectorAll("select").forEach(field => {
+                field.selectedIndex = 0;
+            });
+
+            document.getElementById("summary").innerText = "Your generated summary will appear here.";
+        }
+    </script>
+
+</body>
+
+</html>
