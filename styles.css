@@ -71,7 +71,9 @@ li {
 }
 
 .brand img {
-    height: 100px;
+    height: 80px;
+    max-width: 200px;
+    object-fit: contain;
 }
 
 .nav {

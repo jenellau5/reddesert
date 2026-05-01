@@ -4,20 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Red Desert Check-In | Local Check-Ins in Southern Utah</title>
     <meta name="description"
-        content="Local in-person check-ins for seniors, family, friends, pets, homes, recovery support, and custom situations in Southern Utah." />
+        content="Local, in-person check-ins for seniors, loved ones, pets, homes, and custom situations in St. George, Washington, and Southern Utah." />
+
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Performance: preload the main hero image only -->
+    <link rel="preload" as="image" href="images/checkin-door.webp" />
 </head>
 
 <body>
 
     <header class="site-header">
-        <a class="brand" href="index.html">
-            <img src="images/reddesertlogo.png" alt="Red Desert Check-In logo">
+        <a class="brand" href="index.html" aria-label="Red Desert Check-In home">
+            <img src="images/reddesertlogo.webp" alt="Red Desert Check-In logo" width="220" height="80"
+                loading="eager" />
         </a>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="Main navigation">
             <a href="#how">How It Works</a>
             <a href="#categories">Check-In Types</a>
             <a href="#pricing">Pricing</a>
@@ -26,7 +32,9 @@
             <a href="#contact">Contact</a>
         </nav>
 
-        <a class="header-cta" href="mailto:reddesertcheckin@gmail.com">Email</a>
+        <a class="header-cta" href="https://koalendar.com/e/red-desert-check-in" target="_blank" rel="noopener">
+            Book Consult
+        </a>
     </header>
 
     <main>
@@ -40,18 +48,23 @@
                 <p class="hero-text">
                     Red Desert Check-In provides local, in-person check-ins for the people, pets, homes, and places that
                     matter to you.
-                    I show up, look at what needs to be checked, and send you a clear update after.
+                    I show up, put eyes on the situation, and send you a clear update after.
                 </p>
 
                 <div class="hero-actions">
-                    <a class="button button-primary" href=https://koalendar.com/e/red-desert-check-in>Start With a
-                        Consultation</a>
-                    <a class="button button-secondary" href="#categories">See Check-In Types</a>
+                    <a class="button button-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
+                        rel="noopener">
+                        Start With a Consultation
+                    </a>
+                    <a class="button button-secondary" href="#categories">
+                        See Check-In Types
+                    </a>
                 </div>
             </div>
 
             <div class="hero-image">
-                <img src="images/checkin-door.png" alt="Local in-person check-in at a front door">
+                <img src="images/checkin-door.webp" alt="Local in-person check-in at a front door" width="900"
+                    height="700" loading="eager" fetchpriority="high" />
             </div>
         </section>
 
@@ -85,22 +98,28 @@
                 <article class="step-card">
                     <span>1</span>
                     <h3>We talk first</h3>
-                    <p>We talk through the situation, what you need checked, and what kind of update would actually
-                        help.</p>
+                    <p>
+                        We talk through the situation, what you are worried about, and what kind of update would
+                        actually help.
+                    </p>
                 </article>
 
                 <article class="step-card">
                     <span>2</span>
                     <h3>I show up in person</h3>
-                    <p>I visit locally, check what needs to be checked, spend time where needed, and notice what
-                        matters.</p>
+                    <p>
+                        I visit locally, check what needs to be checked, spend time where needed, and notice what
+                        matters.
+                    </p>
                 </article>
 
                 <article class="step-card">
                     <span>3</span>
-                    <h3>You get an update</h3>
-                    <p>You receive a clear update after so you are not guessing, spiraling, or trying to read between
-                        the lines.</p>
+                    <h3>You get a clear update</h3>
+                    <p>
+                        You receive a text or email update after so you are not guessing, spiraling, or trying to read
+                        between the lines.
+                    </p>
                 </article>
             </div>
         </section>
@@ -108,10 +127,10 @@
         <section id="categories" class="section category-section">
             <div class="section-intro narrow">
                 <p class="eyebrow">Check-in types</p>
-                <h2>Click a category to see examples.</h2>
+                <h2>Click a category to see when you would use it.</h2>
                 <p>
                     This is one check-in service that can be used in different situations.
-                    The category just helps us understand what needs to be looked at.
+                    The category just helps us understand what kind of concern you have.
                 </p>
             </div>
 
@@ -119,120 +138,127 @@
 
                 <details class="category-card">
                     <summary>
-                        <img src="images/category-seniors.png" alt="Senior check-in">
+                        <img src="images/category-seniors.webp" alt="Senior check-in" width="700" height="500"
+                            loading="lazy" />
                         <div>
                             <h3>Seniors</h3>
-                            <p>For aging loved ones who are still independent but need local eyes.</p>
+                            <p>For aging loved ones who are still independent, but need local eyes.</p>
                         </div>
                     </summary>
                     <div class="category-details">
-                        <p>Examples:</p>
+                        <p>Use this when:</p>
                         <ul>
-                            <li>Check on an aging parent who lives alone</li>
-                            <li>Notice changes in mood, hygiene, food, clutter, or mobility</li>
-                            <li>Walk through the home for obvious safety concerns</li>
-                            <li>Spend time talking so the visit does not feel clinical</li>
-                            <li>Send family a clear update after</li>
+                            <li>Your parent lives alone and something just feels off</li>
+                            <li>They keep saying they are fine, but you are not fully convinced</li>
+                            <li>You live out of town and cannot just stop by</li>
+                            <li>You want someone to notice small changes before they become big ones</li>
+                            <li>You want a real visit, not a rushed box-check</li>
                         </ul>
                     </div>
                 </details>
 
                 <details class="category-card">
                     <summary>
-                        <img src="images/category-family.png" alt="Family and friends check-in">
+                        <img src="images/category-family.webp" alt="Family and friends check-in" width="700"
+                            height="500" loading="lazy" />
                         <div>
                             <h3>Family & Friends</h3>
                             <p>For someone you care about when you cannot get there yourself.</p>
                         </div>
                     </summary>
                     <div class="category-details">
-                        <p>Examples:</p>
+                        <p>Use this when:</p>
                         <ul>
-                            <li>Check on a loved one who is not responding</li>
-                            <li>Drop by when someone is going through a hard season</li>
-                            <li>Make sure they have what they need</li>
-                            <li>Confirm they are safe and okay</li>
-                            <li>Give you a real update, not just “they seem fine”</li>
+                            <li>Someone has not answered calls or texts and you are worried</li>
+                            <li>A loved one is going through a hard season and you want eyes on them</li>
+                            <li>You want to know if they seem okay, not just hear “I’m fine”</li>
+                            <li>You do not want to put the responsibility on a neighbor again</li>
+                            <li>You need a calm local person to check in and report back</li>
                         </ul>
                     </div>
                 </details>
 
                 <details class="category-card">
                     <summary>
-                        <img src="images/category-recovery.png" alt="Wellness and recovery check-in">
+                        <img src="images/category-recovery.webp" alt="Wellness and recovery check-in" width="700"
+                            height="500" loading="lazy" />
                         <div>
                             <h3>Wellness & Recovery</h3>
-                            <p>Extra eyes during illness, surgery recovery, or temporary support.</p>
+                            <p>For the days after surgery, illness, injury, or a rough stretch.</p>
                         </div>
                     </summary>
                     <div class="category-details">
-                        <p>Examples:</p>
+                        <p>Use this when:</p>
                         <ul>
-                            <li>Post-surgery check-in</li>
-                            <li>Make sure they are up, eating, and moving safely</li>
-                            <li>Look for fall risks or obvious concerns</li>
-                            <li>Check that basic needs are being met</li>
-                            <li>Update family during a recovery window</li>
+                            <li>Someone is home after surgery and you want reassurance</li>
+                            <li>You want to know if they are getting around safely</li>
+                            <li>They are recovering, but do not need full-time care</li>
+                            <li>You are worried they may downplay how they are really doing</li>
+                            <li>You need short-term support during a recovery window</li>
                         </ul>
                     </div>
                 </details>
 
                 <details class="category-card">
                     <summary>
-                        <img src="images/category-property.png" alt="Property and business check-in">
+                        <img src="images/category-property.webp" alt="Property and home check-in" width="700"
+                            height="500" loading="lazy" />
                         <div>
-                            <h3>Property & Business</h3>
-                            <p>For homes, rentals, offices, or small businesses that need a walkthrough.</p>
+                            <h3>Property & Home</h3>
+                            <p>For homes, rentals, offices, or small spaces that need a walkthrough.</p>
                         </div>
                     </summary>
                     <div class="category-details">
-                        <p>Examples:</p>
+                        <p>Use this when:</p>
                         <ul>
-                            <li>Walk through a second home while you are away</li>
-                            <li>Check for leaks, damage, open doors, or obvious issues</li>
-                            <li>Look at lights, temperature, mail, or general condition</li>
-                            <li>Send photos when appropriate</li>
-                            <li>Do a simple eyes-on report</li>
+                            <li>You are out of town and keep wondering if everything is okay</li>
+                            <li>You have a second home sitting empty</li>
+                            <li>You want someone to check for obvious issues like leaks, damage, lights, doors, or
+                                temperature</li>
+                            <li>You do not want to keep asking friends or neighbors to stop by</li>
+                            <li>You need a simple eyes-on update with photos when appropriate</li>
                         </ul>
                     </div>
                 </details>
 
                 <details class="category-card">
                     <summary>
-                        <img src="images/category-pets.png" alt="Pet check-in">
+                        <img src="images/category-pets.webp" alt="Pet check-in" width="700" height="500"
+                            loading="lazy" />
                         <div>
                             <h3>Pets</h3>
-                            <p>For checking on animals, food, water, safety, and anything that seems off.</p>
+                            <p>For quick eyes on pets when you are away or need backup.</p>
                         </div>
                     </summary>
                     <div class="category-details">
-                        <p>Examples:</p>
+                        <p>Use this when:</p>
                         <ul>
-                            <li>Make sure pets have food and water</li>
-                            <li>Check that they appear safe and okay</li>
-                            <li>Look for messes, unusual behavior, or concerns</li>
-                            <li>Send a quick update or photo</li>
-                            <li>Useful for short trips or backup support</li>
+                            <li>You are on a short trip and want someone to check on your pet</li>
+                            <li>You need backup between regular pet care visits</li>
+                            <li>You want to know if food, water, or the home setup looks okay</li>
+                            <li>You are worried something may be off while you are gone</li>
+                            <li>You want a quick update or photo for peace of mind</li>
                         </ul>
                     </div>
                 </details>
 
                 <details class="category-card">
                     <summary>
-                        <img src="images/category-custom.png" alt="Custom check-in">
+                        <img src="images/category-custom.webp" alt="Custom check-in" width="700" height="500"
+                            loading="lazy" />
                         <div>
                             <h3>Custom Check-Ins</h3>
-                            <p>If it does not fit in a box, we can talk through what you need.</p>
+                            <p>For the odd situations that do not fit neatly into a box.</p>
                         </div>
                     </summary>
                     <div class="category-details">
-                        <p>Examples:</p>
+                        <p>Use this when:</p>
                         <ul>
-                            <li>A situation that does not fit the other categories</li>
-                            <li>A one-time concern</li>
-                            <li>A recurring local check</li>
-                            <li>A specific list you want looked at</li>
-                            <li>Something that needs human judgment, not an app</li>
+                            <li>You have a one-time concern and need someone local</li>
+                            <li>You need something checked on a certain day or time</li>
+                            <li>You have a simple task tied to a check-in, like looking at a specific area</li>
+                            <li>The situation is not an emergency, but it still matters</li>
+                            <li>You need human judgment instead of an app, camera, or automated alert</li>
                         </ul>
                     </div>
                 </details>
@@ -307,17 +333,21 @@
                     Life Chapters is a guided storytelling service where I record conversations, transcribe them,
                     and turn them into a digital keepsake for the person or family.
                 </p>
-                <a class="button button-secondary" href="life-chapters.html">Learn About Life Chapters</a>
+                <a class="button button-secondary" href="life-chapters.html">
+                    Learn About Life Chapters
+                </a>
             </div>
 
             <div class="life-image">
-                <img src="images/life-chapters.png" alt="Life Chapters storytelling session">
+                <img src="images/life-chapters.webp" alt="Life Chapters storytelling session" width="800" height="600"
+                    loading="lazy" />
             </div>
         </section>
 
         <section id="about" class="section about-section">
             <div class="about-image">
-                <img src="images/jenell.png" alt="Jenell, founder of Red Desert Check-In">
+                <img src="images/jenell.webp" alt="Jenell, founder of Red Desert Check-In" width="700" height="700"
+                    loading="lazy" />
             </div>
 
             <div class="about-copy">
@@ -341,16 +371,25 @@
         <section id="contact" class="contact-section">
             <div>
                 <h2>Want to book or ask a question?</h2>
-                <p>Schedule a consult at <a href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                        rel="noopener">https://koalendar.com/e/red-desert-check-in</a>.</p>
-                <p>Questions? Feel free to email me at <a
-                        href="mailto:reddesertcheckin@gmail.com">reddesertcheckin@gmail.com</a>.</p>
+                <p>
+                    Start with a quick consult or reach out directly. No pressure, no weird sales pitch.
+                </p>
             </div>
 
             <div class="contact-actions">
                 <a class="button button-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                    rel="noopener">Schedule a Consult</a>
-                <a class="button button-secondary" href="mailto:reddesertcheckin@gmail.com">Email with Questions</a>
+                    rel="noopener">
+                    Schedule a Consult
+                </a>
+
+                <a class="button button-secondary" href="mailto:reddesertcheckin@gmail.com">
+                    Email Me
+                </a>
+
+                <a class="button button-secondary" href="https://www.instagram.com/reddesertcheckin/" target="_blank"
+                    rel="noopener">
+                    Instagram @reddesertcheckin
+                </a>
             </div>
         </section>
 
@@ -358,6 +397,11 @@
 
     <footer class="footer">
         <p>Red Desert Check-In | Southern Utah</p>
+        <p>
+            <a href="mailto:reddesertcheckin@gmail.com">reddesertcheckin@gmail.com</a>
+            <span aria-hidden="true"> | </span>
+            <a href="https://www.instagram.com/reddesertcheckin/" target="_blank" rel="noopener">@reddesertcheckin</a>
+        </p>
         <p>© 2026 Red Desert Check-In</p>
     </footer>
 
