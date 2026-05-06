@@ -5,423 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Red Desert Check-In | Local Check-In Visits in Southern Utah</title>
+    <title>Red Desert Check-In | Local Check-In Visits in St. George & Southern Utah</title>
     <meta name="description"
-        content="Local, in-person check-in visits for people, pets, homes, rentals, businesses, and custom situations in St. George, Washington, and Southern Utah." />
+        content="Local, in-person check-in visits in St. George, Washington, and Southern Utah for people, pets, homes, rentals, businesses, and custom situations." />
 
     <link rel="stylesheet" href="styles.css" />
     <link rel="preload" as="image" href="images/checkin-door.webp" />
-
-    <style>
-        .modern-hero {
-            padding: 74px 7% 62px;
-            display: grid;
-            grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-            gap: 42px;
-            align-items: center;
-            background:
-                radial-gradient(circle at 12% 12%, rgba(255, 222, 184, 0.9), transparent 32%),
-                radial-gradient(circle at 88% 18%, rgba(167, 52, 32, 0.20), transparent 30%),
-                linear-gradient(135deg, #fff8ef 0%, #f7e0c8 48%, #d9824e 100%);
-        }
-
-        .hero-badge-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 18px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 9px 12px;
-            border: 1px solid rgba(167, 52, 32, 0.24);
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.55);
-            color: var(--clay-dark);
-            font-size: 13px;
-            font-weight: 900;
-        }
-
-        .modern-hero h1 {
-            max-width: 820px;
-            margin-bottom: 22px;
-            color: #2f120c;
-            font-size: clamp(44px, 6.4vw, 82px);
-            line-height: 0.94;
-        }
-
-        .modern-hero .hero-text {
-            max-width: 700px;
-            margin-bottom: 30px;
-            color: #3f2922;
-            font-size: 20px;
-            line-height: 1.55;
-        }
-
-        .hero-panel {
-            padding: 18px;
-            border-radius: 30px;
-            background: rgba(255, 255, 255, 0.48);
-            border: 1px solid rgba(255, 255, 255, 0.55);
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(10px);
-        }
-
-        .hero-panel img {
-            width: 100%;
-            min-height: 430px;
-            object-fit: cover;
-            border-radius: 24px;
-        }
-
-        .quick-card-row {
-            margin-top: 16px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
-        .quick-card {
-            padding: 14px;
-            border-radius: 18px;
-            background: #fffdf9;
-            border: 1px solid var(--line);
-            text-align: center;
-            font-weight: 900;
-            color: #4b3027;
-            font-size: 13px;
-        }
-
-        .modern-section {
-            padding: 76px 7%;
-        }
-
-        .modern-intro {
-            max-width: 840px;
-            margin-bottom: 34px;
-        }
-
-        .modern-intro.center {
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-
-        .modern-intro h2 {
-            margin-bottom: 14px;
-            color: var(--clay-dark);
-            font-size: clamp(34px, 4.6vw, 58px);
-            line-height: 1.02;
-        }
-
-        .modern-intro p:not(.eyebrow) {
-            color: var(--muted);
-            font-size: 18px;
-        }
-
-        .simple-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .modern-card {
-            padding: 28px;
-            border-radius: 24px;
-            background: white;
-            border: 1px solid var(--line);
-            box-shadow: 0 12px 32px rgba(53, 23, 17, 0.06);
-        }
-
-        .modern-card h3 {
-            margin-bottom: 10px;
-            color: #351711;
-            font-size: 25px;
-        }
-
-        .modern-card p {
-            margin-bottom: 0;
-            color: var(--muted);
-        }
-
-        .icon-dot {
-            width: 46px;
-            height: 46px;
-            margin-bottom: 16px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 16px;
-            background: var(--soft);
-            color: var(--clay);
-            font-weight: 900;
-            font-size: 20px;
-        }
-
-        .use-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
-
-        .use-card {
-            display: grid;
-            grid-template-columns: 170px 1fr;
-            gap: 20px;
-            align-items: stretch;
-            padding: 14px;
-            border-radius: 26px;
-            background: white;
-            border: 1px solid var(--line);
-            box-shadow: 0 12px 32px rgba(53, 23, 17, 0.06);
-            overflow: hidden;
-        }
-
-        .use-card img {
-            width: 100%;
-            height: 100%;
-            min-height: 180px;
-            object-fit: cover;
-            border-radius: 18px;
-        }
-
-        .use-card-content {
-            padding: 10px 8px 10px 0;
-        }
-
-        .use-card h3 {
-            margin-bottom: 8px;
-            font-size: 27px;
-            color: #351711;
-        }
-
-        .use-card p {
-            margin-bottom: 12px;
-            color: var(--muted);
-        }
-
-        .mini-list {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-
-        .mini-list li {
-            position: relative;
-            padding-left: 22px;
-            margin-bottom: 7px;
-            color: #473029;
-            font-size: 14px;
-            line-height: 1.45;
-        }
-
-        .mini-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--clay);
-            font-weight: 900;
-        }
-
-        .visit-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 22px;
-            align-items: stretch;
-        }
-
-        .visit-box {
-            padding: 34px;
-            border-radius: 28px;
-            background: white;
-            border: 1px solid var(--line);
-            box-shadow: 0 12px 32px rgba(53, 23, 17, 0.06);
-        }
-
-        .visit-box.highlight {
-            background: #fff8ef;
-            border-color: rgba(167, 52, 32, 0.28);
-        }
-
-        .visit-box h2 {
-            margin-bottom: 16px;
-            color: #351711;
-            font-size: clamp(30px, 4vw, 42px);
-        }
-
-        .pricing-modern {
-            background:
-                radial-gradient(circle at top right, rgba(167, 52, 32, 0.10), transparent 34%),
-                #fffdf9;
-        }
-
-        .price-modern-grid {
-            max-width: 920px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
-
-        .price-modern-card {
-            padding: 34px;
-            border-radius: 28px;
-            background: white;
-            border: 1px solid var(--line);
-            box-shadow: 0 12px 32px rgba(53, 23, 17, 0.06);
-        }
-
-        .price-modern-card.featured {
-            border: 2px solid var(--clay);
-            background: #fff8ef;
-        }
-
-        .price-modern-card h3 {
-            margin-bottom: 10px;
-            font-size: 30px;
-            color: #351711;
-        }
-
-        .big-price {
-            margin: 8px 0 14px;
-            color: var(--clay);
-            font-size: 56px;
-            font-weight: 900;
-            line-height: 1;
-        }
-
-        .big-price span {
-            font-size: 16px;
-            color: var(--muted);
-        }
-
-        .add-on-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .question-strip {
-            padding: 42px 7%;
-            background: #fffdf9;
-        }
-
-        .question-strip-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 34px;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 24px;
-            align-items: center;
-            border: 1px solid var(--line);
-            border-radius: 28px;
-            background: white;
-            box-shadow: 0 12px 32px rgba(53, 23, 17, 0.06);
-        }
-
-        .question-strip h2 {
-            margin-bottom: 8px;
-            color: #351711;
-            font-size: clamp(28px, 4vw, 42px);
-        }
-
-        .question-strip p {
-            margin-bottom: 0;
-            color: var(--muted);
-        }
-
-        .final-cta {
-            margin: 0 7% 56px;
-            padding: 42px;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 26px;
-            align-items: center;
-            border-radius: 32px;
-            color: white;
-            background: linear-gradient(135deg, var(--clay), var(--clay-dark));
-            box-shadow: var(--shadow);
-        }
-
-        .final-cta h2 {
-            margin-bottom: 10px;
-            color: white;
-            font-size: clamp(30px, 4vw, 48px);
-        }
-
-        .final-cta p {
-            margin-bottom: 0;
-            color: #fff0e8;
-        }
-
-        .final-cta .button-secondary {
-            background: white;
-            border-color: white;
-        }
-
-        @media (max-width: 1050px) {
-
-            .modern-hero,
-            .visit-split,
-            .final-cta,
-            .question-strip-inner {
-                grid-template-columns: 1fr;
-            }
-
-            .use-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 850px) {
-
-            .simple-grid,
-            .price-modern-grid,
-            .add-on-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .use-card {
-                grid-template-columns: 1fr;
-            }
-
-            .use-card img {
-                min-height: 220px;
-            }
-
-            .use-card-content {
-                padding: 8px;
-            }
-        }
-
-        @media (max-width: 700px) {
-
-            .modern-hero,
-            .modern-section,
-            .question-strip {
-                padding-left: 6%;
-                padding-right: 6%;
-            }
-
-            .quick-card-row {
-                grid-template-columns: 1fr;
-            }
-
-            .final-cta {
-                margin-left: 6%;
-                margin-right: 6%;
-                padding: 30px;
-            }
-
-            .question-strip-inner {
-                padding: 26px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -441,366 +30,343 @@
             <a href="#about">About</a>
         </nav>
 
-        <a class="header-cta" href="book.html">
-            Book a Check-In
-        </a>
+        <a class="header-cta" href="book.html">Book a Check-In</a>
     </header>
 
     <main>
 
-        <section class="modern-hero">
+        <section class="hero">
             <div class="hero-content">
-                <p class="eyebrow">Local check-in visits in Southern Utah</p>
-
-                <div class="hero-badge-row">
-                    <span class="hero-badge">People</span>
-                    <span class="hero-badge">Pets</span>
-                    <span class="hero-badge">Homes</span>
-                    <span class="hero-badge">Rentals</span>
-                    <span class="hero-badge">Businesses</span>
-                </div>
-
-                <h1>When you need someone local to go check.</h1>
-
+                <p class="eyebrow">Local check-in visits in St. George and Southern Utah</p>
+                <h1>When you need someone local to go check, I can.</h1>
                 <p class="hero-text">
-                    Red Desert Check-In provides in-person visits for the people, pets, homes, rentals, and places you
-                    care about. I show up, pay attention, help with small things when appropriate, and send you a real
-                    update after.
+                    Red Desert Check-In provides in-person visits for the people, pets, homes, rentals, businesses,
+                    and situations you care about. I show up, pay attention, and send you a clear update after.
                 </p>
 
                 <div class="hero-actions">
-                    <a class="button button-primary" href="book.html">
-                        Book a Check-In
-                    </a>
-
-                    <a class="button button-secondary" href="mailto:reddesertcheckin@gmail.com">
-                        Questions? Email Me
-                    </a>
-
+                    <a class="button button-primary" href="book.html">Book a Check-In</a>
+                    <a class="button button-secondary" href="mailto:reddesertcheckin@gmail.com">Questions? Email Me</a>
                     <a class="button button-secondary" href="https://koalendar.com/e/red-desert-check-in"
-                        target="_blank" rel="noopener">
-                        Free 15-Minute Consult
-                    </a>
+                        target="_blank" rel="noopener noreferrer">Free 15-Minute Consult</a>
                 </div>
             </div>
 
-            <div class="hero-panel">
+            <div class="hero-image">
                 <img src="images/checkin-door.webp" alt="Local in-person check-in at a front door" width="900"
                     height="700" loading="eager" fetchpriority="high" />
-                <div class="quick-card-row">
-                    <div class="quick-card">Starts at $65</div>
-                    <div class="quick-card">45–60 min visits</div>
-                    <div class="quick-card">Real updates</div>
-                </div>
             </div>
         </section>
 
-        <section class="modern-section">
-            <div class="modern-intro center">
-                <p class="eyebrow">The in-between service</p>
-                <h2>Not an emergency. Not full-time care. Just eyes on the situation.</h2>
+        <section class="section problem-section">
+            <div class="section-intro center">
+                <p class="eyebrow">What this is</p>
+                <h2>Not emergency response. Not full-time care. Just a real person checking on what matters.</h2>
                 <p>
-                    Sometimes you do not need a caregiver, cleaner, sitter, or emergency response. You need a calm local
-                    person to go there, look around, notice what matters, and tell you clearly.
+                    Sometimes you do not need a caregiver, house sitter, or a long list of services. You just need
+                    someone local, calm, and reliable to go there, look around, notice what matters, and tell you
+                    clearly
+                    what is going on.
                 </p>
             </div>
 
-            <div class="simple-grid">
-                <article class="modern-card">
-                    <div class="icon-dot">1</div>
-                    <h3>Something feels off</h3>
-                    <p>They are not answering, the house is sitting empty, or you just need someone local to check.</p>
+            <div class="sign-grid">
+                <div class="sign-card">People</div>
+                <div class="sign-card">Pets</div>
+                <div class="sign-card">Homes</div>
+                <div class="sign-card">Rentals</div>
+                <div class="sign-card">Businesses</div>
+                <div class="sign-card">Custom situations</div>
+            </div>
+        </section>
+
+        <section class="section trust-section">
+            <div class="section-intro center">
+                <p class="eyebrow">Why people book</p>
+                <h2>Clear, local, and personal.</h2>
+                <p>
+                    Red Desert Check-In is for the moments when something feels off, something needs attention, or you
+                    simply want eyes on a situation. You know who is going, what is being checked, and that you will
+                    hear
+                    back from a real person.
+                </p>
+            </div>
+
+            <div class="steps-grid">
+                <article class="step-card">
+                    <span>1</span>
+                    <h3>Local to Southern Utah</h3>
+                    <p>Serving St. George, Washington, and nearby Southern Utah communities.</p>
                 </article>
 
-                <article class="modern-card">
-                    <div class="icon-dot">2</div>
-                    <h3>I go in person</h3>
-                    <p>I do the visit, walkthrough, conversation, or quick check-in based on the situation.</p>
+                <article class="step-card">
+                    <span>2</span>
+                    <h3>Real updates</h3>
+                    <p>You get a clear update after the visit with what I noticed, what was handled, and what may need
+                        attention next.</p>
                 </article>
 
-                <article class="modern-card">
-                    <div class="icon-dot">3</div>
-                    <h3>You get the update</h3>
-                    <p>You receive a clear update with what I noticed, what was handled, and anything worth watching.
-                    </p>
+                <article class="step-card">
+                    <span>3</span>
+                    <h3>One point of contact</h3>
+                    <p>No call center and no handoff. You know exactly who is showing up and communicating with you.</p>
                 </article>
             </div>
         </section>
 
-        <section id="how" class="modern-section how-section">
-            <div class="modern-intro center">
+        <section id="how" class="section how-section">
+            <div class="section-intro center">
                 <p class="eyebrow">How it works</p>
                 <h2>Simple enough to book. Personal enough to matter.</h2>
             </div>
 
-            <div class="simple-grid">
-                <article class="modern-card">
-                    <div class="icon-dot">01</div>
+            <div class="steps-grid">
+                <article class="step-card">
+                    <span>01</span>
                     <h3>Choose a visit</h3>
-                    <p>Book one check-in or schedule multiple/repeated visits at a lower rate.</p>
+                    <p>Book a one-time visit or schedule more than one at the lower rate.</p>
                 </article>
 
-                <article class="modern-card">
-                    <div class="icon-dot">02</div>
-                    <h3>Tell me what to check</h3>
-                    <p>On the booking form, you’ll choose the check-in type, add-ons, address, and details.</p>
+                <article class="step-card">
+                    <span>02</span>
+                    <h3>Share the details</h3>
+                    <p>Tell me what to check, where to go, and anything important I should know before the visit.</p>
                 </article>
 
-                <article class="modern-card">
-                    <div class="icon-dot">03</div>
-                    <h3>I show up and report back</h3>
-                    <p>I visit locally, pay attention, help where it makes sense, and send a real update.</p>
+                <article class="step-card">
+                    <span>03</span>
+                    <h3>I go and report back</h3>
+                    <p>I show up, pay attention, and send you a clear update afterward.</p>
                 </article>
             </div>
         </section>
 
-        <section id="checkins" class="modern-section category-section">
-            <div class="modern-intro">
+        <section id="checkins" class="section category-section">
+            <div class="section-intro narrow">
                 <p class="eyebrow">Check-in types</p>
-                <h2>What can a check-in be used for?</h2>
+                <h2>Common reasons people reach out</h2>
                 <p>
-                    This is one local check-in service, used in different situations. Choose the category that feels
-                    closest. If it does not fit perfectly, custom check-ins are available.
+                    This is one local service that can be used in a lot of different situations. If your need does not
+                    fit neatly into one category, a custom check-in is available.
                 </p>
             </div>
 
-            <div class="use-grid">
-                <article class="use-card">
-                    <img src="images/category-family.webp" alt="Check-in on someone" width="700" height="500"
-                        loading="lazy" />
-                    <div class="use-card-content">
-                        <h3>Check-In on Someone</h3>
-                        <p>Because you cannot always be there yourself.</p>
-                        <ul class="mini-list">
+            <div class="category-grid">
+                <details class="category-card">
+                    <summary>
+                        <img src="images/category-family.webp" alt="Check-in on someone" width="700" height="500"
+                            loading="lazy" />
+                        <div>
+                            <h3>Check-In on Someone</h3>
+                            <p>For the moments when you cannot be there yourself.</p>
+                        </div>
+                    </summary>
+                    <div class="category-details">
+                        <p>Examples</p>
+                        <ul>
                             <li>Aging parent living alone</li>
-                            <li>New or overwhelmed mom</li>
                             <li>College student away from home</li>
                             <li>Friend you have not heard from</li>
-                            <li>Someone in recovery you want eyes on</li>
+                            <li>Someone in recovery</li>
+                            <li>New or overwhelmed mom</li>
                         </ul>
                     </div>
-                </article>
+                </details>
 
-                <article class="use-card">
-                    <img src="images/category-recovery.webp" alt="Recovery check-in" width="700" height="500"
-                        loading="lazy" />
-                    <div class="use-card-content">
-                        <h3>Recovery Check-In</h3>
-                        <p>After surgery, illness, loss, or a hard season.</p>
-                        <ul class="mini-list">
-                            <li>Home after surgery</li>
-                            <li>Grief, loss, or major life shift</li>
-                            <li>Burnout or emotional overwhelm</li>
-                            <li>Someone saying they are fine, but you are not sure</li>
-                            <li>Short-term support during recovery</li>
+                <details class="category-card">
+                    <summary>
+                        <img src="images/category-recovery.webp" alt="Support during a hard season" width="700"
+                            height="500" loading="lazy" />
+                        <div>
+                            <h3>Support During a Hard Season</h3>
+                            <p>For times of illness, overwhelm, loss, or recovery.</p>
+                        </div>
+                    </summary>
+                    <div class="category-details">
+                        <p>Examples</p>
+                        <ul>
+                            <li>After surgery or illness</li>
+                            <li>During burnout or emotional overwhelm</li>
+                            <li>After a major life change</li>
+                            <li>When someone says they are fine, but you are not sure</li>
                         </ul>
                     </div>
-                </article>
+                </details>
 
-                <article class="use-card">
-                    <img src="images/category-property.webp" alt="Away from home check-in" width="700" height="500"
-                        loading="lazy" />
-                    <div class="use-card-content">
-                        <h3>Away From Home Check-In</h3>
-                        <p>When no one is around to check things.</p>
-                        <ul class="mini-list">
+                <details class="category-card">
+                    <summary>
+                        <img src="images/category-property.webp" alt="Home and property check-in" width="700"
+                            height="500" loading="lazy" />
+                        <div>
+                            <h3>Home & Property Check-In</h3>
+                            <p>When you need someone local to go look around.</p>
+                        </div>
+                    </summary>
+                    <div class="category-details">
+                        <p>Examples</p>
+                        <ul>
                             <li>Traveling or on vacation</li>
                             <li>Second homes and snowbird properties</li>
                             <li>Mail, trash, doors, lights, or obvious issues</li>
                             <li>Quick peace-of-mind walkthrough</li>
                         </ul>
                     </div>
-                </article>
+                </details>
 
-                <article class="use-card">
-                    <img src="images/category-pets.webp" alt="Pet check-in" width="700" height="500" loading="lazy" />
-                    <div class="use-card-content">
-                        <h3>Pet Check-In</h3>
-                        <p>Quick visits while you are away.</p>
-                        <ul class="mini-list">
+                <details class="category-card">
+                    <summary>
+                        <img src="images/category-pets.webp" alt="Pet check-in" width="700" height="500"
+                            loading="lazy" />
+                        <div>
+                            <h3>Pet Check-In</h3>
+                            <p>Quick visits while you are away or need backup help.</p>
+                        </div>
+                    </summary>
+                    <div class="category-details">
+                        <p>Examples</p>
+                        <ul>
                             <li>Food and water check</li>
                             <li>Letting them out or quick attention</li>
-                            <li>Backup between regular pet care visits</li>
+                            <li>Backup between pet care visits</li>
                             <li>Not full-time pet sitting</li>
                         </ul>
                     </div>
-                </article>
+                </details>
 
-                <article class="use-card">
-                    <img src="images/category-custom.webp" alt="Property and business check-in" width="700" height="500"
-                        loading="lazy" />
-                    <div class="use-card-content">
-                        <h3>Property & Business Check-In</h3>
-                        <p>An extra set of eyes when you need verification.</p>
-                        <ul class="mini-list">
+                <details class="category-card">
+                    <summary>
+                        <img src="images/category-custom.webp" alt="Rental and business check-in" width="700"
+                            height="500" loading="lazy" />
+                        <div>
+                            <h3>Rental & Business Check-In</h3>
+                            <p>For walkthroughs, spot checks, and follow-up eyes on things.</p>
+                        </div>
+                    </summary>
+                    <div class="category-details">
+                        <p>Examples</p>
+                        <ul>
                             <li>Vacation rentals and Airbnbs</li>
-                            <li>New build or construction walkthrough</li>
-                            <li>Checking a home before buying</li>
-                            <li>Verifying cleaning or maintenance</li>
-                            <li>Business spot check or complaint follow-up</li>
+                            <li>Cleaning or maintenance verification</li>
+                            <li>Business spot check</li>
+                            <li>Complaint follow-up</li>
+                            <li>Construction or walkthrough check</li>
                         </ul>
                     </div>
-                </article>
+                </details>
 
-                <article class="use-card">
-                    <img src="images/category-seniors.webp" alt="Custom check-in" width="700" height="500"
-                        loading="lazy" />
-                    <div class="use-card-content">
-                        <h3>Custom Check-In</h3>
-                        <p>For the thing that does not fit neatly in a box.</p>
-                        <ul class="mini-list">
+                <details class="category-card">
+                    <summary>
+                        <img src="images/category-seniors.webp" alt="Custom check-in" width="700" height="500"
+                            loading="lazy" />
+                        <div>
+                            <h3>Custom Check-In</h3>
+                            <p>For the thing that does not fit neatly in a box.</p>
+                        </div>
+                    </summary>
+                    <div class="category-details">
+                        <p>Examples</p>
+                        <ul>
                             <li>Something feels off and you want it checked</li>
                             <li>A unique one-time request</li>
                             <li>A specific person, place, item, or area</li>
                             <li>“I just need someone local to go look”</li>
                         </ul>
                     </div>
-                </article>
+                </details>
             </div>
         </section>
 
-        <section id="visit" class="modern-section">
-            <div class="visit-split">
-                <div class="visit-box highlight">
-                    <p class="eyebrow">During the visit</p>
-                    <h2>What a check-in may include</h2>
-                    <ul class="check-list">
-                        <li>In-person check-in visit</li>
-                        <li>Basic walkthrough and eyes on the situation</li>
-                        <li>Conversation and connection when appropriate</li>
-                        <li>Small help during the visit, like trash, packages, or light reset</li>
-                        <li>Photos when useful and appropriate</li>
-                        <li>Clear update sent to one designated contact</li>
-                    </ul>
-                </div>
+        <section id="visit" class="section details-section">
+            <div class="split-card positive">
+                <p class="eyebrow">What a visit may include</p>
+                <h2>Practical help and a clear update</h2>
+                <ul class="check-list">
+                    <li>In-person check-in visit</li>
+                    <li>Basic walkthrough and eyes on the situation</li>
+                    <li>Conversation and connection when appropriate</li>
+                    <li>Small help during the visit, like trash, packages, or light reset</li>
+                    <li>Photos when useful and appropriate</li>
+                    <li>Clear update sent to one designated contact</li>
+                </ul>
+            </div>
 
-                <div class="visit-box">
-                    <p class="eyebrow">Clear boundaries</p>
-                    <h2>What this is not</h2>
-                    <ul class="x-list">
-                        <li>Not emergency response</li>
-                        <li>Not nursing care</li>
-                        <li>Not medication management</li>
-                        <li>Not full-time caregiving</li>
-                        <li>Not full housekeeping</li>
-                        <li>Not a replacement for 911</li>
-                    </ul>
-                </div>
+            <div class="split-card">
+                <p class="eyebrow">Clear boundaries</p>
+                <h2>What this is not</h2>
+                <ul class="x-list">
+                    <li>Not emergency response</li>
+                    <li>Not nursing care</li>
+                    <li>Not medication management</li>
+                    <li>Not full-time caregiving</li>
+                    <li>Not full housekeeping</li>
+                    <li>Not a replacement for 911</li>
+                </ul>
             </div>
         </section>
 
-        <section class="modern-section problem-section">
-            <div class="modern-intro center">
+        <section class="section problem-section">
+            <div class="section-intro center">
                 <p class="eyebrow">Why it matters</p>
-                <h2>I do not just stop by. I pay attention.</h2>
+                <h2>Sometimes peace of mind starts with someone simply showing up.</h2>
                 <p>
-                    A check-in is not just a quick knock on the door. I look for the small things people often miss:
-                    changes in the home, signs someone may be struggling, things that need to be handled, and what may
-                    need more support next.
+                    A check-in is not just a quick stop. It is a way to get real information, catch small things before
+                    they become bigger problems, and feel less in the dark when you cannot see for yourself.
                 </p>
             </div>
         </section>
 
-        <section id="pricing" class="modern-section pricing-modern">
-            <div class="modern-intro center">
+        <section id="pricing" class="section pricing-section">
+            <div class="section-intro center">
                 <p class="eyebrow">Pricing</p>
-                <h2>Simple pricing. No complicated packages.</h2>
+                <h2>Simple pricing. No confusing packages.</h2>
                 <p>Book one visit, or schedule more than one and receive the lower rate.</p>
             </div>
 
-            <div class="price-modern-grid">
-                <article class="price-modern-card">
+            <div class="pricing-grid two">
+                <article class="price-card">
                     <h3>One-Time Check-In</h3>
-                    <p class="big-price">$65</p>
+                    <p class="price">$65</p>
                     <p>Best for a single visit, occasional need, or quick peace of mind.</p>
-                    <ul class="mini-list">
+                    <ul class="check-list">
                         <li>One local check-in visit</li>
                         <li>About 45–60 minutes</li>
-                        <li>Real update after the visit</li>
+                        <li>Clear update after the visit</li>
                     </ul>
                 </article>
 
-                <article class="price-modern-card featured">
+                <article class="price-card featured">
                     <p class="tag">Best for repeated visits</p>
                     <h3>Multiple Check-Ins</h3>
-                    <p class="big-price">$50<span>/visit</span></p>
-                    <p>For clients booking more than one check-in or setting up repeated visits.</p>
-                    <ul class="mini-list">
+                    <p class="price">$50<span>/visit</span></p>
+                    <p>For clients booking more than one check-in or setting up a repeated schedule.</p>
+                    <ul class="check-list">
                         <li>Good for weekly, monthly, temporary, or custom schedules</li>
                         <li>Works for recovery, travel, ongoing concerns, or property checks</li>
                         <li>Scheduling details handled during booking</li>
                     </ul>
                 </article>
             </div>
-        </section>
 
-        <section class="modern-section how-section">
-            <div class="modern-intro center">
-                <p class="eyebrow">Optional add-ons</p>
-                <h2>Add what makes the visit more helpful.</h2>
-                <p>Add-ons can be requested during booking and confirmed separately if there is an added cost.</p>
-            </div>
-
-            <div class="add-on-grid">
-                <article class="modern-card">
-                    <div class="icon-dot">+</div>
-                    <h3>Meal Train Setup</h3>
-                    <p>I create a simple meal train link you can send to family, friends, neighbors, or coworkers.</p>
-                </article>
-
-                <article class="modern-card">
-                    <div class="icon-dot">+</div>
-                    <h3>Video Walkthrough</h3>
-                    <p>Add a short video walkthrough when you want a clearer visual update from the visit.</p>
-                </article>
-
-                <article class="modern-card">
-                    <div class="icon-dot">+</div>
-                    <h3>Extra Time</h3>
-                    <p>Add 30 minutes when the situation needs more time, support, or conversation.</p>
-                </article>
+            <div class="pricing-notes">
+                <p><strong>Extra time</strong> can be added when a visit needs more support or conversation.</p>
+                <p><strong>Video walkthroughs</strong> are available when you want a more visual update.</p>
+                <p><strong>Custom situations</strong> are welcome if your request does not fit a standard category.</p>
             </div>
         </section>
 
-        <section class="question-strip">
-            <div class="question-strip-inner">
-                <div>
-                    <p class="eyebrow">Questions first?</p>
-                    <h2>Need to talk through a unique situation first?</h2>
-                    <p>
-                        If your situation is more complicated, emotional, or you are unsure whether this service fits,
-                        you can either email me directly or book a free 15-minute online consult.
-                    </p>
-                </div>
-
-                <div class="contact-actions">
-                    <a class="button button-secondary" href="mailto:reddesertcheckin@gmail.com">
-                        Email Me
-                    </a>
-
-                    <a class="button button-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                        rel="noopener">
-                        Free 15-Minute Consult
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="modern-section life-section">
+        <section class="section life-section">
             <div class="life-copy">
                 <p class="eyebrow">Second offer</p>
                 <h2>Life Chapters</h2>
                 <p>
-                    Sometimes the thing that needs attention is not the house, the schedule, or the check-in. Sometimes
-                    it is the story.
+                    Sometimes the thing that needs attention is not the house, the pet, or the schedule. Sometimes it is
+                    the story.
                 </p>
                 <p>
                     Life Chapters is a guided storytelling service where I record conversations, transcribe them, and
                     turn them into a digital keepsake for the person or family.
                 </p>
-                <a class="button button-secondary" href="life-chapters.html">
-                    Learn About Life Chapters
-                </a>
+                <a class="button button-secondary" href="life-chapters.html">Learn About Life Chapters</a>
             </div>
 
             <div class="life-image">
@@ -809,7 +375,7 @@
             </div>
         </section>
 
-        <section id="about" class="modern-section about-section">
+        <section id="about" class="section about-section">
             <div class="about-image">
                 <img src="images/jenell.webp" alt="Jenell, founder of Red Desert Check-In" width="700" height="700"
                     loading="lazy" />
@@ -817,14 +383,15 @@
 
             <div class="about-copy">
                 <p class="eyebrow">About Red Desert Check-In</p>
-                <h2>Created by someone who knows how much families worry when they cannot see for themselves.</h2>
+                <h2>Created by someone who understands concern, urgency, and the need for clear information.</h2>
                 <p>
-                    I’m Jenell. I work in medical alarm dispatch, and I have spent years talking with seniors,
-                    families, caregivers, and people in stressful situations.
+                    I’m Jenell. I work in medical alarm dispatch, and I have spent years talking with people in
+                    stressful,
+                    uncertain, and time-sensitive situations.
                 </p>
                 <p>
-                    I know the difference between panic and concern. I also know how often families just need someone
-                    calm, local, and practical to help them get a clearer picture.
+                    I know the difference between panic and concern. I also know how often people simply need someone
+                    calm, local, observant, and practical to go check.
                 </p>
                 <p class="strong">
                     Red Desert Check-In exists for the moments when you need human eyes, honest updates, and someone
@@ -833,27 +400,21 @@
             </div>
         </section>
 
-        <section class="final-cta">
+        <section class="contact-section">
             <div>
-                <h2>Ready to book a check-in?</h2>
+                <p class="eyebrow">Questions first?</p>
+                <h2>Need to talk through a unique situation?</h2>
                 <p>
-                    Choose one visit or schedule multiple. You’ll share the details on the booking form.
+                    If your situation feels emotional, unusual, or hard to explain, email me directly or book a free
+                    15-minute consult first.
                 </p>
             </div>
 
-            <div class="contact-actions">
-                <a class="button button-secondary" href="book.html">
-                    Book a Check-In
-                </a>
-
-                <a class="button button-secondary" href="mailto:reddesertcheckin@gmail.com">
-                    Questions? Email Me
-                </a>
-
-                <a class="button button-secondary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                    rel="noopener">
-                    Free 15-Minute Consult
-                </a>
+            <div class="hero-actions">
+                <a class="button contact-button" href="book.html">Book a Check-In</a>
+                <a class="button contact-button" href="mailto:reddesertcheckin@gmail.com">Email Me</a>
+                <a class="button contact-button" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
+                    rel="noopener noreferrer">Free 15-Minute Consult</a>
             </div>
         </section>
 
@@ -864,7 +425,8 @@
         <p>
             <a href="mailto:reddesertcheckin@gmail.com">reddesertcheckin@gmail.com</a>
             <span aria-hidden="true"> | </span>
-            <a href="https://www.instagram.com/reddesertcheckin/" target="_blank" rel="noopener">@reddesertcheckin</a>
+            <a href="https://www.instagram.com/reddesertcheckin/" target="_blank"
+                rel="noopener noreferrer">@reddesertcheckin</a>
         </p>
         <p>© 2026 Red Desert Check-In</p>
     </footer>

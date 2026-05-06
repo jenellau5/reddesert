@@ -651,3 +651,9 @@ li {
         text-align: center;
     }
 }
+
+.trust-section {
+    background: #fffdf9;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
