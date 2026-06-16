@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8" />
@@ -11,7 +11,6 @@
     <meta property="og:description"
         content="A real person who shows up, looks around, and tells you clearly what is going on. Serving St. George and Southern Utah." />
     <meta property="og:type" content="website" />
-    <meta name="color-scheme" content="light" />
 
     <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,8 +21,10 @@
     <link rel="preload" as="image" href="images/checkin-door.webp" />
 
     <script>
-        // Force light theme across all devices
-        document.documentElement.setAttribute('data-theme', 'light');
+        (function () {
+            var m = window.matchMedia('(prefers-color-scheme: dark)');
+            document.documentElement.setAttribute('data-theme', m.matches ? 'dark' : 'light');
+        })();
     </script>
 </head>
 
