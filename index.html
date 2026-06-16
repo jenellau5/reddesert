@@ -5,12 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Red Desert Check-In | Local Check-In Visits in St. George &amp; Southern Utah</title>
-  <meta name="description" content="Local, in-person check-in visits in St. George, Washington, and Southern Utah for people, pets, homes, rentals, businesses, and custom situations." />
+  <meta name="description" content="Local, in-person check-in visits in St. George, Washington, and Southern Utah for people, homes, rentals, businesses, hospital situations, and custom needs." />
   <meta property="og:title" content="Red Desert Check-In | Local Check-In Visits in Southern Utah" />
   <meta property="og:description" content="A real person who shows up, looks around, and tells you clearly what is going on. Serving St. George and Southern Utah." />
   <meta property="og:type" content="website" />
 
-  <!-- Fonts -->
   <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,9 +19,8 @@
   <link rel="preload" as="image" href="images/checkin-door.webp" />
 
   <script>
-    // Apply theme before paint to avoid flash
     (function () {
-      const m = window.matchMedia('(prefers-color-scheme: dark)');
+      var m = window.matchMedia('(prefers-color-scheme: dark)');
       document.documentElement.setAttribute('data-theme', m.matches ? 'dark' : 'light');
     })();
   </script>
@@ -50,18 +48,29 @@
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero-content">
-        <p class="eyebrow">Southern Utah &mdash; St. George &amp; surrounding communities</p>
-        <h1 id="hero-heading">Someone local.<br>Real eyes.<br>A clear update.</h1>
+        <p class="eyebrow">Local check-in visits in St. George and Southern Utah</p>
+        <h1 id="hero-heading">When you need someone local to go check, I can.</h1>
         <p class="hero-desc">
-          When you cannot be there yourself, Red Desert Check-In goes. Whether it is a loved one, a property, a pet, or a situation that needs a calm and reliable person to show up &mdash; that is what this is.
+          Local, in-person check-in visits in St. George, Washington, and nearby Southern Utah communities for people, homes, rentals, businesses, hospital situations, and custom needs.
+        </p>
+        <p class="hero-desc">
+          I show up, look with real eyes, and send you a clear update after.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://koalendar.com/e/Check-ins" target="_blank" rel="noopener noreferrer">Book a $50 Check-In</a>
           <a class="btn btn-ghost" href="https://koalendar.com/e/red-desert-check-in" target="_blank" rel="noopener noreferrer">Free 15-Min Consult</a>
+          <a class="hero-email-link" href="mailto:reddesertcheckin@gmail.com">Email Me</a>
         </div>
       </div>
       <div class="hero-image">
-        <img src="images/checkin-door.webp" alt="A door in Southern Utah &mdash; someone showing up to check in" width="900" height="700" loading="eager" fetchpriority="high" />
+        <img src="images/checkin-door.webp" alt="Someone arriving at a front door for a local check-in visit" width="900" height="700" loading="eager" fetchpriority="high" />
+      </div>
+    </section>
+
+    <!-- SERVICE AREA -->
+    <section class="service-area-bar" aria-label="Service area">
+      <div class="container">
+        <p><strong>Local to Southern Utah</strong> &nbsp;&mdash;&nbsp; Serving St. George, Washington, and nearby Southern Utah communities.</p>
       </div>
     </section>
 
@@ -69,21 +78,76 @@
     <section class="section what-section" aria-labelledby="what-heading">
       <div class="container-narrow">
         <p class="eyebrow">What this is</p>
-        <h2 id="what-heading">Not a caregiver. Not a house sitter. Not 911.</h2>
+        <h2 id="what-heading">Not emergency response. Not full-time care. Just a real person checking on what matters.</h2>
         <p class="lead">
-          Sometimes you do not need a service. You just need a real person to go there, look around carefully, and tell you what they saw. That is the whole thing.
+          Sometimes you do not need a caregiver, house sitter, or a long list of services. You just need someone local, calm, and reliable to go there, look around, notice what matters, and tell you clearly what is going on.
         </p>
         <p>
-          Red Desert Check-In is for the moments when something feels off, you need eyes on a situation, or someone you care about needs a calm presence nearby until you can get there yourself.
+          Red Desert Check-In provides local, in-person check-in visits for people, homes, rentals, businesses, hospital situations, and custom situations in Southern Utah.
         </p>
         <div class="tag-row" role="list">
           <span role="listitem">People</span>
-          <span role="listitem">Pets</span>
           <span role="listitem">Homes</span>
           <span role="listitem">Rentals</span>
           <span role="listitem">Businesses</span>
-          <span role="listitem">Hospital support</span>
+          <span role="listitem">Hospital situations</span>
           <span role="listitem">Custom situations</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY PEOPLE BOOK -->
+    <section class="section trust-section" aria-labelledby="trust-heading">
+      <div class="container-narrow">
+        <p class="eyebrow">Why people book</p>
+        <h2 id="trust-heading">Clear, local, and personal.</h2>
+        <p>
+          Red Desert Check-In is for the moments when something feels off, something needs attention, or you simply want eyes on a situation. You know who is going, what is being checked, and that you will hear back from a real person.
+        </p>
+        <div class="trust-points">
+          <div class="trust-point">
+            <h3>Local to Southern Utah</h3>
+            <p>Serving St. George, Washington, and nearby Southern Utah communities.</p>
+          </div>
+          <div class="trust-point">
+            <h3>Real updates</h3>
+            <p>You get a clear update after the visit with what was noticed, what was handled, and what may need attention next.</p>
+          </div>
+          <div class="trust-point">
+            <h3>One point of contact</h3>
+            <p>No call center and no handoff. You know exactly who is showing up and communicating with you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section how-section" aria-labelledby="how-heading">
+      <div class="container-narrow">
+        <p class="eyebrow">How it works</p>
+        <h2 id="how-heading">Simple enough to book. Personal enough to matter.</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num" aria-hidden="true">01</div>
+            <div class="step-content">
+              <h3>Choose a time</h3>
+              <p>Choose a time that works best for your situation.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num" aria-hidden="true">02</div>
+            <div class="step-content">
+              <h3>Share the details</h3>
+              <p>Tell me what to check, where to go, and anything important I should know before the visit.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num" aria-hidden="true">03</div>
+            <div class="step-content">
+              <h3>I go and report back</h3>
+              <p>I show up, pay attention, and send you a clear update afterward.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -94,120 +158,128 @@
         <div class="section-header">
           <p class="eyebrow">Check-in types</p>
           <h2 id="services-heading">Common reasons people reach out</h2>
-          <p class="section-desc">One service, used in different real-life situations. If yours does not fit neatly, a custom check-in is always an option.</p>
+          <p class="section-desc">One clear service, used in different real-life situations. If your need does not fit neatly into one category, book a custom check-in.</p>
         </div>
 
         <div class="service-list">
 
           <article class="service-item">
             <div class="service-label">
-              <h3>Aging parent or loved one</h3>
+              <h3>Check-In on Someone</h3>
             </div>
             <div class="service-body">
-              <div class="service-img"><img src="images/category-family.webp" alt="Check-in on an aging parent or loved one" width="700" height="460" loading="lazy" /></div>
-              <p>For the moments when you are far away and something feels off. A check-in visit means a real person goes over, makes sure they are okay, and reports back to you directly.</p>
+              <div class="service-img">
+                <img src="images/category-family.webp" alt="Check-in on someone you care about" width="700" height="460" loading="lazy" />
+              </div>
+              <p>For the moments when you cannot be there yourself.</p>
+              <p class="examples-label">Examples</p>
               <ul>
-                <li>Parent or grandparent living alone</li>
-                <li>Someone in recovery or managing health changes</li>
-                <li>A friend you have not been able to reach</li>
-                <li>Someone who says they are fine, but you are not sure</li>
+                <li>Aging parent living alone</li>
+                <li>College student away from home</li>
+                <li>Friend you have not heard from</li>
+                <li>Someone in recovery</li>
+                <li>New or overwhelmed mom</li>
               </ul>
             </div>
           </article>
 
           <article class="service-item">
             <div class="service-label">
-              <h3>Hospital support</h3>
-              <span class="service-badge">New</span>
+              <h3>Support During a Hard Season</h3>
             </div>
             <div class="service-body">
-              <div class="service-img"><img src="images/category-recovery.webp" alt="Hospital support check-in" width="700" height="460" loading="lazy" /></div>
-              <p>If someone you love has been taken to the hospital and family is still on the way, a check-in means someone calm and caring can go sit with them, let them know they are not alone, and give you updates until you arrive.</p>
-              <p class="service-note">This is not medical care. It is a human presence &mdash; someone to sit nearby, speak calmly, and communicate with you so no one is waiting alone in an unfamiliar place.</p>
+              <div class="service-img">
+                <img src="images/category-recovery.webp" alt="Support during illness, burnout, or a hard season" width="700" height="460" loading="lazy" />
+              </div>
+              <p>For times of illness, overwhelm, loss, or recovery.</p>
+              <p class="examples-label">Examples</p>
               <ul>
-                <li>Sitting with someone until family arrives</li>
-                <li>Providing calm company and reassurance</li>
-                <li>Sending regular updates to a designated contact</li>
-                <li>Staying as long as needed (discussed ahead of time)</li>
+                <li>After surgery or illness</li>
+                <li>During burnout or emotional overwhelm</li>
+                <li>After a major life change</li>
+                <li>When someone says they are fine, but you are not sure</li>
               </ul>
             </div>
           </article>
 
           <article class="service-item">
             <div class="service-label">
-              <h3>Home &amp; property</h3>
+              <h3>Home &amp; Property Check-In</h3>
             </div>
             <div class="service-body">
-              <div class="service-img"><img src="images/category-property.webp" alt="Home and property check-in" width="700" height="460" loading="lazy" /></div>
-              <p>When you are traveling, at work, or simply cannot get there, a property check-in means a set of reliable eyes on what you care about.</p>
+              <div class="service-img">
+                <img src="images/category-property.webp" alt="Home and property check-in" width="700" height="460" loading="lazy" />
+              </div>
+              <p>When you need someone local to go look around.</p>
+              <p class="examples-label">Examples</p>
               <ul>
-                <li>Traveling or extended time away</li>
+                <li>Traveling or on vacation</li>
                 <li>Second homes and snowbird properties</li>
-                <li>Mail, packages, lights, doors, obvious concerns</li>
-                <li>Peace-of-mind walkthrough after a storm or worry</li>
+                <li>Mail, trash, doors, lights, or obvious issues</li>
+                <li>Quick peace-of-mind walkthrough</li>
+                <li>Walkthrough of a potential home before or during the buying process</li>
+                <li>Checking on new build progress while you are out of town</li>
               </ul>
             </div>
           </article>
 
           <article class="service-item">
             <div class="service-label">
-              <h3>Pets</h3>
+              <h3>Rental &amp; Business Check-In</h3>
             </div>
             <div class="service-body">
-              <div class="service-img"><img src="images/category-pets.webp" alt="Pet check-in" width="700" height="460" loading="lazy" /></div>
-              <p>Quick visits when your pet needs attention and you cannot get there. Not full-time pet sitting &mdash; just a reliable check when it matters.</p>
+              <div class="service-img">
+                <img src="images/category-rental.jpg" alt="Rental and business check-in" width="700" height="460" loading="lazy" />
+              </div>
+              <p>For rental properties, business locations, and on-site follow-up when you cannot be there yourself.</p>
+              <p class="examples-label">Examples</p>
               <ul>
-                <li>Food and water check</li>
-                <li>Letting them out or a few minutes of attention</li>
-                <li>Backup between regular pet care visits</li>
-                <li>Quick welfare check when something feels off</li>
+                <li>Check on a rental property between guests or visits</li>
+                <li>Walk through a vacation rental or Airbnb</li>
+                <li>Confirm a cleaner, vendor, or maintenance visit</li>
+                <li>Check on your business while you are out of town</li>
+                <li>See how things look on-site and report back</li>
+                <li>Follow up on a complaint or concern</li>
+                <li>Check progress on a repair, project, or contractor visit</li>
+                <li>Quick walkthrough after an issue or unexpected concern</li>
               </ul>
             </div>
           </article>
 
           <article class="service-item">
             <div class="service-label">
-              <h3>Rental or vacant home</h3>
+              <h3>Hospital Check-In</h3>
             </div>
             <div class="service-body">
-              <div class="service-img"><img src="images/category-custom.webp" alt="Rental and vacant home check-in" width="700" height="460" loading="lazy" /></div>
-              <p>For vacation rentals, Airbnbs, and vacant properties that need a set of eyes between visits or after a guest stay.</p>
+              <div class="service-img">
+                <img src="images/category-hospital.jpg" alt="Hospital check-in visit" width="700" height="460" loading="lazy" />
+              </div>
+              <p>For the moments when someone has been taken to the hospital and you are not nearby yet.</p>
+              <p class="examples-label">Examples</p>
               <ul>
-                <li>Condition check after a guest checkout</li>
-                <li>Cleaning or maintenance verification</li>
-                <li>Vacant property check for security or weather concerns</li>
-                <li>Quick walkthrough with photos sent to you</li>
+                <li>A loved one was taken to the hospital and you are still on the way</li>
+                <li>You want someone local to stop by and be there until family arrives</li>
+                <li>You need a calm in-person visit and a clear update</li>
+                <li>You want someone to sit with them for a short time so they are not alone</li>
               </ul>
             </div>
           </article>
 
           <article class="service-item">
             <div class="service-label">
-              <h3>Business or property check</h3>
+              <h3>Custom Check-In</h3>
             </div>
             <div class="service-body">
-              <div class="service-img"><img src="images/category-seniors.webp" alt="Business and property check-in" width="700" height="460" loading="lazy" /></div>
-              <p>For business owners who need someone local to go look at something without making a full trip.</p>
-              <ul>
-                <li>Business spot check after hours or while you are away</li>
-                <li>Construction or contractor follow-up</li>
-                <li>Complaint or concern follow-up</li>
-                <li>Quick exterior or condition walkthrough</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="service-item">
-            <div class="service-label">
-              <h3>Custom situation</h3>
-            </div>
-            <div class="service-body">
-              <p>For the thing that does not fit a category. If something feels off and you need a calm, reliable person to go look &mdash; that qualifies.</p>
+              <div class="service-img">
+                <img src="images/category-custom.webp" alt="Custom check-in for any situation" width="700" height="460" loading="lazy" />
+              </div>
+              <p>For the thing that does not fit neatly in a box.</p>
+              <p class="examples-label">Examples</p>
               <ul>
                 <li>Something feels off and you want it checked</li>
                 <li>A unique one-time request</li>
-                <li>A specific person, place, or concern</li>
-                <li>"I just need someone local to go look"</li>
+                <li>A specific person, place, item, or area</li>
+                <li>I just need someone local to go look</li>
               </ul>
             </div>
           </article>
@@ -216,47 +288,50 @@
       </div>
     </section>
 
-    <!-- HOW IT WORKS -->
-    <section id="how" class="section how-section" aria-labelledby="how-heading">
-      <div class="container-narrow">
-        <p class="eyebrow">How it works</p>
-        <h2 id="how-heading">Simple enough to book in a few minutes.</h2>
+    <!-- WHAT A VISIT INCLUDES + BOUNDARIES -->
+    <section id="visit" class="section details-section" aria-label="What a visit includes">
+      <div class="container">
+        <div class="details-grid">
 
-        <div class="steps">
-          <div class="step">
-            <div class="step-num" aria-hidden="true">01</div>
-            <div class="step-content">
-              <h3>Choose a time</h3>
-              <p>Book directly online or reach out to talk through your situation first. Either works.</p>
-            </div>
+          <div class="split-card positive">
+            <p class="eyebrow">What a visit may include</p>
+            <h2>Practical help and a clear update</h2>
+            <ul class="check-list">
+              <li>In-person check-in visit</li>
+              <li>Basic walkthrough and eyes on the situation</li>
+              <li>Conversation and connection when appropriate</li>
+              <li>Small help during the visit, like trash, packages, or light reset</li>
+              <li>Photos when useful and appropriate</li>
+              <li>Clear update sent to one designated contact</li>
+            </ul>
+            <p class="details-note">Some visits may also include extra time, a video walkthrough, waiting with someone for a short period, or other special requests depending on the situation.</p>
           </div>
-          <div class="step">
-            <div class="step-num" aria-hidden="true">02</div>
-            <div class="step-content">
-              <h3>Share the details</h3>
-              <p>Tell me what to check, where to go, and anything I should know going in. The more context, the better the visit.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num" aria-hidden="true">03</div>
-            <div class="step-content">
-              <h3>I go and report back</h3>
-              <p>I show up, pay attention, and send you a clear update after the visit &mdash; what I saw, what was handled, what may need attention.</p>
-            </div>
-          </div>
-        </div>
 
-        <div class="what-includes">
-          <p class="includes-label">A standard visit may include</p>
-          <ul class="includes-list">
-            <li>In-person check-in at the location</li>
-            <li>Basic walkthrough and direct observation</li>
-            <li>Conversation and calm presence when appropriate</li>
-            <li>Small practical help (trash, packages, reset) when possible</li>
-            <li>Photos when useful and appropriate</li>
-            <li>Clear written update sent to you after</li>
-          </ul>
+          <div class="split-card">
+            <p class="eyebrow">Clear boundaries</p>
+            <h2>What this is not</h2>
+            <ul class="x-list">
+              <li>Not emergency response</li>
+              <li>Not nursing care</li>
+              <li>Not medication management</li>
+              <li>Not full-time caregiving</li>
+              <li>Not full housekeeping</li>
+              <li>Not a replacement for 911</li>
+            </ul>
+          </div>
+
         </div>
+      </div>
+    </section>
+
+    <!-- WHY IT MATTERS -->
+    <section class="section why-section" aria-labelledby="why-heading">
+      <div class="container-narrow center-text">
+        <p class="eyebrow">Why it matters</p>
+        <h2 id="why-heading">Sometimes peace of mind starts with someone simply showing up.</h2>
+        <p>
+          A check-in is not just a quick stop. It is a way to get real information, catch small things before they become bigger problems, and feel less in the dark when you cannot see for yourself.
+        </p>
       </div>
     </section>
 
@@ -264,94 +339,40 @@
     <section id="pricing" class="section pricing-section" aria-labelledby="pricing-heading">
       <div class="container-narrow">
         <p class="eyebrow">Pricing</p>
-        <h2 id="pricing-heading">One flat rate. No packages to figure out.</h2>
+        <h2 id="pricing-heading">Simple pricing. No confusing packages.</h2>
+        <p class="section-lead">One simple price for any standard check-in visit.</p>
 
         <div class="price-block">
           <div class="price-main">
             <span class="price-amount">$50</span>
-            <span class="price-label">Standard check-in visit</span>
+            <span class="price-label">Check-In Visit</span>
           </div>
+          <p class="price-subtitle">People &bull; Homes &bull; Rentals &bull; Business &bull; Hospital &bull; Custom Requests</p>
+          <p class="price-desc">One simple price for people, homes, rentals, businesses, hospital situations, and custom requests.</p>
           <ul class="price-includes">
-            <li>In-person local visit</li>
-            <li>Approximately 45&ndash;60 minutes on-site</li>
+            <li>In-person local check-in visit</li>
+            <li>Approximately 45&ndash;60 minutes</li>
             <li>Photos when appropriate</li>
-            <li>Clear update sent to you afterward</li>
-            <li>Same price whether one-time or recurring</li>
+            <li>Clear update after the visit</li>
+            <li>Custom requests welcome</li>
           </ul>
           <a class="btn btn-primary" href="https://koalendar.com/e/Check-ins" target="_blank" rel="noopener noreferrer">Schedule Your Check-In</a>
         </div>
 
         <div class="addons-block">
-          <h3>Add-ons &amp; special requests</h3>
-          <p>Some situations need a little more. If your visit involves any of the following, just mention it ahead of time and we will work it out together.</p>
+          <h3>Add-Ons and Special Requests</h3>
+          <p>Some situations need more time or a little more support. Add-ons may be requested for:</p>
           <ul class="addon-list">
             <li>Extra time on-site</li>
-            <li>Video walkthroughs for a more visual update</li>
-            <li>More detailed written reports</li>
-            <li>Waiting with someone until family or help arrives</li>
-            <li>Multiple stops in one visit</li>
-            <li>Recurring check-ins on a regular schedule</li>
-            <li>Any other special situation or custom need</li>
+            <li>Video walkthroughs</li>
+            <li>More detailed updates</li>
+            <li>Waiting with someone until family arrives</li>
+            <li>Multiple stops</li>
+            <li>Special requests</li>
+            <li>Other custom needs depending on the situation</li>
           </ul>
-          <p class="addon-note">Whenever possible, any add-ons or extra time are discussed and agreed on before the visit so there are no surprises.</p>
+          <p class="addon-note">Add-ons or extra time can be discussed ahead of time whenever possible.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- WHY / TRUST -->
-    <section class="section trust-section" aria-labelledby="trust-heading">
-      <div class="container-narrow">
-        <p class="eyebrow">Why people use this</p>
-        <h2 id="trust-heading">Reassurance starts with someone actually showing up.</h2>
-
-        <div class="trust-points">
-          <div class="trust-point">
-            <h3>Local &amp; personal</h3>
-            <p>Serving St. George, Washington, and surrounding Southern Utah communities. No call centers, no handoffs. You know who is showing up.</p>
-          </div>
-          <div class="trust-point">
-            <h3>Real updates</h3>
-            <p>After every visit you hear back clearly &mdash; what was seen, what was handled, and anything that may need attention next.</p>
-          </div>
-          <div class="trust-point">
-            <h3>One point of contact</h3>
-            <p>You communicate directly with the person going. No coordination layers, no confusion about who said what.</p>
-          </div>
-          <div class="trust-point">
-            <h3>Calm in hard moments</h3>
-            <p>A check-in is not just practical. For situations involving people &mdash; especially hard ones &mdash; knowing someone went and saw for themselves matters.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BOUNDARIES -->
-    <section class="section boundary-section" aria-labelledby="boundary-heading">
-      <div class="container-narrow">
-        <div class="boundary-inner">
-          <div class="boundary-col">
-            <p class="eyebrow">What a visit may include</p>
-            <ul class="boundary-list boundary-yes">
-              <li>In-person presence and direct observation</li>
-              <li>Calm company when someone needs it</li>
-              <li>Honest, clear updates to you after</li>
-              <li>Photos when appropriate</li>
-              <li>Practical small help when possible</li>
-            </ul>
-          </div>
-          <div class="boundary-divider" aria-hidden="true"></div>
-          <div class="boundary-col">
-            <p class="eyebrow">What this is not</p>
-            <ul class="boundary-list boundary-no">
-              <li>Not emergency response or 911</li>
-              <li>Not nursing or medical care</li>
-              <li>Not medication management</li>
-              <li>Not full-time caregiving</li>
-              <li>Not housekeeping or home management</li>
-            </ul>
-          </div>
-        </div>
-        <p class="boundary-note">If a situation requires emergency services, please call 911. Red Desert Check-In is for non-emergency presence, check-ins, and peace of mind.</p>
       </div>
     </section>
 
@@ -362,29 +383,31 @@
       </div>
       <div class="about-copy">
         <p class="eyebrow">About Red Desert Check-In</p>
-        <h2 id="about-heading">Built by someone who knows what it feels like to need calm, clear information fast.</h2>
+        <h2 id="about-heading">Created by someone who understands concern, urgency, and the need for clear information.</h2>
         <p>
-          I'm Jenell. I work in emergency dispatch, and I have spent years on the phone with people in stressful, uncertain situations &mdash; people who need information quickly and someone steady on the other end.
+          I'm Jenell. I work in medical alarm dispatch, and I have spent years talking with people in stressful, uncertain, and time-sensitive situations.
         </p>
         <p>
-          I know the difference between panic and real concern. And I know how often what people actually need is not a service &mdash; it is just a trustworthy person willing to go look.
+          I know the difference between panic and concern. I also know how often people simply need someone calm, local, observant, and practical to go check.
         </p>
         <p class="about-closing">
-          Red Desert Check-In exists for those moments.
+          Red Desert Check-In exists for the moments when you need human eyes, honest updates, and someone willing to show up.
         </p>
       </div>
     </section>
 
-    <!-- FINAL CTA -->
-    <section class="section cta-section" aria-labelledby="cta-heading">
-      <div class="container-narrow cta-inner">
-        <p class="eyebrow">Ready when you are</p>
-        <h2 id="cta-heading">If something needs checking, I can go.</h2>
-        <p>Book online, email with questions, or start with a free 15-minute consult to talk through your situation first.</p>
-        <div class="cta-actions">
+    <!-- CONSULT / CONTACT -->
+    <section class="section contact-section" aria-labelledby="contact-heading">
+      <div class="container-narrow">
+        <p class="eyebrow">Questions first?</p>
+        <h2 id="contact-heading">Need to talk through the situation first?</h2>
+        <p>
+          If your situation feels emotional, unusual, or hard to explain, you can email me directly or book a free 15-minute consult first.
+        </p>
+        <div class="contact-actions">
           <a class="btn btn-primary" href="https://koalendar.com/e/Check-ins" target="_blank" rel="noopener noreferrer">Book a $50 Check-In</a>
-          <a class="btn btn-outline" href="mailto:reddesertcheckin@gmail.com">Email with a Question</a>
-          <a class="btn btn-ghost" href="https://koalendar.com/e/red-desert-check-in" target="_blank" rel="noopener noreferrer">Free 15-Min Consult</a>
+          <a class="btn btn-outline" href="https://koalendar.com/e/red-desert-check-in" target="_blank" rel="noopener noreferrer">Free 15-Min Consult</a>
+          <a class="contact-email-link" href="mailto:reddesertcheckin@gmail.com">Email Me</a>
         </div>
       </div>
     </section>
@@ -395,7 +418,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <img src="images/reddesertlogo.webp" alt="Red Desert Check-In" class="footer-logo" width="100" height="36" loading="lazy" />
-        <p>Local check-in visits in St. George &amp; Southern Utah</p>
+        <p>Red Desert Check-In | Southern Utah</p>
       </div>
       <div class="footer-links">
         <a href="mailto:reddesertcheckin@gmail.com">reddesertcheckin@gmail.com</a>
@@ -405,7 +428,6 @@
     </div>
   </footer>
 
-  <!-- Koalendar Popup Widget -->
   <script>
     window.Koalendar = window.Koalendar || function () {
       (Koalendar.props = Koalendar.props || []).push(arguments);
