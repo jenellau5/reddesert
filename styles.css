@@ -108,18 +108,15 @@ h3{font-size:var(--t-lg);font-weight:600;color:var(--ink);margin-bottom:var(--s2
 /* ———————————————— HEADER ———————————————— */
 .site-header{
   position:sticky;top:0;z-index:200;
-  background:var(--bg);border-bottom:1px solid var(--divider);
+  /* White header so the white-background logo is seamless */
+  background:#ffffff;border-bottom:1px solid var(--divider);
   display:flex;align-items:center;gap:var(--s6);
   padding-block:var(--s3);padding-inline:clamp(var(--s5),5vw,var(--s12));
   min-height:64px;
 }
 .brand{text-decoration:none;flex-shrink:0;}
-/* Logo: clip away the white JPG background so it sits cleanly on cream */
 .brand-logo{
   height:46px;width:auto;display:block;
-  /* mix-blend-mode darkens the white bg so it blends into the warm page */
-  mix-blend-mode:multiply;
-  border-radius:var(--r-sm);
 }
 /* Desktop nav */
 .nav{display:flex;gap:clamp(var(--s3),2vw,var(--s5));margin-left:auto;flex-wrap:wrap;align-items:center;}
