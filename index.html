@@ -84,17 +84,46 @@
     <a class="brand" href="#top" aria-label="Red Desert Check-In home">
       <img src="images/logoheader.jpg" alt="Red Desert Check-In" class="brand-logo" width="240" height="66" loading="eager" />
     </a>
+
+    <!-- Desktop nav -->
     <nav class="nav" aria-label="Main navigation">
       <a href="#people">People</a>
       <a href="#relief">Relief</a>
       <a href="#property">Property</a>
-      <a href="#rental">Rental</a>
+      <a href="#rental">Rental &amp; Business</a>
       <a href="#tech">Tech</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
+      <a href="#about">About</a>
     </nav>
-    <a class="header-cta" href="https://koalendar.com/e/Check-ins" target="_blank" rel="noopener noreferrer">Book a Visit</a>
+
+    <div class="header-right">
+      <a class="header-cta" href="https://koalendar.com/e/Check-ins" target="_blank" rel="noopener noreferrer">Book a Visit</a>
+      <!-- Hamburger -->
+      <button class="hamburger" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <button class="mobile-menu-close" id="menu-close" aria-label="Close menu">&times;</button>
+      <nav aria-label="Mobile navigation">
+        <a href="#people" class="mm-link">People Check-Ins</a>
+        <a href="#relief" class="mm-link">Relief &amp; Presence</a>
+        <a href="#property" class="mm-link">Property Check-Ins</a>
+        <a href="#rental" class="mm-link">Rental &amp; Business</a>
+        <a href="#tech" class="mm-link">Tech &amp; Safety</a>
+        <a href="#pricing" class="mm-link">Pricing</a>
+        <a href="#faq" class="mm-link">FAQ</a>
+        <a href="#about" class="mm-link">About</a>
+      </nav>
+      <a class="btn btn-primary mm-cta" href="https://koalendar.com/e/Check-ins" target="_blank" rel="noopener noreferrer">Book a Visit &mdash; $50</a>
+      <a class="mm-consult" href="https://koalendar.com/e/red-desert-check-in" target="_blank" rel="noopener noreferrer">Free 15-Min Consult</a>
+    </div>
+  </div>
 
   <main>
 
@@ -162,588 +191,691 @@
     </section>
 
     <!-- 3. PEOPLE CHECK-INS & CAREGIVER SUPPORT -->
-    <section id="people" class="section service-family-section" aria-labelledby="people-heading">
-      <div class="container">
-        <div class="family-header">
-          <div class="family-header-text">
-            <p class="eyebrow">People Check-Ins &amp; Caregiver Support</p>
-            <h2 id="people-heading">When you need someone local to check on a person, spend a little time with them, and send you a clear update afterward.</h2>
-            <p>Designed for real-life situations like aging parents, adult children away from home, recovery after surgery, new parent overwhelm, or seasons when something just feels off.</p>
-            <p class="family-price">Standard visit: <strong>$50</strong> for approximately 45&ndash;60 minutes.</p>
-          </div>
-          <div class="family-image">
-            <img src="images/category-family.webp" alt="Friendly check-in visit with an older adult" width="600" height="400" loading="lazy" />
-          </div>
-        </div>
 
-        <div class="family-includes">
-          <p class="includes-label">A standard People Check-In may include</p>
-          <ul class="check-list cols-2">
-            <li>In-person visit</li>
-            <li>Check of the person and their immediate environment</li>
-            <li>Friendly conversation and companionship</li>
-            <li>Light practical help during the visit</li>
-            <li>Photos when useful and appropriate</li>
-            <li>Written update to one designated contact</li>
-          </ul>
-        </div>
+    <!-- ══════════════════════════════════════════
+         SERVICES — ACCORDION FAMILIES
+         3. People  4. Relief  5. Property  6. Rental  7. Tech
+         ══════════════════════════════════════════ -->
 
-        <div class="service-items">
-
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Aging Parent / Senior Check-In</h3>
-              <p class="si-sub">Know how your loved one is really doing when you cannot be there yourself.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Friendly in-person check-in and conversation</li>
-                <li>Visual check of general wellbeing</li>
-                <li>Fridge and pantry check when appropriate</li>
-                <li>Observation of home condition and obvious safety concerns</li>
-                <li>Mail, package, or basic household check</li>
-                <li>Light help during the visit</li>
-                <li>Clear written update afterward</li>
-              </ul>
-              <p class="si-concerns-label">Common concerns</p>
-              <ul class="concerns-list">
-                <li>Falls or general safety concerns</li>
-                <li>Isolation</li>
-                <li>Missed meals or dehydration</li>
-                <li>Home condition changes</li>
-                <li>Cognitive or behavior changes</li>
-                <li>"Something feels off, but I'm not sure what"</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Adult Child / Student Check-In</h3>
-              <p class="si-sub">Support for adult children or students away from home who may need local encouragement or a simple check-in.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Meet for coffee, a meal, or a short walk</li>
-                <li>Wellness conversation</li>
-                <li>Practical local support or a supply drop-off if arranged</li>
-                <li>Living environment check when appropriate</li>
-                <li>Update to parent or family member only with the student's permission</li>
-              </ul>
-              <p class="si-concerns-label">Common concerns</p>
-              <ul class="concerns-list">
-                <li>Illness or stress</li>
-                <li>Homesickness or overwhelm</li>
-                <li>Major life transition</li>
-                <li>Worry from a distance</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Post-Surgery Recovery Check-In</h3>
-              <p class="si-sub">Reassurance that recovery appears to be progressing and basic needs are covered.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Check food, hydration, and comfort</li>
-                <li>Observe the recovery environment for obvious concerns</li>
-                <li>Help organize supplies or discharge instructions in a simple way</li>
-                <li>Light practical help during the visit</li>
-                <li>Written recovery update for family</li>
-              </ul>
-              <p class="si-concerns-label">Common concerns</p>
-              <ul class="concerns-list">
-                <li>Falls or dehydration</li>
-                <li>Isolation during recovery</li>
-                <li>Trouble managing at home</li>
-                <li>Family living out of town</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="si-label">
-              <h3>New Parent Check-In</h3>
-              <p class="si-sub">Practical, non-medical support and a little breathing room during an exhausting season.</p>
-              <p class="si-note">Longer visits may be available up to 3 hours when arranged in advance.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Friendly visit and emotional support</li>
-                <li>Holding baby while parent rests, showers, eats, or handles something important</li>
-                <li>Light tidying or reset of the main living area</li>
-                <li>Gentle check-in on how the parent is doing</li>
-                <li>Written update if another parent or family member is the point of contact</li>
-              </ul>
-              <p class="si-concerns-label">Common concerns</p>
-              <ul class="concerns-list">
-                <li>Exhaustion or isolation</li>
-                <li>Feeling overwhelmed</li>
-                <li>Lack of nearby support</li>
-                <li>Needing one practical window of help</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Hard Season Support Check-In</h3>
-              <p class="si-sub">In-person support, observation, and practical help during a difficult season.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Calm in-person check-in</li>
-                <li>Conversation and companionship</li>
-                <li>Light practical help during the visit</li>
-                <li>Gentle observation of how they seem and how the environment feels</li>
-                <li>Written update afterward when appropriate</li>
-              </ul>
-              <p class="si-concerns-label">Common concerns</p>
-              <ul class="concerns-list">
-                <li>Grief, burnout, or major life transition</li>
-                <li>Emotional overwhelm</li>
-                <li>"They say they're okay, but I'm not sure"</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
+    <section class="section services-overview" aria-label="Services overview">
+      <div class="container-narrow">
+        <p class="eyebrow">What we do</p>
+        <h2 class="section-title-xl">What kind of visit do you need?</h2>
+        <p class="section-intro">Choose a service family below to see what's available. Click any specific service to read full details.</p>
+        <p class="price-badge">Every standard visit is <strong>$50</strong> &nbsp;/&nbsp; approx. 45&ndash;60 min &nbsp;/&nbsp; written update included</p>
       </div>
     </section>
 
-    <!-- 4. RELIEF & PRESENCE VISITS -->
-    <section id="relief" class="section service-family-section alt-bg" aria-labelledby="relief-heading">
+    <!-- ── FAMILY 1: PEOPLE CHECK-INS ── -->
+    <section id="people" class="service-family" aria-labelledby="people-title">
       <div class="container">
-        <div class="family-header">
-          <div class="family-header-text">
-            <p class="eyebrow">Relief &amp; Presence Visits</p>
-            <h2 id="relief-heading">When the main need is not just a check-in, but a trusted person who can be there.</h2>
-            <p>Designed for situations where a caregiver needs a break, someone should not go through an appointment alone, a loved one needs companionship during a hard moment, or a family wants someone at the bedside when they cannot be there themselves.</p>
-            <p class="family-price">Standard visit: <strong>$50</strong> for approximately 45&ndash;60 minutes.</p>
-          </div>
-          <div class="family-image">
-            <img src="images/category-recovery.webp" alt="Calm supportive presence during a difficult visit" width="600" height="400" loading="lazy" />
-          </div>
-        </div>
+        <div class="family-card">
 
-        <div class="family-includes">
-          <p class="includes-label">A Relief &amp; Presence visit may include</p>
-          <ul class="check-list cols-2">
-            <li>Calm, in-person presence</li>
-            <li>Companionship and conversation</li>
-            <li>Brief supportive supervision or sitting with someone</li>
-            <li>Light practical help during the visit</li>
-            <li>Written update afterward</li>
-            <li>Extra time when arranged and appropriate</li>
-          </ul>
-        </div>
-
-        <div class="service-items">
-
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Caregiver Relief Visit</h3>
-              <p class="si-sub">A real window of relief for family caregivers who need time to step away.</p>
-              <p class="si-note">Longer visits may be available up to 3 hours when arranged in advance.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Staying with your loved one while you step away for rest, errands, an appointment, or a short break</li>
-                <li>Conversation, quiet company, reading, TV, cards, or simple activities</li>
-                <li>Basic comfort check during the visit</li>
-                <li>Light support within the visit window</li>
-                <li>Update afterward for the caregiver</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Appointment Support Visit</h3>
-              <p class="si-sub">Supportive presence for an important appointment, without transportation.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Meet-there support at the appointment location</li>
-                <li>Calm presence before, during, or after the appointment</li>
-                <li>Help remembering questions or writing down notes</li>
-                <li>Waiting nearby when appropriate</li>
-                <li>Update afterward to the family or contact person</li>
-              </ul>
-              <p class="si-note-inline">Transportation is not included. This is meet-there support only.</p>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Meet-Up / Companion Visit</h3>
-              <p class="si-sub">A trusted local presence when being alone would feel harder than it should.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Meeting in a public place or agreed setting</li>
-                <li>Coffee, conversation, a short walk, or quiet companionship</li>
-                <li>Emotional support through a stressful moment or transition</li>
-                <li>Sitting with someone before or after an important event</li>
-                <li>Brief update afterward when appropriate</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Hospital Check-In</h3>
-              <p class="si-sub">Reassurance that someone was there and a clearer sense of how your loved one seemed.</p>
-            </div>
-            <div class="si-body">
-              <div class="service-img-inline">
-                <img src="images/category-hospital.jpg" alt="Hospital bedside check-in visit" width="600" height="380" loading="lazy" />
+          <div class="family-card-header">
+            <div class="family-card-meta">
+              <p class="family-number" aria-hidden="true">01</p>
+              <div>
+                <p class="eyebrow">People Check-Ins &amp; Caregiver Support</p>
+                <h2 class="family-title" id="people-title">Check-ins for people who need a local presence.</h2>
               </div>
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Bedside visit and conversation</li>
-                <li>Companionship during the visit</li>
-                <li>Comfort-item drop-off when arranged</li>
-                <li>Help writing down questions or concerns</li>
-                <li>Written update afterward</li>
-              </ul>
+            </div>
+            <div class="family-card-image">
+              <img src="images/category-family.webp" alt="Friendly check-in visit" width="420" height="280" loading="lazy" />
             </div>
           </div>
 
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Extended Hospital Sitting</h3>
-              <p class="si-sub">Longer bedside presence during times when family cannot be there or needs relief.</p>
-              <p class="si-note">Available in longer blocks when arranged in advance, case by case.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Longer bedside presence</li>
-                <li>Companionship during long waits or stressful hours</li>
-                <li>Calm observation and emotional reassurance</li>
-                <li>Family updates as agreed</li>
-                <li>Support within the limits of a non-medical role</li>
-              </ul>
-            </div>
-          </div>
+          <p class="family-summary">Aging parents, adult children away from home, recovery, new parents, and seasons when something just feels off. Standard visit: <strong>$50</strong> for approx. 45&ndash;60 min.</p>
 
+          <div class="service-accordion">
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Aging Parent / Senior Check-In</span>
+                <span class="svc-tag">Aging adult support</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when you want to know how your loved one is really doing when you cannot be there yourself.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Friendly in-person check-in and conversation</li>
+                      <li>Visual check of general wellbeing</li>
+                      <li>Fridge and pantry check when appropriate</li>
+                      <li>Observation of home condition and obvious safety concerns</li>
+                      <li>Mail, package, or basic household check</li>
+                      <li>Light help during the visit</li>
+                      <li>Clear written update afterward</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="svc-label">Common concerns</p>
+                    <ul class="concerns">
+                      <li>Falls or general safety concerns</li>
+                      <li>Isolation</li>
+                      <li>Missed meals or dehydration</li>
+                      <li>Home condition changes</li>
+                      <li>Cognitive or behavior changes</li>
+                      <li>"Something feels off, but I'm not sure what"</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Adult Child / Student Check-In</span>
+                <span class="svc-tag">Away from home</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when your adult child or student is away and may need local support, encouragement, or a simple check-in.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Meet for coffee, a meal, or a short walk</li>
+                      <li>Wellness conversation</li>
+                      <li>Practical local support or a supply drop-off if arranged</li>
+                      <li>Living environment check when appropriate</li>
+                      <li>Update to parent or family only with student's permission</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="svc-label">Common concerns</p>
+                    <ul class="concerns">
+                      <li>Illness or stress</li>
+                      <li>Homesickness or overwhelm</li>
+                      <li>Major life transition</li>
+                      <li>Worry from a distance</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Post-Surgery Recovery Check-In</span>
+                <span class="svc-tag">Recovery support</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when someone is home recovering and family wants reassurance that basic needs are covered.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Check food, hydration, and comfort</li>
+                      <li>Observe recovery environment for obvious concerns</li>
+                      <li>Help organize supplies or discharge instructions</li>
+                      <li>Light practical help during the visit</li>
+                      <li>Written recovery update for family</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="svc-label">Common concerns</p>
+                    <ul class="concerns">
+                      <li>Falls or dehydration</li>
+                      <li>Isolation during recovery</li>
+                      <li>Trouble managing at home</li>
+                      <li>Family living out of town</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">New Parent Check-In</span>
+                <span class="svc-tag">Up to 3 hrs available</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when a new parent needs practical, non-medical support and a trusted person during an exhausting season.</p>
+                <p class="svc-note">Longer visits may be available up to 3 hours when arranged in advance.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Friendly visit and emotional support</li>
+                      <li>Holding baby while parent rests, showers, or eats</li>
+                      <li>Light tidying or reset of the main living area</li>
+                      <li>Gentle check-in on how the parent is doing</li>
+                      <li>Written update if another family member is the contact</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="svc-label">Common concerns</p>
+                    <ul class="concerns">
+                      <li>Exhaustion or isolation</li>
+                      <li>Feeling overwhelmed</li>
+                      <li>Lack of nearby support</li>
+                      <li>Needing one practical window of help</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Hard Season Support Check-In</span>
+                <span class="svc-tag">Difficult seasons</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when someone is going through a difficult season and may need in-person support and a little practical help.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Calm in-person check-in</li>
+                      <li>Conversation and companionship</li>
+                      <li>Light practical help during the visit</li>
+                      <li>Gentle observation of how they seem</li>
+                      <li>Written update afterward when appropriate</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="svc-label">Common concerns</p>
+                    <ul class="concerns">
+                      <li>Grief, burnout, or major life transition</li>
+                      <li>Emotional overwhelm</li>
+                      <li>"They say they're okay, but I'm not sure"</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. PROPERTY CHECK-INS -->
-    <section id="property" class="section service-family-section" aria-labelledby="property-heading">
+    <!-- ── FAMILY 2: RELIEF & PRESENCE ── -->
+    <section id="relief" class="service-family family-alt" aria-labelledby="relief-title">
       <div class="container">
-        <div class="family-header">
-          <div class="family-header-text">
-            <p class="eyebrow">Property Check-Ins</p>
-            <h2 id="property-heading">When you need local eyes on a home, property, or building project and cannot be there yourself.</h2>
-            <p>Designed to help homeowners, second-home owners, buyers, and out-of-town clients feel informed, reassured, and aware of issues before they turn into bigger problems.</p>
-            <p class="family-price">Standard visit: <strong>$50</strong> for approximately 45&ndash;60 minutes.</p>
-          </div>
-          <div class="family-image">
-            <img src="images/category-property.webp" alt="Home property walkthrough check-in" width="600" height="400" loading="lazy" />
-          </div>
-        </div>
+        <div class="family-card">
 
-        <div class="family-includes">
-          <p class="includes-label">A standard Property Check-In may include</p>
-          <ul class="check-list cols-2">
-            <li>Exterior and interior walkthrough when access is available</li>
-            <li>Observation of general condition</li>
-            <li>Check for obvious concerns such as leaks, damage, or HVAC issues</li>
-            <li>Photo documentation</li>
-            <li>Light property tasks when requested and appropriate</li>
-            <li>Written update afterward</li>
-          </ul>
-        </div>
-
-        <div class="service-items">
-
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Home / Travel Property Check-In</h3>
-              <p class="si-sub">Know your home looks normal while you are away.</p>
+          <div class="family-card-header">
+            <div class="family-card-meta">
+              <p class="family-number" aria-hidden="true">02</p>
+              <div>
+                <p class="eyebrow">Relief &amp; Presence Visits</p>
+                <h2 class="family-title" id="relief-title">When someone needs a trusted person to be there.</h2>
+              </div>
             </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Exterior check of doors, windows, yard, and visible condition</li>
-                <li>Interior walkthrough when requested</li>
-                <li>Check for obvious leaks, unusual smells, power or HVAC concerns</li>
-                <li>Bring in packages or mail if requested</li>
-                <li>Basic thermostat, light, or water check when requested</li>
-                <li>Photo documentation and written update</li>
-              </ul>
+            <div class="family-card-image">
+              <img src="images/category-recovery.webp" alt="Calm supportive presence visit" width="420" height="280" loading="lazy" />
             </div>
           </div>
 
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Second Home / Snowbird Check-In</h3>
-              <p class="si-sub">Trusted local eyes on your second home between visits.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Exterior and interior walkthrough</li>
-                <li>Check doors, windows, visible damage, and general home condition</li>
-                <li>Check for leaks, HVAC issues, or anything unusual</li>
-                <li>Bring in packages or flyers if needed</li>
-                <li>Simple agreed-upon home check tasks when appropriate</li>
-                <li>Photos and written update</li>
-              </ul>
-            </div>
-          </div>
+          <p class="family-summary">Caregiver relief, appointment support, companionship, hospital check-ins, and extended bedside sitting. Standard visit: <strong>$50</strong> for approx. 45&ndash;60 min.</p>
 
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Home Buying Walkthrough Support</h3>
-              <p class="si-sub">Local eyes and documentation before a major decision, when you cannot be there yourself.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Walkthrough support before closing or during escrow</li>
-                <li>Final walkthrough support for out-of-town buyers</li>
-                <li>Photo documentation of condition, concerns, or requested areas</li>
-                <li>Observation of obvious issues or unfinished items</li>
-                <li>Clear written summary of what was seen</li>
-              </ul>
-            </div>
-          </div>
+          <div class="service-accordion">
 
-          <div class="service-item">
-            <div class="si-label">
-              <h3>New Build Progress Check</h3>
-              <p class="si-sub">Updates, photos, and local eyes on a home being built when you cannot be on site yourself.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Walkthrough of visible project progress</li>
-                <li>Photo documentation of the current stage</li>
-                <li>Observation of obvious issues, unfinished items, or changes</li>
-                <li>Focus on areas you specifically want checked</li>
-                <li>Written update after the visit</li>
-              </ul>
-            </div>
-          </div>
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Caregiver Relief Visit</span>
+                <span class="svc-tag">Up to 3 hrs available</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when a family caregiver needs time to step away for rest, errands, an appointment, or a short break.</p>
+                <p class="svc-note">Longer visits may be available up to 3 hours when arranged in advance.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Staying with your loved one while you step away</li>
+                      <li>Conversation, quiet company, reading, TV, or simple activities</li>
+                      <li>Basic comfort check during the visit</li>
+                      <li>Light support within the visit window</li>
+                      <li>Update afterward for the caregiver</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
 
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Appointment Support Visit</span>
+                <span class="svc-tag">Meet-there support</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when someone has an appointment that feels stressful or important enough they should not do it alone.</p>
+                <p class="svc-note">Transportation is not included. This is meet-there support only.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Meet-there support at the appointment location</li>
+                      <li>Calm presence before, during, or after the appointment</li>
+                      <li>Help remembering questions or writing down notes</li>
+                      <li>Waiting nearby when appropriate</li>
+                      <li>Update afterward to family or contact person</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Meet-Up / Companion Visit</span>
+                <span class="svc-tag">Companionship</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when someone would benefit from a calm, supportive person during a stressful season or lonely moment.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Meeting in a public place or agreed setting</li>
+                      <li>Coffee, conversation, a short walk, or quiet companionship</li>
+                      <li>Emotional support through a stressful moment or transition</li>
+                      <li>Sitting with someone before or after an important event</li>
+                      <li>Brief update afterward when appropriate</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Hospital Check-In</span>
+                <span class="svc-tag">Bedside visit</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when a loved one is in the hospital and family wants someone local to stop by, sit with them, and report back.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Bedside visit and conversation</li>
+                      <li>Companionship during the visit</li>
+                      <li>Comfort-item drop-off when arranged</li>
+                      <li>Help writing down questions or concerns</li>
+                      <li>Written update afterward</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="svc-image">
+                  <img src="images/category-hospital.jpg" alt="Hospital bedside visit" width="600" height="340" loading="lazy" />
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Extended Hospital Sitting</span>
+                <span class="svc-tag">Longer blocks available</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when a family needs someone to stay much longer at the bedside during a difficult or exhausting hospital situation.</p>
+                <p class="svc-note">Available in longer blocks when arranged in advance and agreed case by case.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Longer bedside presence</li>
+                      <li>Companionship during long waits or stressful hours</li>
+                      <li>Calm observation and emotional reassurance</li>
+                      <li>Family updates as agreed</li>
+                      <li>Support within the limits of a non-medical role</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 6. RENTAL & BUSINESS CHECK-INS -->
-    <section id="rental" class="section service-family-section alt-bg" aria-labelledby="rental-heading">
+    <!-- ── FAMILY 3: PROPERTY CHECK-INS ── -->
+    <section id="property" class="service-family" aria-labelledby="property-title">
       <div class="container">
-        <div class="family-header">
-          <div class="family-header-text">
-            <p class="eyebrow">Rental &amp; Business Check-Ins</p>
-            <h2 id="rental-heading">When you need someone local to walk through a property, business, or job site and report back clearly.</h2>
-            <p>Designed for owners, hosts, managers, and out-of-town clients who need local eyes on a space, a concern, or a vendor visit without being there themselves.</p>
-            <p class="family-price">Standard visit: <strong>$50</strong> for approximately 45&ndash;60 minutes.</p>
-          </div>
-          <div class="family-image">
-            <img src="images/category-rental.jpg" alt="Rental and business property check-in" width="600" height="400" loading="lazy" />
-          </div>
-        </div>
+        <div class="family-card">
 
-        <div class="family-includes">
-          <p class="includes-label">A standard Rental &amp; Business Check-In may include</p>
-          <ul class="check-list cols-2">
-            <li>On-site walkthrough</li>
-            <li>Observation of overall condition</li>
-            <li>Check for obvious concerns, damage, or signs something is off</li>
-            <li>Photo documentation</li>
-            <li>Confirmation of vendor or cleaner presence when applicable</li>
-            <li>Written update afterward</li>
-          </ul>
-        </div>
-
-        <div class="service-items">
-
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Vacation Rental / Airbnb Check-In</h3>
-              <p class="si-sub">Know whether your vacation rental looks guest-ready when you cannot be there yourself.</p>
+          <div class="family-card-header">
+            <div class="family-card-meta">
+              <p class="family-number" aria-hidden="true">03</p>
+              <div>
+                <p class="eyebrow">Property Check-Ins</p>
+                <h2 class="family-title" id="property-title">Local eyes on your home or property when you cannot be there.</h2>
+              </div>
             </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Walkthrough between stays or after a concern</li>
-                <li>Check general condition, cleanliness appearance, and obvious damage</li>
-                <li>Look at entry points, supplies, and visible readiness issues</li>
-                <li>Photo documentation for the owner or host</li>
-                <li>Written update with anything that needs follow-up</li>
-              </ul>
+            <div class="family-card-image">
+              <img src="images/category-property.webp" alt="Home property walkthrough" width="420" height="280" loading="lazy" />
             </div>
           </div>
 
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Rental Property Check-In</h3>
-              <p class="si-sub">Local eyes on a rental property, a concern, or a question about how things look on-site.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Exterior and interior walkthrough when access is available</li>
-                <li>Check for obvious issues, visible damage, or general condition concerns</li>
-                <li>Photo documentation</li>
-                <li>Follow-up after a complaint, concern, or unexpected situation</li>
-                <li>Written summary of what was observed</li>
-              </ul>
-            </div>
-          </div>
+          <p class="family-summary">Travel check-ins, second homes, snowbird properties, new builds, and home buying support. Standard visit: <strong>$50</strong> for approx. 45&ndash;60 min.</p>
 
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Business Location Check-In</h3>
-              <p class="si-sub">See how your business location looks on-site when you cannot be there.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Exterior and interior walkthrough</li>
-                <li>Check doors, windows, visible condition, and obvious concerns</li>
-                <li>Photo documentation of the site</li>
-                <li>Observation of issues that may need follow-up</li>
-                <li>Written update after the visit</li>
-              </ul>
-            </div>
-          </div>
+          <div class="service-accordion">
 
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Vendor / Repair / Construction Follow-Up</h3>
-              <p class="si-sub">Verify progress, condition, or completion when you cannot be there for a vendor visit.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>On-site follow-up after a cleaner, vendor, or maintenance visit</li>
-                <li>Observation of visible progress or obvious unfinished work</li>
-                <li>Photo documentation of the area or project</li>
-                <li>Check on a repair, complaint, or project update</li>
-                <li>Written summary of what was seen</li>
-              </ul>
-            </div>
-          </div>
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Home / Travel Property Check-In</span>
+                <span class="svc-tag">While you are away</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when you are away and want someone local to check that everything looks normal.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Exterior check of doors, windows, yard, and visible condition</li>
+                      <li>Interior walkthrough when requested</li>
+                      <li>Check for leaks, unusual smells, power or HVAC concerns</li>
+                      <li>Bring in packages or mail if requested</li>
+                      <li>Photo documentation and written update</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
 
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Second Home / Snowbird Check-In</span>
+                <span class="svc-tag">Between visits</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when your second home is sitting empty and you want trusted local eyes on it between visits.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Exterior and interior walkthrough</li>
+                      <li>Check doors, windows, visible damage, and general home condition</li>
+                      <li>Check for leaks, HVAC issues, or anything unusual</li>
+                      <li>Bring in packages or flyers if needed</li>
+                      <li>Photos and written update</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Home Buying Walkthrough Support</span>
+                <span class="svc-tag">Out-of-town buyers</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when you are buying a home from out of town and need someone local to go look, document, and report back.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Walkthrough support before closing or during escrow</li>
+                      <li>Final walkthrough support for out-of-town buyers</li>
+                      <li>Photo documentation of condition, concerns, or requested areas</li>
+                      <li>Observation of obvious issues or unfinished items</li>
+                      <li>Clear written summary of what was seen</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">New Build Progress Check</span>
+                <span class="svc-tag">Construction updates</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when you want updates and local eyes on a home being built when you cannot be on site yourself.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Walkthrough of visible project progress</li>
+                      <li>Photo documentation of the current stage</li>
+                      <li>Observation of obvious issues, unfinished items, or changes</li>
+                      <li>Focus on areas you specifically want checked</li>
+                      <li>Written update after the visit</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 7. TECH & SAFETY SUPPORT -->
-    <section id="tech" class="section service-family-section" aria-labelledby="tech-heading">
+    <!-- ── FAMILY 4: RENTAL & BUSINESS ── -->
+    <section id="rental" class="service-family family-alt" aria-labelledby="rental-title">
       <div class="container">
-        <div class="family-header">
-          <div class="family-header-text">
-            <p class="eyebrow">Tech &amp; Safety Support</p>
-            <h2 id="tech-heading">Patient, practical help with everyday devices, apps, and simple safety tools.</h2>
-            <p>Designed for aging adults, caregivers, and families who need help with everyday devices, app-based tools, communication setup, and simple safety-related technology so daily life and peace of mind feel a little easier.</p>
-            <p class="family-price">Standard visit: <strong>$50</strong> for approximately 45&ndash;60 minutes.</p>
+        <div class="family-card">
+
+          <div class="family-card-header">
+            <div class="family-card-meta">
+              <p class="family-number" aria-hidden="true">04</p>
+              <div>
+                <p class="eyebrow">Rental &amp; Business Check-Ins</p>
+                <h2 class="family-title" id="rental-title">On-site follow-up for rentals, businesses, and vendors.</h2>
+              </div>
+            </div>
+            <div class="family-card-image">
+              <img src="images/category-rental.jpg" alt="Rental and business check-in" width="420" height="280" loading="lazy" />
+            </div>
           </div>
-          <div class="family-image">
-            <img src="images/category-seniors.webp" alt="Patient tech help for an older adult" width="600" height="400" loading="lazy" />
+
+          <p class="family-summary">Vacation rentals, Airbnb, rental property conditions, business location checks, and vendor follow-ups. Standard visit: <strong>$50</strong> for approx. 45&ndash;60 min.</p>
+
+          <div class="service-accordion">
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Vacation Rental / Airbnb Check-In</span>
+                <span class="svc-tag">Guest-ready check</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when you want to know whether your vacation rental looks guest-ready and in good condition.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Walkthrough between stays or after a concern</li>
+                      <li>Check general condition, cleanliness appearance, and obvious damage</li>
+                      <li>Look at entry points, supplies, and visible readiness issues</li>
+                      <li>Photo documentation for the owner or host</li>
+                      <li>Written update with anything that needs follow-up</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Rental Property Check-In</span>
+                <span class="svc-tag">Condition check</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when you need someone local to walk through a rental property and check on a concern.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Exterior and interior walkthrough when access is available</li>
+                      <li>Check for obvious issues, visible damage, or condition concerns</li>
+                      <li>Photo documentation</li>
+                      <li>Follow-up after a complaint or unexpected situation</li>
+                      <li>Written summary of what was observed</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Business Location Check-In</span>
+                <span class="svc-tag">Out-of-town owners</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when you want someone local to walk through your business location when you cannot be there.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Exterior and interior walkthrough</li>
+                      <li>Check doors, windows, visible condition, and obvious concerns</li>
+                      <li>Photo documentation of the site</li>
+                      <li>Observation of issues that may need follow-up</li>
+                      <li>Written update after the visit</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Vendor / Repair / Construction Follow-Up</span>
+                <span class="svc-tag">Verify progress</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when a vendor or contractor is supposed to be there and you want someone local to verify progress.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>On-site follow-up after a cleaner, vendor, or maintenance visit</li>
+                      <li>Observation of visible progress or obvious unfinished work</li>
+                      <li>Photo documentation of the area or project</li>
+                      <li>Check on a repair, complaint, or project update</li>
+                      <li>Written summary of what was seen</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="family-includes">
-          <p class="includes-label">A standard Tech &amp; Safety visit may include</p>
-          <ul class="check-list cols-2">
-            <li>Basic device or app setup help</li>
-            <li>Help simplifying phones or tablets for easier use</li>
-            <li>Help adding emergency contacts or caregiver connections</li>
-            <li>Help setting up video calling, reminders, or check-in tools</li>
-            <li>Basic walkthrough of how to use the device or app</li>
-            <li>Written notes or simple instructions if helpful</li>
-          </ul>
-          <p class="family-note">This is basic setup help, not full IT support or device repair.</p>
-        </div>
+    <!-- ── FAMILY 5: TECH & SAFETY ── -->
+    <section id="tech" class="service-family" aria-labelledby="tech-title">
+      <div class="container">
+        <div class="family-card">
 
-        <div class="service-items">
-
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Medical Alert / Safety Device Setup Help</h3>
-              <p class="si-sub">Help getting a medical alert or safety device unboxed, placed, connected, and working.</p>
+          <div class="family-card-header">
+            <div class="family-card-meta">
+              <p class="family-number" aria-hidden="true">05</p>
+              <div>
+                <p class="eyebrow">Tech &amp; Safety Support</p>
+                <h2 class="family-title" id="tech-title">Patient help with devices, apps, and safety tools.</h2>
+              </div>
             </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Help unbox and place the device</li>
-                <li>Help connect or pair the device when appropriate</li>
-                <li>Help test basic setup steps with the family or monitoring instructions</li>
-                <li>Help add caregiver connections or app access when available</li>
-                <li>Simple written notes about how to use it</li>
-              </ul>
+            <div class="family-card-image">
+              <img src="images/category-seniors.webp" alt="Patient tech help for an older adult" width="420" height="280" loading="lazy" />
             </div>
           </div>
 
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Phone, Tablet, and App Help</h3>
-              <p class="si-sub">Help when a device feels confusing, cluttered, or too hard to use for everyday needs.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Help with phone or tablet basics</li>
-                <li>Increase text size or make settings easier to use</li>
-                <li>Organize the home screen for simpler access</li>
-                <li>Download or arrange key apps</li>
-                <li>Help with basic call, text, and app navigation</li>
-              </ul>
-            </div>
-          </div>
+          <p class="family-summary">Basic setup help for phones, tablets, video calling, caregiver apps, and medical alert devices. Not full IT support or device repair. Standard visit: <strong>$50</strong> for approx. 45&ndash;60 min.</p>
 
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Video Call / Communication Setup</h3>
-              <p class="si-sub">Help connecting families when the device or app setup is getting in the way.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Help set up FaceTime, Zoom, or another video-calling option</li>
-                <li>Help connect family contacts</li>
-                <li>Help test a video call</li>
-                <li>Help set up messaging or communication shortcuts</li>
-                <li>Show basic steps for future use</li>
-              </ul>
-            </div>
-          </div>
+          <div class="service-accordion">
 
-          <div class="service-item">
-            <div class="si-label">
-              <h3>Caregiver App / Reminder Setup</h3>
-              <p class="si-sub">Help getting started with a simple app-based way to manage reminders, appointments, and shared support.</p>
-            </div>
-            <div class="si-body">
-              <p class="si-includes-label">A visit may include</p>
-              <ul>
-                <li>Help download and set up caregiver or reminder apps</li>
-                <li>Add appointments, reminders, or basic routines</li>
-                <li>Help connect family members when appropriate</li>
-                <li>Set up simple notifications or alerts</li>
-                <li>Walk through the basics of how to use it</li>
-              </ul>
-            </div>
-          </div>
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Medical Alert / Safety Device Setup</span>
+                <span class="svc-tag">Device setup help</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when a family has a medical alert device but no one local is available to help set it up and walk through how it works.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Help unbox and place the device</li>
+                      <li>Help connect or pair the device when appropriate</li>
+                      <li>Help test basic setup steps</li>
+                      <li>Help add caregiver connections or app access when available</li>
+                      <li>Simple written notes about how to use it</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
 
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Phone, Tablet, and App Help</span>
+                <span class="svc-tag">Simplify &amp; organize</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when a device feels confusing, cluttered, or too hard to use for everyday needs.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Help with phone or tablet basics</li>
+                      <li>Increase text size or make settings easier to use</li>
+                      <li>Organize the home screen for simpler access</li>
+                      <li>Download or arrange key apps</li>
+                      <li>Help with basic call, text, and app navigation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Video Call / Communication Setup</span>
+                <span class="svc-tag">Stay connected</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when a family wants easier communication but the device or app setup is getting in the way.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Help set up FaceTime, Zoom, or another video-calling option</li>
+                      <li>Help connect family contacts</li>
+                      <li>Help test a video call</li>
+                      <li>Help set up messaging or communication shortcuts</li>
+                      <li>Show basic steps for future use</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="svc">
+              <summary>
+                <span class="svc-name">Caregiver App / Reminder Setup</span>
+                <span class="svc-tag">Caregiver tools</span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-helps">Helps when a caregiver wants a simple app-based way to manage reminders, appointments, and shared support.</p>
+                <div class="svc-cols">
+                  <div>
+                    <p class="svc-label">A visit may include</p>
+                    <ul>
+                      <li>Help download and set up caregiver or reminder apps</li>
+                      <li>Add appointments, reminders, or basic routines</li>
+                      <li>Help connect family members when appropriate</li>
+                      <li>Set up simple notifications or alerts</li>
+                      <li>Walk through the basics of how to use it</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+          </div>
         </div>
       </div>
     </section>
@@ -1015,6 +1147,33 @@
   <script async src="https://koalendar.com/assets/widget.js"></script>
   <script>
     Koalendar('widget',{"url":"https://koalendar.com/e/Check-ins","text":"Book a Visit","shape":"rounded-full","backgroundColor":"#C1291A","textColor":"#FFFFFF","position":"bottom-right","icon":"calendar"});
+  </script>
+
+  <script>
+    // Mobile menu
+    const toggle = document.getElementById('menu-toggle');
+    const close  = document.getElementById('menu-close');
+    const menu   = document.getElementById('mobile-menu');
+    const links  = menu.querySelectorAll('.mm-link, .mm-cta, .mm-consult');
+
+    function openMenu() {
+      menu.classList.add('is-open');
+      menu.setAttribute('aria-hidden','false');
+      toggle.setAttribute('aria-expanded','true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      menu.classList.remove('is-open');
+      menu.setAttribute('aria-hidden','true');
+      toggle.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', openMenu);
+    close.addEventListener('click', closeMenu);
+    links.forEach(l => l.addEventListener('click', closeMenu));
+    menu.addEventListener('click', e => { if (e.target === menu) closeMenu(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
   </script>
 
 </body>
