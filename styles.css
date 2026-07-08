@@ -543,6 +543,8 @@ h3 {
     line-height: 1.05;
     color: var(--ink);
     margin-bottom: var(--s5);
+    hyphens: none;
+    overflow-wrap: break-word;
 }
 
 .hero-desc {
@@ -1968,6 +1970,8 @@ h3 {
     line-height: 1.05;
     color: var(--ink);
     margin-bottom: var(--s5);
+    hyphens: none;
+    overflow-wrap: break-word;
 }
 
 .hero-desc {
