@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Care Confidence Assessment | Red Desert Check-In</title>
+    <meta name="description"
+        content="A free, non-medical guided assessment to help Southern Utah families identify home safety, emergency readiness, caregiver support, and aging-in-place gaps." />
+    <link rel="canonical" href="https://reddesertcheckin.com/confidence.html" />
+    <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300..600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .confidence-page {
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--ink);
+        }
+
+        .confidence-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem clamp(1.25rem, 5vw, 3rem);
+            border-bottom: 1px solid var(--divider);
+            background: var(--surface);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+
+        .confidence-header img {
+            width: 190px;
+            height: auto;
+        }
+
+        .confidence-back {
+            color: var(--ink-muted);
+            text-decoration: none;
+            font-size: .92rem;
+            font-weight: 600;
+        }
+
+        .confidence-back:hover {
+            color: var(--red);
+        }
+
+        .assessment-shell {
+            width: min(920px, calc(100% - 2rem));
+            margin: 0 auto;
+            padding: clamp(2rem, 6vw, 4.5rem) 0 5rem;
+        }
+
+        .assessment-intro {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 2rem;
+        }
+
+        .assessment-intro h1 {
+            font-size: clamp(2.25rem, 7vw, 4.5rem);
+            line-height: 1.02;
+            margin: .4rem 0 1rem;
+        }
+
+        .assessment-intro p {
+            margin-inline: auto;
+            color: var(--ink-muted);
+        }
+
+        .assessment-disclaimer {
+            background: var(--surface-warm);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 1rem 1.15rem;
+            margin: 1.5rem auto 0;
+            max-width: 760px;
+            font-size: .9rem;
+            color: var(--ink-muted);
+        }
+
+        .assessment-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: clamp(1.25rem, 4vw, 2.5rem);
+            box-shadow: 0 18px 50px rgba(37, 26, 17, .07);
+        }
+
+        .progress-wrap {
+            margin-bottom: 2rem;
+        }
+
+        .progress-meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: .8rem;
+            color: var(--ink-muted);
+            margin-bottom: .55rem;
+        }
+
+        .progress-track {
+            height: 8px;
+            background: var(--bg-alt);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 100%;
+            background: var(--red);
+            border-radius: 999px;
+            transition: width .25s ease;
+        }
+
+        .question-kicker {
+            color: var(--red);
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            font-size: .78rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+        }
+
+        .question-title {
+            font-size: clamp(1.65rem, 4vw, 2.35rem);
+            margin: 0 0 .65rem;
+        }
+
+        .question-help {
+            color: var(--ink-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .answer-grid {
+            display: grid;
+            gap: .75rem;
+        }
+
+        .answer-option {
+            display: flex;
+            align-items: flex-start;
+            gap: .8rem;
+            width: 100%;
+            text-align: left;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--bg);
+            padding: 1rem 1.05rem;
+            cursor: pointer;
+            transition: .18s ease;
+        }
+
+        .answer-option:hover {
+            border-color: var(--red);
+            transform: translateY(-1px);
+        }
+
+        .answer-option.selected {
+            border: 2px solid var(--red);
+            background: var(--red-light);
+        }
+
+        .answer-option input {
+            margin-top: .3rem;
+            accent-color: var(--red);
+        }
+
+        .answer-option strong {
+            display: block;
+            font-size: 1rem;
+        }
+
+        .answer-option small {
+            display: block;
+            color: var(--ink-muted);
+            margin-top: .15rem;
+            line-height: 1.45;
+        }
+
+        .assessment-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1.75rem;
+            flex-wrap: wrap;
+        }
+
+        .assessment-actions .btn {
+            cursor: pointer;
+        }
+
+        .btn-disabled {
+            opacity: .45;
+            pointer-events: none;
+        }
+
+        .mini-note {
+            color: var(--ink-muted);
+            font-size: .82rem;
+            margin-top: 1rem;
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .result-header h2 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin: .4rem 0 .8rem;
+        }
+
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: .75rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .score-card {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1rem;
+            background: var(--bg);
+            min-height: 135px;
+        }
+
+        .score-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            margin-bottom: .8rem;
+        }
+
+        .status-green .score-dot {
+            background: #4F7A55;
+        }
+
+        .status-yellow .score-dot {
+            background: #D19A27;
+        }
+
+        .status-red .score-dot {
+            background: #C1291A;
+        }
+
+        .score-card h3 {
+            font-family: var(--ff-body);
+            font-size: .9rem;
+            margin: 0 0 .25rem;
+        }
+
+        .score-card p {
+            color: var(--ink-muted);
+            font-size: .82rem;
+            line-height: 1.4;
+        }
+
+        .priority-list,
+        .action-block {
+            display: grid;
+            gap: .85rem;
+        }
+
+        .priority-item,
+        .action-item {
+            border-left: 4px solid var(--red);
+            background: var(--bg);
+            padding: 1rem 1.1rem;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .priority-item h3,
+        .action-item h3 {
+            font-family: var(--ff-body);
+            font-size: 1rem;
+            margin: 0 0 .25rem;
+        }
+
+        .priority-item p,
+        .action-item p {
+            color: var(--ink-muted);
+            font-size: .92rem;
+        }
+
+        .result-section {
+            margin-top: 2.5rem;
+        }
+
+        .result-section>h3 {
+            font-size: 1.55rem;
+            margin-bottom: .9rem;
+        }
+
+        .recommendation-card {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.25rem;
+            background: var(--surface-warm);
+            margin-top: 1rem;
+        }
+
+        .recommendation-card h3 {
+            font-size: 1.25rem;
+        }
+
+        .recommendation-card p {
+            color: var(--ink-muted);
+        }
+
+        .recommendation-card .btn {
+            margin-top: 1rem;
+        }
+
+        .safety-alert {
+            border: 2px solid var(--red);
+            background: var(--red-light);
+            border-radius: 16px;
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+        }
+
+        .safety-alert h3 {
+            color: var(--ink);
+        }
+
+        .results-footer {
+            display: flex;
+            gap: .75rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .email-results-card {
+            margin-top: 2.5rem;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: clamp(1.25rem, 4vw, 2rem);
+            background: var(--surface);
+            box-shadow: 0 12px 32px rgba(37, 26, 17, .05);
+        }
+
+        .email-results-card h3 {
+            font-size: 1.65rem;
+            margin: .35rem 0 .5rem;
+        }
+
+        .email-results-card>p {
+            color: var(--ink-muted);
+        }
+
+        .email-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .9rem;
+            margin-top: 1.25rem;
+        }
+
+        .email-field {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+        }
+
+        .email-field label {
+            font-weight: 600;
+            font-size: .9rem;
+        }
+
+        .email-field input {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: .85rem .9rem;
+            font: inherit;
+            color: var(--ink);
+            background: var(--bg);
+        }
+
+        .email-field input:focus {
+            outline: 2px solid var(--red-light);
+            border-color: var(--red);
+        }
+
+        .consent-row {
+            display: flex;
+            align-items: flex-start;
+            gap: .65rem;
+            margin-top: 1rem;
+            font-size: .88rem;
+            color: var(--ink-muted);
+        }
+
+        .consent-row input {
+            margin-top: .2rem;
+            accent-color: var(--red);
+        }
+
+        .email-submit-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.25rem;
+        }
+
+        .form-status {
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .form-status.success {
+            color: #3F6847;
+        }
+
+        .form-status.error {
+            color: var(--red);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width:760px) {
+            .score-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .score-card:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .confidence-header img {
+                width: 150px;
+            }
+
+            .assessment-shell {
+                width: min(100% - 1rem, 920px);
+                padding-top: 1.25rem;
+            }
+
+            .assessment-card {
+                border-radius: 16px;
+            }
+
+            .email-form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+
+            .confidence-header,
+            .assessment-actions,
+            .results-footer,
+            .progress-wrap {
+                display: none !important;
+            }
+
+            .assessment-shell {
+                width: 100%;
+                padding: 0;
+            }
+
+            .assessment-card {
+                border: none;
+                box-shadow: none;
+            }
+
+            body {
+                background: #fff !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="confidence-page">
+    <header class="confidence-header">
+        <a href="index.html" aria-label="Red Desert Check-In home">
+            <img src="images/logoheader.png" alt="Red Desert Check-In" />
+        </a>
+        <a class="confidence-back" href="index.html">← Back to RDC</a>
+    </header>
+
+    <main class="assessment-shell">
+        <section class="assessment-intro" id="intro">
+            <p class="eyebrow">Free Guided Assessment</p>
+            <h1>How prepared are you to support safe independence?</h1>
+            <p>Answer a few questions about the person, the home, emergency readiness, technology, and family support.
+                You’ll get a Care Confidence Snapshot with practical next steps.</p>
+            <div class="assessment-disclaimer">
+                This is a non-medical educational tool. It does not diagnose conditions, determine whether someone can
+                safely live alone, investigate abuse or neglect, replace a professional home evaluation, or substitute
+                for emergency services.
+            </div>
+        </section>
+
+        <section class="assessment-card" aria-live="polite">
+            <div class="progress-wrap" id="progressWrap">
+                <div class="progress-meta"><span id="progressLabel">Getting started</span><span
+                        id="progressPercent">0%</span></div>
+                <div class="progress-track">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+
+            <div id="questionView">
+                <p class="question-kicker" id="questionKicker"></p>
+                <h2 class="question-title" id="questionTitle"></h2>
+                <p class="question-help" id="questionHelp"></p>
+                <div class="answer-grid" id="answerGrid"></div>
+                <div class="assessment-actions">
+                    <button class="btn btn-outline" id="backBtn" type="button">Back</button>
+                    <button class="btn btn-primary btn-disabled" id="nextBtn" type="button">Continue</button>
+                </div>
+                <p class="mini-note" id="questionNote"></p>
+            </div>
+
+            <div id="resultView" class="hidden"></div>
+        </section>
+    </main>
+
+    <script>
+        const Q = [
+            {
+                id: "role", section: "Start", type: "single",
+                title: "Who are you thinking about today?",
+                help: "We’ll adjust the wording and recommendations based on your situation.",
+                options: [
+                    ["parent", "A parent or older loved one"],
+                    ["self", "Myself"],
+                    ["caregiver", "Someone I help care for"],
+                    ["transition", "Someone coming home after a recent event"],
+                    ["planning", "We’re planning ahead"]
+                ]
+            },
+            {
+                id: "reason", section: "Start", type: "multi",
+                title: "What brought you here?",
+                help: "Choose everything that applies. This helps us focus on the right questions.",
+                options: [
+                    ["fall", "A fall or near-fall"],
+                    ["hospital", "Recent hospital or ER visit"],
+                    ["surgery", "Coming home after surgery"],
+                    ["mobility", "New mobility difficulty"],
+                    ["memory", "Memory or thinking changes"],
+                    ["alone", "They live alone"],
+                    ["home", "I’m worried about the home"],
+                    ["emergency", "I’m worried about what would happen in an emergency"],
+                    ["caregiver", "Caregiving is becoming overwhelming"],
+                    ["loss", "Loss or change of spouse/caregiver"],
+                    ["alerts", "Repeated emergencies or medical-alert activations"],
+                    ["isolation", "Isolation or loneliness"],
+                    ["abuse", "Possible exploitation, neglect, abuse, or unsafe circumstances"],
+                    ["planning", "Nothing specific. We’re planning ahead."],
+                    ["unsure", "I’m not sure what we need"]
+                ]
+            },
+            {
+                id: "falls", section: "Home & Fall Safety", type: "single",
+                title: "Has there been a fall or near-fall in the last 12 months?",
+                options: [
+                    ["none", "No", 0],
+                    ["near", "A near-fall or loss of balance", 2],
+                    ["one", "One fall", 3],
+                    ["multiple", "More than one fall", 5]
+                ], category: "home"
+            },
+            {
+                id: "mobility_home", section: "Home & Fall Safety", type: "single",
+                title: "Has getting around the home become harder?",
+                help: "Think about stairs, getting up from chairs or bed, walking, or using a mobility aid.",
+                options: [
+                    ["no", "No noticeable change", 0],
+                    ["some", "A little harder than it used to be", 2],
+                    ["yes", "Yes, there are clear difficulties", 4]
+                ], category: "home"
+            },
+            {
+                id: "bathroom", section: "Home & Fall Safety", type: "single",
+                title: "How does the bathroom feel from a safety standpoint?",
+                options: [
+                    ["good", "No current concerns", 0],
+                    ["some", "Some concerns such as slippery surfaces, tub entry, or lack of supports", 2],
+                    ["hard", "Getting in/out or using the bathroom safely is difficult", 4]
+                ], category: "home"
+            },
+            {
+                id: "hazards", section: "Home & Fall Safety", type: "multi",
+                title: "Which home concerns are present?",
+                help: "Select any that apply.",
+                options: [
+                    ["rugs", "Loose rugs or slippery flooring", 1],
+                    ["clutter", "Clutter, cords, pets, or narrow walking paths", 1],
+                    ["lighting", "Poor lighting, especially at night", 1],
+                    ["stairs", "Stairs or steps without secure rails", 2],
+                    ["entry", "Difficult entry/exit or steps into the home", 2],
+                    ["reaching", "Frequently used items require reaching or climbing", 1],
+                    ["none", "None of these", 0]
+                ], category: "home"
+            },
+            {
+                id: "living", section: "Independence & Support", type: "single",
+                title: "What does the current support setup look like?",
+                options: [
+                    ["with", "Lives with reliable support", 0],
+                    ["near", "Lives alone, but support is nearby and checks in regularly", 1],
+                    ["far", "Lives alone and family/support is farther away", 3],
+                    ["limited", "Lives alone with limited reliable support", 4]
+                ], category: "independence"
+            },
+            {
+                id: "daily", section: "Independence & Support", type: "multi",
+                title: "Where are you noticing growing difficulty?",
+                options: [
+                    ["meals", "Meals or groceries", 1],
+                    ["transport", "Transportation or appointments", 1],
+                    ["house", "Household tasks", 1],
+                    ["phone", "Using a phone or communication device", 2],
+                    ["routine", "Managing usual routines", 2],
+                    ["help", "Asking for or accepting help", 1],
+                    ["none", "None of these", 0]
+                ], category: "independence"
+            },
+            {
+                id: "isolation_q", section: "Independence & Support", type: "single",
+                title: "How connected are they to other people?",
+                options: [
+                    ["connected", "Regular contact and meaningful connection", 0],
+                    ["some", "Some contact, but less than they would like", 1],
+                    ["isolated", "Often alone or socially isolated", 3]
+                ], category: "independence"
+            },
+            {
+                id: "phone_access", section: "Emergency Readiness", type: "single",
+                title: "If something happened, could they reliably summon help?",
+                options: [
+                    ["yes", "Yes, they reliably carry or can reach a phone/device", 0],
+                    ["usually", "Usually, but not always", 2],
+                    ["no", "No, there are times they may not be able to reach help", 4]
+                ], category: "emergency"
+            },
+            {
+                id: "emergency_info", section: "Emergency Readiness", type: "single",
+                title: "Is important emergency information organized and easy to find?",
+                help: "For example: emergency contacts, medications/medical information, and who should be called first.",
+                options: [
+                    ["yes", "Yes and it is current", 0],
+                    ["partial", "Some of it is organized", 2],
+                    ["no", "No or I’m not sure", 3]
+                ], category: "emergency"
+            },
+            {
+                id: "access", section: "Emergency Readiness", type: "single",
+                title: "Could help get into the home if the person could not open the door?",
+                options: [
+                    ["yes", "Yes, there is a reliable access plan", 0],
+                    ["maybe", "Maybe / depends who is available", 2],
+                    ["no", "No or I’m not sure", 3]
+                ], category: "emergency"
+            },
+            {
+                id: "alert", section: "Technology & Alert Readiness", type: "single",
+                title: "Is a medical alert system currently in place?",
+                options: [
+                    ["yes_used", "Yes, and it is worn/used consistently", 0],
+                    ["yes_notused", "Yes, but it is not always worn or used", 3],
+                    ["no", "No", 1],
+                    ["unsure", "I’m not sure what would be appropriate", 1]
+                ], category: "tech"
+            },
+            {
+                id: "outside", section: "Technology & Alert Readiness", type: "single",
+                title: "Do they spend time outside the home alone?",
+                help: "This can help determine whether mobile/GPS alert options may be worth exploring.",
+                options: [
+                    ["no", "Rarely or never", 0],
+                    ["sometimes", "Sometimes", 1],
+                    ["often", "Often", 2]
+                ], category: "tech"
+            },
+            {
+                id: "care_hours", section: "Caregiver & Family Support", type: "single",
+                title: "How much support is one person providing?",
+                options: [
+                    ["light", "Occasional help", 0],
+                    ["regular", "Regular help several times a week", 1],
+                    ["daily", "Daily support", 3],
+                    ["constant", "Frequent support that feels hard to step away from", 4]
+                ], category: "caregiver"
+            },
+            {
+                id: "care_strain", section: "Caregiver & Family Support", type: "multi",
+                title: "What is caregiving affecting right now?",
+                options: [
+                    ["worry", "Frequent worry", 1],
+                    ["sleep", "Sleep", 2],
+                    ["work", "Work or other responsibilities", 2],
+                    ["leave", "Feeling unable to leave the person alone", 3],
+                    ["conflict", "Family disagreement about what is needed", 1],
+                    ["none", "None of these", 0]
+                ], category: "caregiver"
+            },
+            {
+                id: "backup", section: "Caregiver & Family Support", type: "single",
+                title: "Is there reliable backup support?",
+                options: [
+                    ["yes", "Yes", 0],
+                    ["some", "Some, but it is inconsistent", 2],
+                    ["no", "No", 3]
+                ], category: "caregiver"
+            },
+            {
+                id: "transition_mobility", section: "Transition Home", type: "single", trigger: a => hasAny(a.reason, ["fall", "hospital", "surgery", "mobility"]),
+                title: "Since the recent event, has mobility changed?",
+                options: [
+                    ["no", "No significant change", 0],
+                    ["some", "Some change", 2],
+                    ["yes", "Yes, noticeably", 4]
+                ], category: "home"
+            },
+            {
+                id: "transition_checked", section: "Transition Home", type: "single", trigger: a => hasAny(a.reason, ["fall", "hospital", "surgery", "mobility"]),
+                title: "Has anyone looked at the home since abilities changed?",
+                help: "Not just medically. Think about the physical setup, entrances, bathroom, walking paths, and daily routines.",
+                options: [
+                    ["yes", "Yes", 0],
+                    ["informal", "Only informally", 2],
+                    ["no", "No", 3]
+                ], category: "home"
+            },
+            {
+                id: "memory_safety", section: "Memory Safety", type: "multi", trigger: a => hasAny(a.reason, ["memory"]),
+                title: "Which safety concerns have come up with memory or thinking changes?",
+                options: [
+                    ["lost", "Getting lost or disoriented", 3],
+                    ["wander", "Wandering or leaving unexpectedly", 4],
+                    ["appliance", "Leaving appliances or unsafe items on", 4],
+                    ["phone", "Difficulty using the phone or emergency devices", 3],
+                    ["scams", "Increasing vulnerability to scams", 2],
+                    ["alone", "Family is increasingly worried about leaving them alone", 3],
+                    ["none", "None of these", 0]
+                ], category: "independence"
+            },
+            {
+                id: "abuse_urgent", section: "Safety Concern", type: "single", trigger: a => hasAny(a.reason, ["abuse"]),
+                title: "Is anyone in immediate danger right now?",
+                help: "RDC does not investigate abuse, neglect, or exploitation.",
+                options: [
+                    ["yes", "Yes / I believe there may be immediate danger", 0],
+                    ["no", "No immediate danger, but I have concerns", 0],
+                    ["unsure", "I’m not sure", 0]
+                ]
+            }
+        ];
+
+        let answers = {};
+        let history = [];
+        let currentId = null;
+
+        const questionView = document.getElementById("questionView");
+        const resultView = document.getElementById("resultView");
+        const answerGrid = document.getElementById("answerGrid");
+        const nextBtn = document.getElementById("nextBtn");
+        const backBtn = document.getElementById("backBtn");
+
+        function hasAny(value, vals) {
+            const arr = Array.isArray(value) ? value : value ? [value] : [];
+            return vals.some(v => arr.includes(v));
+        }
+        function activeQuestions() {
+            return Q.filter(q => !q.trigger || q.trigger(answers));
+        }
+        function currentIndex() {
+            return activeQuestions().findIndex(q => q.id === currentId);
+        }
+        function firstQuestion() {
+            currentId = activeQuestions()[0].id;
+            renderQuestion();
+        }
+        function sanitizeMulti(q, values) {
+            if (values.includes("none")) return ["none"];
+            return values.filter(v => v !== "none");
+        }
+        function renderQuestion() {
+            const active = activeQuestions();
+            let q = active.find(x => x.id === currentId);
+            if (!q) { currentId = active[0].id; q = active[0]; }
+            const idx = active.findIndex(x => x.id === currentId);
+
+            document.getElementById("questionKicker").textContent = q.section;
+            document.getElementById("questionTitle").textContent = q.title;
+            document.getElementById("questionHelp").textContent = q.help || "";
+            document.getElementById("questionNote").textContent =
+                q.id === "reason" ? "You can choose more than one." :
+                    q.type === "multi" ? "Choose all that apply." : "";
+
+            answerGrid.innerHTML = "";
+            const stored = answers[q.id];
+            q.options.forEach(opt => {
+                const [value, label] = opt;
+                const selected = q.type === "multi" ? (stored || []).includes(value) : stored === value;
+                const wrap = document.createElement("label");
+                wrap.className = "answer-option" + (selected ? " selected" : "");
+                wrap.innerHTML = `<input type="${q.type === "multi" ? "checkbox" : "radio"}" name="${q.id}" value="${value}" ${selected ? "checked" : ""}>
+      <span><strong>${label}</strong></span>`;
+                const input = wrap.querySelector("input");
+                input.addEventListener("change", () => {
+                    if (q.type === "multi") {
+                        const vals = [...answerGrid.querySelectorAll("input:checked")].map(i => i.value);
+                        answers[q.id] = sanitizeMulti(q, vals);
+                    } else {
+                        answers[q.id] = value;
+                    }
+                    renderQuestion();
+                });
+                answerGrid.appendChild(wrap);
+            });
+
+            const complete = q.type === "multi" ? Array.isArray(answers[q.id]) && answers[q.id].length : !!answers[q.id];
+            nextBtn.classList.toggle("btn-disabled", !complete);
+            backBtn.style.visibility = history.length ? "visible" : "hidden";
+
+            const pct = Math.round((idx / active.length) * 100);
+            document.getElementById("progressBar").style.width = pct + "%";
+            document.getElementById("progressPercent").textContent = pct + "%";
+            document.getElementById("progressLabel").textContent = `Step ${idx + 1} of about ${active.length}`;
+        }
+
+        nextBtn.addEventListener("click", () => {
+            const q = activeQuestions().find(x => x.id === currentId);
+            if (!answers[q.id] || (Array.isArray(answers[q.id]) && !answers[q.id].length)) return;
+
+            history.push(currentId);
+            const active = activeQuestions();
+            const idx = active.findIndex(x => x.id === currentId);
+            if (idx >= active.length - 1) {
+                showResults();
+                return;
+            }
+            currentId = active[idx + 1].id;
+            renderQuestion();
+        });
+
+        backBtn.addEventListener("click", () => {
+            const prev = history.pop();
+            if (prev) { currentId = prev; renderQuestion(); }
+        });
+
+        function pointsFor(q) {
+            const ans = answers[q.id];
+            if (ans == null || !q.options) return 0;
+            if (q.type === "multi") {
+                return ans.reduce((sum, val) => {
+                    const opt = q.options.find(o => o[0] === val);
+                    return sum + (opt && typeof opt[2] === "number" ? opt[2] : 0);
+                }, 0);
+            }
+            const opt = q.options.find(o => o[0] === ans);
+            return opt && typeof opt[2] === "number" ? opt[2] : 0;
+        }
+        function scores() {
+            const s = { home: 0, independence: 0, emergency: 0, tech: 0, caregiver: 0 };
+            activeQuestions().forEach(q => { if (q.category) s[q.category] += pointsFor(q); });
+
+            // Combination weighting
+            if (["one", "multiple"].includes(answers.falls) && ["some", "hard"].includes(answers.bathroom)) s.home += 3;
+            if (["far", "limited"].includes(answers.living) && answers.phone_access === "no") { s.emergency += 2; s.tech += 3; }
+            if (["one", "multiple"].includes(answers.falls) && answers.alert === "no") s.tech += 2;
+            if (["daily", "constant"].includes(answers.care_hours) && answers.backup === "no") s.caregiver += 3;
+            if (hasAny(answers.reason, ["hospital", "surgery", "fall"]) && answers.transition_mobility === "yes") s.home += 3;
+            return s;
+        }
+        function status(category, score) {
+            const cuts = {
+                home: [4, 9], independence: [3, 7], emergency: [3, 7], tech: [3, 6], caregiver: [3, 7]
+            }[category];
+            return score >= cuts[1] ? "red" : score >= cuts[0] ? "yellow" : "green";
+        }
+        function labelStatus(s) {
+            return s === "red" ? "Priority" : s === "yellow" ? "Worth Attention" : "Doing Well";
+        }
+        function priorityData(s) {
+            const arr = [
+                ["home", "Home & Fall Safety", s.home],
+                ["emergency", "Emergency Readiness", s.emergency],
+                ["independence", "Independence & Support", s.independence],
+                ["caregiver", "Caregiver/Family Support", s.caregiver],
+                ["tech", "Technology & Alert Readiness", s.tech]
+            ];
+            return arr.sort((a, b) => b[2] - a[2]).slice(0, 3);
+        }
+        function recommendationText(key, score) {
+            const st = status(key, score);
+            const map = {
+                home: st === "red" ? "Several answers suggest the physical home deserves a closer look, especially around falls, mobility, bathrooms, entries, or recent changes." :
+                    st === "yellow" ? "A few home-safety items are worth addressing before they become bigger problems." :
+                        "Your answers did not identify major home-safety gaps today. Keep reviewing the home as needs change.",
+                emergency: st === "red" ? "There are meaningful gaps in how help would be summoned, how responders could access the home, or how emergency information is organized." :
+                    st === "yellow" ? "Your emergency plan is partly in place, but a few pieces could be strengthened." :
+                        "Emergency readiness appears fairly strong based on your answers.",
+                independence: st === "red" ? "Daily support or social-connection gaps may be making independence harder to sustain." :
+                    st === "yellow" ? "There are a few areas where extra support or planning may help." :
+                        "Current daily support appears relatively stable based on your answers.",
+                caregiver: st === "red" ? "One person may be carrying too much of the support load without reliable backup." :
+                    st === "yellow" ? "Caregiving strain is beginning to show and is worth addressing early." :
+                        "Caregiver support appears relatively sustainable based on your answers.",
+                tech: st === "red" ? "Technology may be able to close an important safety gap, particularly if someone lives alone, falls, or cannot always reach a phone." :
+                    st === "yellow" ? "A few technology or alert-system options may be worth exploring." :
+                        "No strong technology gap was identified from your answers."
+            };
+            return map[key];
+        }
+
+        const WORKER_URL = "https://rdc-care-confidence.jenellmulitalo-eeb.workers.dev/";
+        let latestEmailPayload = null;
+
+        function buildEmailPayload(s, topPriorities, doNow, homeNeedsPro, medAlert) {
+            const categoryResults = {
+                home: labelStatus(status("home", s.home)),
+                independence: labelStatus(status("independence", s.independence)),
+                emergency: labelStatus(status("emergency", s.emergency)),
+                tech: labelStatus(status("tech", s.tech)),
+                caregiver: labelStatus(status("caregiver", s.caregiver))
+            };
+
+            const rdcRecommendations = [];
+            if (homeNeedsPro) rdcRecommendations.push("Consider a professional in-home Home Safety Check with Red Desert Check-In.");
+            if (medAlert) rdcRecommendations.push("A medical alert system may be worth exploring based on the answers provided.");
+            if (s.caregiver >= 7) rdcRecommendations.push("Identify caregiver backup, respite, community resources, or a home-care provider when hands-on personal care is needed.");
+            if (hasAny(answers.reason, ["memory"])) rdcRecommendations.push("Address practical safety concerns and discuss new or worsening memory changes with an appropriate healthcare professional.");
+            if (!rdcRecommendations.length) rdcRecommendations.push("No urgent paid RDC service is indicated from these answers. Keep the plan current and reassess after meaningful changes.");
+
+            return {
+                relationship: answers.role || "",
+                results: categoryResults,
+                priorities: topPriorities.map(([key, name, score]) => ({
+                    title: name,
+                    detail: recommendationText(key, score)
+                })),
+                nextSteps: doNow.slice(0, 4).map(item => `${item[0]}: ${item[1]}`).join("\n"),
+                rdcRecommendation: rdcRecommendations.join("\n"),
+                marketingConsent: false
+            };
+        }
+
+        async function submitEmailResults(event) {
+            event.preventDefault();
+
+            const form = event.currentTarget;
+            const button = document.getElementById("emailResultsBtn");
+            const statusEl = document.getElementById("emailFormStatus");
+
+            if (!latestEmailPayload) {
+                statusEl.textContent = "Please restart the assessment and try again.";
+                statusEl.className = "form-status error";
+                return;
+            }
+
+            const payload = {
+                ...latestEmailPayload,
+                firstName: document.getElementById("resultFirstName").value.trim(),
+                email: document.getElementById("resultEmail").value.trim(),
+                zip: document.getElementById("resultZip").value.trim(),
+                phone: document.getElementById("resultPhone").value.trim(),
+                marketingConsent: document.getElementById("marketingConsent").checked
+            };
+
+            button.disabled = true;
+            button.textContent = "Sending...";
+            statusEl.textContent = "";
+
+            try {
+                const response = await fetch(WORKER_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json().catch(() => ({}));
+
+                if (!response.ok || !data.success) {
+                    throw new Error(data.error || "We couldn't send your results.");
+                }
+
+                form.querySelectorAll("input").forEach(input => input.disabled = true);
+                button.textContent = "Results Sent";
+                statusEl.textContent = "Check your inbox. Your Care Confidence Snapshot is on its way.";
+                statusEl.className = "form-status success";
+            } catch (error) {
+                button.disabled = false;
+                button.textContent = "Email My Results";
+                statusEl.textContent = error.message || "Something went wrong. Please try again.";
+                statusEl.className = "form-status error";
+            }
+        }
+
+        function showResults() {
+            document.getElementById("progressWrap").classList.add("hidden");
+            questionView.classList.add("hidden");
+            resultView.classList.remove("hidden");
+
+            const s = scores();
+            const cats = [
+                ["home", "Home & Fall Safety"],
+                ["independence", "Independence & Support"],
+                ["emergency", "Emergency Readiness"],
+                ["tech", "Technology & Alert Readiness"],
+                ["caregiver", "Caregiver/Family Support"]
+            ];
+
+            const abuseSelected = hasAny(answers.reason, ["abuse"]);
+            const urgent = answers.abuse_urgent === "yes";
+            const safetyBlock = abuseSelected ? `
+    <div class="safety-alert">
+      <h3>${urgent ? "Immediate safety comes first." : "A safety concern needs the right resource."}</h3>
+      <p>${urgent
+                    ? "If you believe someone is in immediate danger, call 911. Red Desert Check-In does not investigate abuse, neglect, or exploitation."
+                    : "Red Desert Check-In does not determine whether abuse, neglect, or exploitation occurred. Consider contacting the appropriate local protective, legal, or community resource for guidance. If the situation becomes an emergency, call 911."}</p>
+    </div>` : "";
+
+            const scoreCards = cats.map(([key, name]) => {
+                const st = status(key, s[key]);
+                return `<div class="score-card status-${st}">
+      <div class="score-dot"></div>
+      <h3>${name}</h3>
+      <p><strong>${labelStatus(st)}</strong><br>${recommendationText(key, s[key])}</p>
+    </div>`;
+            }).join("");
+
+            const topPriorities = priorityData(s);
+            const priorities = topPriorities.map(([key, name, score], i) => `
+    <div class="priority-item"><h3>${i + 1}. ${name}</h3><p>${recommendationText(key, score)}</p></div>
+  `).join("");
+
+            const doNow = [];
+            if (s.emergency >= 3) doNow.push(["Organize emergency information", "Update emergency contacts, key medical information, and the plan for who should be called first."]);
+            if (["maybe", "no"].includes(answers.access)) doNow.push(["Create an emergency access plan", "Decide how trusted family or emergency responders could get in if the person cannot open the door."]);
+            if (s.home >= 4) doNow.push(["Fix the easiest home hazards first", "Start with lighting, clear walking paths, loose rugs, cords, and other obvious hazards you can safely address."]);
+            if (s.caregiver >= 3) doNow.push(["Name a backup person", "Even one reliable backup can reduce the pressure on the primary caregiver."]);
+            if (!doNow.length) doNow.push(["Keep a baseline", "Your answers are relatively reassuring. Revisit this assessment after a fall, hospital visit, mobility change, or other major change."]);
+
+            let professional = "";
+            const homeNeedsPro = s.home >= 8 || (["one", "multiple"].includes(answers.falls) && ["some", "hard"].includes(answers.bathroom)) ||
+                (hasAny(answers.reason, ["hospital", "surgery", "fall"]) && ["some", "yes"].includes(answers.transition_mobility));
+            if (homeNeedsPro) {
+                professional += `<div class="recommendation-card">
+      <p class="eyebrow">RDC Recommendation</p>
+      <h3>Consider a professional in-home Home Safety Check</h3>
+      <p>Your answers suggest that seeing the actual home may uncover details an online assessment cannot. Red Desert Check-In offers a structured, non-medical room-by-room walkthrough led by a Senior Home Safety Specialist® with written findings and practical recommendations.</p>
+      <a class="btn btn-primary" href="https://tally.so/r/zxAgvR" target="_blank" rel="noopener noreferrer">Request a $95 Safety Check</a>
+    </div>`;
+            }
+
+            const medAlert = (answers.phone_access === "no" || ["one", "multiple"].includes(answers.falls) || ["far", "limited"].includes(answers.living)) &&
+                answers.alert !== "yes_used";
+            if (medAlert) {
+                professional += `<div class="recommendation-card">
+      <p class="eyebrow">Worth Exploring</p>
+      <h3>A medical alert system may be worth considering</h3>
+      <p>Because of the combination of living situation, fall history, or unreliable phone access, an alert option could help close an emergency-response gap. RDC can help you think through what features may fit. This does not prevent falls or guarantee emergency outcomes.</p>
+    </div>`;
+            }
+
+            if (s.caregiver >= 7) {
+                professional += `<div class="recommendation-card">
+      <p class="eyebrow">Support Gap</p>
+      <h3>The caregiver needs backup too</h3>
+      <p>Your answers suggest that the current support load may be difficult to sustain. A good next step is identifying respite, family backup, community resources, or a home-care provider when hands-on personal care is needed.</p>
+    </div>`;
+            }
+
+            if (hasAny(answers.reason, ["memory"])) {
+                professional += `<div class="recommendation-card">
+      <p class="eyebrow">Memory Safety</p>
+      <h3>Address safety concerns and discuss new changes with a healthcare professional</h3>
+      <p>This assessment does not diagnose memory or cognitive conditions. New or worsening changes should be discussed with an appropriate healthcare professional, while practical home and emergency-safety gaps can be addressed separately.</p>
+    </div>`;
+            }
+
+            latestEmailPayload = buildEmailPayload(s, topPriorities, doNow, homeNeedsPro, medAlert);
+
+            resultView.innerHTML = `
+    <div class="result-header">
+      <p class="eyebrow">Your Care Confidence Snapshot</p>
+      <h2>Here’s what deserves attention first.</h2>
+      <p>This is a planning snapshot based only on the answers you provided, not a determination that someone is safe or unsafe to live independently.</p>
+    </div>
+    ${safetyBlock}
+    <div class="score-grid">${scoreCards}</div>
+
+    <div class="result-section">
+      <h3>Your top 3 priorities</h3>
+      <div class="priority-list">${priorities}</div>
+    </div>
+
+    <div class="result-section">
+      <h3>Do now</h3>
+      <div class="action-block">
+        ${doNow.slice(0, 4).map(x => `<div class="action-item"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")}
+      </div>
+    </div>
+
+    <div class="result-section">
+      <h3>Plan next / get support</h3>
+      ${professional || `<div class="recommendation-card"><h3>No urgent paid service is indicated from these answers</h3><p>Keep your plan current and reassess when something changes. RDC is available if you want a local second set of eyes or have a situation that does not fit neatly into a category.</p></div>`}
+    </div>
+
+
+    <div class="email-results-card" id="emailResultsCard">
+      <p class="eyebrow">Keep Your Results</p>
+      <h3>Want this snapshot emailed to you?</h3>
+      <p>We’ll send your Care Confidence results, your top priorities, and the next steps shown above.</p>
+
+      <form id="emailResultsForm">
+        <div class="email-form-grid">
+          <div class="email-field">
+            <label for="resultFirstName">First name *</label>
+            <input id="resultFirstName" type="text" autocomplete="given-name" required maxlength="100">
+          </div>
+          <div class="email-field">
+            <label for="resultEmail">Email *</label>
+            <input id="resultEmail" type="email" autocomplete="email" required maxlength="254">
+          </div>
+          <div class="email-field">
+            <label for="resultZip">ZIP code</label>
+            <input id="resultZip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10">
+          </div>
+          <div class="email-field">
+            <label for="resultPhone">Phone (optional)</label>
+            <input id="resultPhone" type="tel" autocomplete="tel" maxlength="30">
+          </div>
+        </div>
+
+        <label class="consent-row">
+          <input id="resultConsent" type="checkbox" required>
+          <span>Email me my Care Confidence results and recommendations. *</span>
+        </label>
+
+        <label class="consent-row">
+          <input id="marketingConsent" type="checkbox">
+          <span>Send me occasional aging-in-place tips and Red Desert Check-In updates. Optional.</span>
+        </label>
+
+        <div class="email-submit-row">
+          <button class="btn btn-primary" id="emailResultsBtn" type="submit">Email My Results</button>
+          <span class="form-status" id="emailFormStatus" role="status" aria-live="polite"></span>
+        </div>
+
+        <p class="mini-note">Requesting your results does not automatically enroll you in ongoing marketing. The second checkbox is separate and optional.</p>
+      </form>
+    </div>
+
+    <div class="results-footer">
+      <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save Results</button>
+      <a class="btn btn-outline" href="https://koalendar.com/e/red-desert-check-in" target="_blank" rel="noopener noreferrer">Free 15-Min Consult</a>
+      <button class="btn btn-outline" type="button" id="restartBtn">Start Over</button>
+    </div>
+    <p class="mini-note">If you believe there is an emergency or immediate danger, call 911. RDC provides non-medical educational and home-safety support and does not replace emergency, medical, legal, protective-services, home-health, occupational-therapy, or personal-care services.</p>
+  `;
+            document.getElementById("restartBtn").addEventListener("click", () => {
+                answers = {}; history = []; resultView.classList.add("hidden"); questionView.classList.remove("hidden");
+                document.getElementById("progressWrap").classList.remove("hidden"); firstQuestion(); window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+            document.getElementById("emailResultsForm").addEventListener("submit", submitEmailResults);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        firstQuestion();
+    </script>
+</body>
+
+</html>
