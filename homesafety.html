@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Home Safety Checkup | Red Desert Check-In</title>
+    <meta name="description"
+        content="A free room-by-room home safety checkup for older adults and families in Southern Utah. Identify common fall, accessibility and emergency-readiness concerns." />
+    <link rel="canonical" href="https://reddesertcheckin.com/homesafety.html" />
+    <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300..600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .hs-page {
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--ink)
+        }
+
+        .hs-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem clamp(1.25rem, 5vw, 3rem);
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+            position: sticky;
+            top: 0;
+            z-index: 20
+        }
+
+        .hs-header img {
+            width: 190px;
+            height: auto
+        }
+
+        .hs-header a {
+            color: var(--ink-muted);
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        .hs-shell {
+            width: min(940px, calc(100% - 2rem));
+            margin: 0 auto;
+            padding: clamp(2rem, 6vw, 4.5rem) 0 5rem
+        }
+
+        .hs-intro {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 2rem
+        }
+
+        .hs-intro h1 {
+            font-size: clamp(2.2rem, 7vw, 4.4rem);
+            line-height: 1.03;
+            margin: .4rem 0 1rem
+        }
+
+        .hs-intro p {
+            color: var(--ink-muted)
+        }
+
+        .hs-disclaimer {
+            background: var(--surface-warm);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.15rem;
+            margin: 1.5rem auto 0;
+            max-width: 780px;
+            font-size: .9rem;
+            color: var(--ink-muted)
+        }
+
+        .hs-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: clamp(1.25rem, 4vw, 2.5rem);
+            box-shadow: 0 18px 50px rgba(37, 26, 17, .07)
+        }
+
+        .progress-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: .8rem;
+            color: var(--ink-muted);
+            margin-bottom: .55rem
+        }
+
+        .progress-track {
+            height: 8px;
+            background: var(--bg-alt);
+            border-radius: 999px;
+            overflow: hidden;
+            margin-bottom: 2rem
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background: var(--red);
+            transition: width .2s
+        }
+
+        .question-kicker {
+            font-size: .76rem;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            font-weight: 700;
+            color: var(--red);
+            margin: 0 0 .6rem
+        }
+
+        .question-title {
+            font-size: clamp(1.6rem, 4vw, 2.35rem);
+            line-height: 1.12;
+            margin: 0 0 .6rem
+        }
+
+        .question-help {
+            color: var(--ink-muted);
+            margin-bottom: 1.4rem
+        }
+
+        .answers {
+            display: grid;
+            gap: .7rem
+        }
+
+        .answer {
+            width: 100%;
+            text-align: left;
+            padding: 1rem 1.05rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--bg);
+            color: var(--ink);
+            font: inherit;
+            cursor: pointer
+        }
+
+        .answer:hover,
+        .answer.selected {
+            border-color: var(--red);
+            background: var(--red-light)
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            gap: .75rem;
+            margin-top: 1.5rem
+        }
+
+        .disabled {
+            opacity: .45;
+            pointer-events: none
+        }
+
+        .hidden {
+            display: none !important
+        }
+
+        .result-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 1.8rem
+        }
+
+        .result-header h2 {
+            font-size: clamp(2rem, 6vw, 3.2rem)
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: .8rem;
+            margin: 1.5rem 0
+        }
+
+        .summary-card {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1rem;
+            background: var(--bg)
+        }
+
+        .summary-card strong {
+            display: block;
+            font-size: 1.5rem
+        }
+
+        .summary-card p {
+            margin: .2rem 0 0;
+            color: var(--ink-muted);
+            font-size: .88rem
+        }
+
+        .section-result {
+            margin-top: 2rem
+        }
+
+        .section-result h3 {
+            font-size: 1.5rem
+        }
+
+        .issue {
+            border-left: 4px solid var(--red);
+            background: var(--surface-warm);
+            padding: 1rem 1.1rem;
+            border-radius: 10px;
+            margin: .75rem 0
+        }
+
+        .issue.medium {
+            border-left-color: #B98931
+        }
+
+        .issue h4 {
+            margin: 0 0 .35rem
+        }
+
+        .issue p {
+            margin: 0;
+            color: var(--ink-muted)
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: .9rem
+        }
+
+        .resource {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1rem;
+            background: var(--bg)
+        }
+
+        .resource h4 {
+            margin: .1rem 0 .45rem
+        }
+
+        .resource p {
+            color: var(--ink-muted);
+            font-size: .9rem
+        }
+
+        .resource a {
+            font-weight: 700;
+            color: var(--red)
+        }
+
+        .cta-box {
+            margin-top: 2rem;
+            border: 2px solid var(--red);
+            border-radius: 16px;
+            padding: 1.25rem;
+            background: var(--red-light)
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: .75rem;
+            flex-wrap: wrap;
+            margin-top: 1rem
+        }
+
+        .small {
+            font-size: .85rem;
+            color: var(--ink-muted)
+        }
+
+        @media(max-width:700px) {
+
+            .summary-grid,
+            .resource-grid {
+                grid-template-columns: 1fr
+            }
+
+            .hs-header img {
+                width: 150px
+            }
+
+            .actions {
+                flex-wrap: wrap
+            }
+        }
+
+        @media print {
+
+            .hs-header,
+            .actions,
+            .progress-track,
+            .progress-meta,
+            .cta-actions {
+                display: none !important
+            }
+
+            .hs-shell {
+                width: 100%;
+                padding: 0
+            }
+
+            .hs-card {
+                border: none;
+                box-shadow: none
+            }
+        }
+    </style>
+</head>
+
+<body class="hs-page">
+    <header class="hs-header"><a href="index.html"><img src="images/logoheader.png" alt="Red Desert Check-In" /></a><a
+            href="index.html">← Back to RDC</a></header>
+    <main class="hs-shell">
+        <section class="hs-intro">
+            <p class="eyebrow">Free Room-by-Room Checkup</p>
+            <h1>How aging-ready is this home?</h1>
+            <p>Walk through the home yourself and answer what you see. You’ll get a Home Safety Snapshot showing what
+                looks good, what deserves attention, and what may warrant a closer in-person review.</p>
+            <div class="hs-disclaimer"><strong>This is not RDC's $95 professional Home Safety Assessment.</strong> This
+                free tool is completed by you and is for education and planning only. It does not replace an in-person
+                assessment, occupational therapy evaluation, contractor inspection, building-code review, medical
+                advice, or emergency services.</div>
+        </section>
+        <section class="hs-card" aria-live="polite">
+            <div id="progress">
+                <div class="progress-meta"><span id="progressLabel">Getting started</span><span
+                        id="progressPct">0%</span></div>
+                <div class="progress-track">
+                    <div class="progress-bar" id="bar"></div>
+                </div>
+            </div>
+            <div id="questionView">
+                <p class="question-kicker" id="kicker"></p>
+                <h2 class="question-title" id="title"></h2>
+                <p class="question-help" id="help"></p>
+                <div class="answers" id="answers"></div>
+                <div class="actions"><button class="btn btn-outline" id="back">Back</button><button
+                        class="btn btn-primary disabled" id="next">Continue</button></div>
+            </div>
+            <div id="results" class="hidden"></div>
+        </section>
+    </main>
+    <script>
+        const Q = [
+            { id: 'falls', sec: 'Recent Changes', title: 'Has there been a fall or near-fall in or around the home recently?', opts: [['no', 'No', 0], ['near', 'A near-fall', 2], ['fall', 'One fall', 4], ['multiple', 'More than one fall', 5], ['unsure', 'Not sure', 1]] },
+            { id: 'mobility', sec: 'Recent Changes', title: 'Has walking, balance, strength, or use of a cane/walker changed recently?', opts: [['no', 'No noticeable change', 0], ['some', 'Some change', 2], ['yes', 'Yes, noticeably', 4], ['na', 'Not applicable / not sure', 0]] },
+            { id: 'entry', sec: 'Entry & Exterior', title: 'Can the main entrance be used safely?', help: 'Think about steps, threshold height, railings, lighting, uneven surfaces, and whether a mobility aid fits.', opts: [['yes', 'Yes', 0], ['some', 'Mostly, but there are concerns', 2], ['no', 'No / difficult', 4], ['na', 'Not applicable', 0]] },
+            { id: 'walkways', sec: 'Entry & Exterior', title: 'Are outdoor walkways and driveways even, well lit, and clear of trip hazards?', opts: [['yes', 'Yes', 0], ['some', 'Some concerns', 2], ['no', 'Several concerns', 3], ['na', 'Not applicable', 0]] },
+            { id: 'stairs', sec: 'Stairs & Hallways', title: 'If there are stairs, do they have secure handrails and good lighting?', opts: [['yes', 'Yes', 0], ['some', 'Only one rail / lighting could improve', 2], ['no', 'No secure rail or poor visibility', 4], ['na', 'No stairs / not applicable', 0]] },
+            { id: 'paths', sec: 'Floors & Walking Paths', title: 'Are the main walking paths clear and wide enough?', help: 'Look for furniture pinch points, cords, clutter, shoes, pet items, and narrow paths.', opts: [['yes', 'Yes', 0], ['some', 'A few tight or cluttered areas', 2], ['no', 'Several hazards or blocked paths', 4], ['na', 'Not applicable', 0]] },
+            { id: 'rugs', sec: 'Floors & Walking Paths', title: 'Are rugs, mats, and floor transitions secure?', opts: [['yes', 'Yes', 0], ['some', 'A few edges or mats move', 2], ['no', 'Several loose rugs / uneven transitions', 3], ['na', 'No rugs / not applicable', 0]] },
+            { id: 'lighting', sec: 'Lighting', title: 'Is lighting bright enough from bed to bathroom, in hallways, stairs, and entrances?', opts: [['yes', 'Yes', 0], ['some', 'Some dim areas', 2], ['no', 'Multiple dim or dark areas', 3], ['na', 'Not sure', 0]] },
+            { id: 'bath_entry', sec: 'Bathroom', title: 'Can the tub or shower be entered and exited without feeling unsteady?', opts: [['yes', 'Yes', 0], ['some', 'Sometimes difficult', 3], ['no', 'No / feels unsafe', 5], ['na', 'Not applicable', 0]] },
+            { id: 'bath_support', sec: 'Bathroom', title: 'Are there secure grab bars or other appropriate supports where needed?', opts: [['yes', 'Yes', 0], ['maybe', 'Some support, but not everywhere needed', 2], ['no', 'No supports where they may be useful', 4], ['na', 'Not applicable / not sure', 0]] },
+            { id: 'bath_floor', sec: 'Bathroom', title: 'Is the bathroom floor and shower/tub surface slip-resistant and kept reasonably dry?', opts: [['yes', 'Yes', 0], ['some', 'Some slipping or water concerns', 2], ['no', 'Frequently slippery', 4], ['na', 'Not applicable', 0]] },
+            { id: 'toilet', sec: 'Bathroom', title: 'Can the toilet be used and stood up from without unsafe pulling, rocking, or grabbing furniture?', opts: [['yes', 'Yes', 0], ['some', 'Some difficulty', 2], ['no', 'Regular difficulty', 4], ['na', 'Not applicable', 0]] },
+            { id: 'bed', sec: 'Bedroom', title: 'Can the person get in and out of bed and reach a light or phone safely?', opts: [['yes', 'Yes', 0], ['some', 'Some difficulty', 2], ['no', 'Regular difficulty or no reachable light/phone', 4], ['na', 'Not applicable', 0]] },
+            { id: 'nightpath', sec: 'Bedroom', title: 'Is the nighttime path from bed to bathroom clear and lit?', opts: [['yes', 'Yes', 0], ['some', 'Could be improved', 2], ['no', 'No', 4], ['na', 'Not applicable', 0]] },
+            { id: 'kitchen_reach', sec: 'Kitchen', title: 'Are frequently used kitchen items reachable without climbing or unsafe stretching?', opts: [['yes', 'Yes', 0], ['some', 'Some items require reaching or a stool', 2], ['no', 'Frequent climbing / unstable reaching', 4], ['na', 'Not applicable', 0]] },
+            { id: 'kitchen_safety', sec: 'Kitchen', title: 'Are cooking areas, cords, appliances, and floor surfaces generally safe and uncluttered?', opts: [['yes', 'Yes', 0], ['some', 'A few concerns', 2], ['no', 'Several concerns', 4], ['na', 'Not applicable', 0]] },
+            { id: 'chairs', sec: 'Living Areas', title: 'Are the most-used chairs stable and easy to get in and out of?', opts: [['yes', 'Yes', 0], ['some', 'Some difficulty', 2], ['no', 'Regular difficulty or unstable furniture', 4], ['na', 'Not applicable', 0]] },
+            { id: 'pets', sec: 'Living Areas', title: 'Do pets, cords, oxygen tubing, or frequently moved items create trip hazards?', opts: [['no', 'No', 0], ['sometimes', 'Sometimes', 2], ['yes', 'Yes, often', 3], ['na', 'Not applicable', 0]] },
+            { id: 'smoke', sec: 'Fire & Emergency', title: 'Are working smoke and carbon-monoxide alarms present where appropriate?', opts: [['yes', 'Yes / recently checked', 0], ['unsure', 'Not sure when they were checked', 2], ['no', 'Missing or not working', 5], ['na', 'Not applicable', 0]] },
+            { id: 'escape', sec: 'Fire & Emergency', title: 'Is there a realistic plan for getting out during a fire, power outage, or evacuation?', opts: [['yes', 'Yes', 0], ['partial', 'Some plan', 2], ['no', 'No clear plan', 4], ['na', 'Not sure', 1]] },
+            { id: 'help', sec: 'Emergency Help', title: 'Could the person summon help from the places they spend the most time?', help: 'Think about phone access, medical alert, smartwatch, or another reliable method.', opts: [['yes', 'Yes', 0], ['maybe', 'Usually, but there are gaps', 2], ['no', 'No reliable way', 5], ['na', 'Not applicable / not sure', 0]] },
+            { id: 'access', sec: 'Emergency Help', title: 'Could emergency responders or a trusted person get into the home if the door could not be opened?', opts: [['yes', 'Yes', 0], ['maybe', 'Maybe / depends who is available', 2], ['no', 'No clear access plan', 4], ['na', 'Not sure', 1]] }
+        ];
+        let idx = 0, ans = {}; const av = document.getElementById('answers'), next = document.getElementById('next'), back = document.getElementById('back');
+        function render() { const q = Q[idx]; document.getElementById('kicker').textContent = q.sec; document.getElementById('title').textContent = q.title; document.getElementById('help').textContent = q.help || ''; av.innerHTML = ''; q.opts.forEach(([v, l]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'answer' + (ans[q.id] === v ? ' selected' : ''); b.textContent = l; b.onclick = () => { ans[q.id] = v; render(); }; av.appendChild(b) }); next.classList.toggle('disabled', !ans[q.id]); back.disabled = idx === 0; const pct = Math.round((idx / Q.length) * 100); document.getElementById('progressPct').textContent = pct + '%'; document.getElementById('progressLabel').textContent = q.sec; document.getElementById('bar').style.width = pct + '%' }
+        function scoreOf(id) { const q = Q.find(x => x.id === id), v = ans[id], o = q.opts.find(x => x[0] === v); return o ? o[2] : 0 }
+        next.onclick = () => { if (!ans[Q[idx].id]) return; if (idx < Q.length - 1) { idx++; render() } else showResults() }; back.onclick = () => { if (idx > 0) { idx--; render() } };
+        function showResults() {
+            document.getElementById('progress').classList.add('hidden'); document.getElementById('questionView').classList.add('hidden'); const rv = document.getElementById('results'); rv.classList.remove('hidden'); const issues = Q.map(q => ({ q, score: scoreOf(q.id), value: ans[q.id] })).filter(x => x.score > 0).sort((a, b) => b.score - a.score); const high = issues.filter(x => x.score >= 4), med = issues.filter(x => x.score >= 2 && x.score < 4); const safe = Q.length - issues.length; let issueHtml = issues.slice(0, 8).map(x => `<div class="issue ${x.score < 4 ? 'medium' : ''}"><h4>${x.q.sec}: ${x.q.title}</h4><p>${x.score >= 4 ? 'Priority attention' : 'Worth attention'} based on your answer.</p></div>`).join(''); if (!issueHtml) issueHtml = '<div class="issue medium"><h4>No major concerns surfaced</h4><p>That is reassuring, but conditions can change. Recheck after a fall, hospital stay, mobility change, or home renovation.</p></div>';
+            const pro = high.length >= 2 || ['fall', 'multiple'].includes(ans.falls) || ['no'].includes(ans.bath_entry) || ['no'].includes(ans.help);
+            rv.innerHTML = `<div class="result-header"><p class="eyebrow">Your Home Safety Snapshot</p><h2>${pro ? 'A closer look may be worthwhile.' : 'Here is what stood out.'}</h2><p>This snapshot is based only on what you observed and answered. It is not a determination that the home is safe or unsafe.</p></div><div class="summary-grid"><div class="summary-card"><strong>${safe}</strong><p>areas with no concern selected</p></div><div class="summary-card"><strong>${med.length}</strong><p>worth attention</p></div><div class="summary-card"><strong>${high.length}</strong><p>priority concerns</p></div></div><div class="section-result"><h3>What deserves attention first</h3>${issueHtml}</div><div class="section-result"><h3>Helpful resources</h3><div class="resource-grid"><div class="resource"><h4>CDC STEADI patient & caregiver resources</h4><p>Current fall-prevention brochures and home-safety materials, including the Check for Safety checklist.</p><a href="https://www.cdc.gov/steadi/patient-resources/index.html" target="_blank" rel="noopener noreferrer">Open CDC resources ↗</a></div><div class="resource"><h4>National Institute on Aging: Preventing Falls at Home</h4><p>Room-by-room fall-prevention guidance for floors, stairs, bathrooms, bedrooms, lighting and more.</p><a href="https://www.nia.nih.gov/health/falls-and-falls-prevention/preventing-falls-home-room-room" target="_blank" rel="noopener noreferrer">Read the room-by-room guide ↗</a></div><div class="resource"><h4>RDC Home Safety Guide & Checklist</h4><p>Use the printable room-by-room workbook to record what you saw, mark areas that need attention, and turn this checkup into a short priority list.</p><a href="resources/RDC-Home-Safety-Guide-Checklist.pdf" target="_blank" rel="noopener noreferrer">Open the free printable guide ↗</a></div><div class="resource"><h4>RDC Emergency Information & Home Access Plan</h4><p>If emergency access, responder information, power outages or evacuation planning came up while you walked the home, use this workbook to organize the family plan.</p><a href="resources/RDC-Emergency-Information-Home-Access-Plan.pdf" target="_blank" rel="noopener noreferrer">Open the emergency plan ↗</a></div></div></div>${pro ? `<div class="cta-box"><p class="eyebrow">Want a trained second set of eyes?</p><h3>RDC's $95 in-home Home Safety Assessment is different from this free checkup.</h3><p>A Senior Home Safety Specialist® physically walks the home, looks for things a family may miss, prioritizes findings, and provides written recommendations. RDC does not perform repairs or sell remodeling work, so the assessment remains independent.</p><div class="cta-actions"><a class="btn btn-primary" href="https://tally.so/r/zxAgvR" target="_blank" rel="noopener noreferrer">Request the $95 In-Home Assessment</a><a class="btn btn-outline" href="confidence.html">Take the Care Confidence Assessment</a></div></div>` : `<div class="cta-box"><h3>Keep this as a baseline.</h3><p>Repeat the checkup after a fall, hospital visit, new mobility issue, or meaningful change in the home. If you want an independent in-person review, RDC's $95 SHSS Home Safety Assessment is available.</p><div class="cta-actions"><a class="btn btn-outline" href="https://tally.so/r/zxAgvR" target="_blank" rel="noopener noreferrer">Learn About the $95 In-Home Assessment</a><a class="btn btn-outline" href="confidence.html">Take the Care Confidence Assessment</a></div></div>`}<div class="cta-actions" style="margin-top:1.25rem"><button class="btn btn-outline" onclick="window.print()">Print / Save Results</button><button class="btn btn-outline" onclick="location.reload()">Restart</button></div><p class="small" style="margin-top:1.5rem">If there is an immediate emergency, call 911. New or worsening medical, balance, strength, vision, dizziness, or medication concerns should be discussed with an appropriate healthcare professional.</p>`
+        }
+        render();
+    </script>
+</body>
+
+</html>
