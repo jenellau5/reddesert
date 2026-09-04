@@ -550,7 +550,7 @@
     <main class="assessment-shell">
         <section class="assessment-intro" id="intro">
             <p class="eyebrow">Free Guided Assessment</p>
-            <h1>How prepared are you to support safe independence?</h1>
+            <h1>How prepared are we for safe independence at home?</h1>
             <p>Answer a few questions about the person, the home, emergency readiness, technology, family support,
                 money-management basics, planning documents, and community needs. You’ll get a Care Confidence Snapshot
                 with practical next steps.</p>
@@ -1225,7 +1225,7 @@
         }
         function resourceCardsHtml(resources) {
             return resources.map(r => {
-                const links = (r.links || []).map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${label} opens in a new tab">${label} ↗</a>`).join("");
+                const links = (r.links || []).map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${label} opens in a new tab">${label}</a>`).join("");
                 return `<div class="resource-card ${r.links && r.links.length ? "" : "placeholder"}">
       <span class="resource-tag">${r.tag}</span>
       <h4>${r.title}</h4><p>${r.description}</p>
