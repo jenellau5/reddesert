@@ -1136,7 +1136,7 @@
             if (s.caregiver >= 3 || hasAny(selected, ["caregiver_resources"])) {
                 add("five-county-caregiver", "Five County caregiver support", "Five County Area Agency on Aging connects Southern Utah caregivers with education, support and in-home/community programs.", [["Caregiver & aging programs", "https://www.areaagencyonagingfivecounty.org/"]], "Public / nonprofit");
                 add("brand-love-caregiver", "Local caregiver and senior-living navigation", "The Brand Is Love provides local elder-care and senior-living guidance. Check their site directly for current caregiver events or group information.", [["The Brand Is Love", "https://thebrandislove.com/"]], "Southern Utah");
-                add("rdc-caregiver", "RDC Family Care Plan", "A practical family workbook for assigning primary and backup roles, emergency access, appointments, transportation, bills, daily-life responsibilities and the question: if something changed tomorrow, who would do what?", [["Open the free Family Care Plan", "https://reddesertcheckin.com/resources/RDC-Family-Care-Plan.pdf"]], "Free RDC workbook");
+                add("rdc-family-plan", "RDC Family Care Plan", "A practical family workbook for assigning primary and backup roles, emergency access, appointments, transportation, bills, daily-life responsibilities and the question: if something changed tomorrow, who would do what?", [["Open the free Family Care Plan", "https://reddesertcheckin.com/resources/RDC-Family-Care-Plan.pdf"]], "Free RDC workbook");
             }
 
             if (hasAny(answers.reason, ["memory"])) {
@@ -1163,8 +1163,7 @@
             }
 
             if (hasAny(selected, ["moving"])) {
-                add("brand-love-placement", "Assisted living or memory-care next steps", "If remaining at home may no longer fit, The Brand Is Love helps Southern Utah families explore assisted living, memory care and next-step options.", [["The Brand Is Love", "https://thebrandislove.com/"]], "Local navigation");
-                add("rdc-moving", "RDC Stay, Add Support, or Move? Family Decision Guide", "A worksheet to organize safety concerns, support needs, costs, family capacity and questions to ask before touring communities.", [], "RDC resource coming soon");
+                add("brand-love-placement", "Assisted living, memory care or senior-living guidance", "If remaining at home may no longer fit, The Brand Is Love helps Southern Utah families understand and compare independent living, assisted living, memory care and other senior-living options. Their senior-living guidance is offered at no cost to families.", [["Visit The Brand Is Love", "https://thebrandislove.com/"], ["Learn about assisted living", "https://thebrandislove.com/assisted-living"]], "Local senior-living guidance");
             }
 
             if (hasAny(selected, ["benefits"]) || ["transport", "meals"].some(v => hasAny(answers.daily, [v])) || hasAny(answers.daily_changes, ["food", "appointments", "driving"])) {
@@ -1181,13 +1180,13 @@
             }
 
             if (hasAny(selected, ["veteran"]) || hasAny(community, ["veteran_social"])) {
-                add("veterans", "Southern Utah Veteran Resources", "One starting place for local Veteran aging, health, caregiver, social and long-term-care resources. Options include Veteran Directed Care through Five County, the St. George Vet Center, the St. George VA Clinic, and the Southern Utah Veterans Home in Ivins.", [
+                add("veterans", "Southern Utah Veteran Resources", "A single starting point for local Veteran aging, health, caregiver, social and long-term-care resources, plus RDC's printable Veteran Aging-at-Home Guide.", [
+                    ["RDC Veteran Aging-at-Home Guide", "https://reddesertcheckin.com/resources/RDC-Southern-Utah-Veteran-Aging-at-Home-Guide.pdf"],
                     ["Veteran Directed Care / Five County", "https://www.areaagencyonagingfivecounty.org/casemanagement"],
                     ["St. George Vet Center", "https://www.va.gov/saint-george-vet-center/"],
                     ["St. George VA Clinic", "https://www.va.gov/salt-lake-city-health-care/locations/st-george-va-clinic/"],
                     ["Southern Utah Veterans Home", "https://veterans.utah.gov/veterans-homes/"]
                 ], "Veteran resources");
-                add("rdc-vet", "RDC Southern Utah Veteran Aging-at-Home Guide", "A Southern Utah planning workbook that organizes VA healthcare, Vet Center, Five County, Veteran Directed Care, benefits, aging-at-home, long-term-care and crisis resource pathways in one place.", [["Open the free Veteran guide", "https://reddesertcheckin.com/resources/RDC-Southern-Utah-Veteran-Aging-at-Home-Guide.pdf"]], "Free RDC workbook");
             }
 
             if (["social", "exercise", "classes", "meals", "transport", "volunteer"].some(v => hasAny(community, [v])) || hasAny(answers.reason, ["isolation"])) {
@@ -1216,9 +1215,7 @@
                 add("aps", "Report abuse, neglect or exploitation in Utah", "If there is immediate danger, call 911. Otherwise, Utah Adult Protective Services accepts online reports 24/7 and phone reports at 1-800-371-7897 during posted business hours.", [["Utah Adult Protective Services", "https://daas.utah.gov/adult-protective-services/"]], "Do not delay for RDC");
             }
 
-            if (!resources.length) {
-                add("rdc-baseline", "RDC Safe Independence Baseline", "A repeatable family snapshot for documenting what normal looks like now across daily independence, organization, home safety, emergency readiness, memory/judgment, connection and family support.", [["Open the free baseline workbook", "https://reddesertcheckin.com/resources/RDC-Safe-Independence-Baseline.pdf"]], "Free RDC workbook");
-            }
+            add("rdc-baseline", "RDC Safe Independence Baseline", "A repeatable family snapshot for documenting what normal looks like now across daily independence, organization, home safety, emergency readiness, memory/judgment, connection and family support.", [["Open the free baseline workbook", "https://reddesertcheckin.com/resources/RDC-Safe-Independence-Baseline.pdf"]], "Free RDC workbook");
             const urgent = resources.filter(r => r.id === "aps");
             const others = resources.filter(r => r.id !== "aps");
             return [...urgent, ...others].slice(0, 7);
@@ -1438,6 +1435,11 @@
       <h3>Resources matched to your answers</h3>
       <p class="mini-note">RDC only shows resources that match what you selected. Local programs and business details can change, so confirm availability directly.</p>
       <div class="resource-grid">${resourceCardsHtml(resources)}</div>
+      <div class="recommendation-card" style="margin-top:1rem;">
+        <h3>Need help figuring out the next level of care?</h3>
+        <p>If you feel your loved one may need more support than RDC provides, or you want to explore independent living, assisted living, memory care, or other senior-living options, The Brand Is Love is a local Southern Utah senior-care navigation resource. Their senior-living guidance is offered at no cost to families.</p>
+        <p><a href="https://thebrandislove.com/" target="_blank" rel="noopener noreferrer">Visit The Brand Is Love</a> &nbsp; <a href="https://thebrandislove.com/assisted-living" target="_blank" rel="noopener noreferrer">Learn about assisted living options</a></p>
+      </div>
     </div>
 
     <div class="result-section">
