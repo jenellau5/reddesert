@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Senior Resources in St. George & Washington County | Red Desert Check-In</title>
+    <meta name="description"
+        content="A free, local list of senior resources in St. George and Washington County, Utah: meals, transportation, Medicare help, veterans, dementia support, legal help, and scam reporting." />
+    <link rel="canonical" href="https://reddesertcheckin.com/community.html" />
+    <link href="https://api.fontshare.com/v2/css?f[]=zodiak@600,700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="home.css" />
+    <style>
+        .board-hero {
+            padding: clamp(40px, 6vw, 72px) 0 24px;
+        }
+
+        .board-hero h1 {
+            max-width: 20ch;
+        }
+
+        .alert {
+            background: var(--red);
+            color: var(--on-red);
+            border-radius: 14px;
+            padding: 14px 18px;
+            font-weight: 600;
+            margin: 24px 0 0;
+        }
+
+        .alert a {
+            color: var(--on-red);
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .filters input {
+            flex: 1 1 260px;
+            padding: 12px 18px;
+            border: 1.5px solid var(--line-warm);
+            border-radius: 999px;
+            background: var(--surface);
+            font: 400 1rem var(--sans);
+            color: var(--ink);
+        }
+
+        .chip {
+            border: 1.5px solid var(--line-warm);
+            background: var(--surface);
+            color: var(--ink);
+            border-radius: 999px;
+            padding: 9px 16px;
+            font: 600 .88rem var(--sans);
+            cursor: pointer;
+        }
+
+        .chip[aria-pressed="true"] {
+            background: var(--ink);
+            border-color: var(--ink);
+            color: var(--on-red);
+        }
+
+        .res-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .res {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .res .cat {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--red);
+        }
+
+        .res h2 {
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .res p {
+            color: var(--ink-soft);
+            font-size: .96rem;
+            margin: 0;
+        }
+
+        .res .contact {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            font-size: .95rem;
+        }
+
+        .res .contact a {
+            font-weight: 600;
+        }
+
+        .res .where {
+            font-size: .88rem;
+        }
+
+        .empty {
+            display: none;
+            color: var(--ink-soft);
+        }
+
+        .suggest {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            align-items: center;
+            margin-top: 32px;
+        }
+
+        .suggest p {
+            color: var(--ink-soft);
+            margin: 0;
+        }
+
+        .fineprint {
+            font-size: .88rem;
+            color: var(--ink-soft);
+            margin-top: 18px;
+        }
+
+        @media (max-width: 820px) {
+
+            .res-grid,
+            .suggest {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="index.html" aria-label="Red Desert Check-In home"><img src="images/logoheader.png"
+                    alt="Red Desert Check-In" width="220" height="66" /></a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="community.html" aria-current="page">Community Board</a>
+                <a href="index.html#about">About</a>
+            </nav>
+            <a class="btn btn-primary header-cta" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
+                rel="noopener noreferrer">Book a Free Call</a>
+            <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+        </div>
+        <nav class="wrap mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#resources">Resources</a>
+            <a href="community.html">Community Board</a>
+            <a href="index.html#about">About</a>
+            <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
+                rel="noopener noreferrer">Book a Free 15-Min Call</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="board-hero">
+            <div class="wrap">
+                <p class="eyebrow">Community Board · Washington County, Utah</p>
+                <h1>Local help for older adults and the families who love them.</h1>
+                <p class="lead">A short, checked list of the places I point families to most: meals, rides, Medicare
+                    help, veterans services, dementia support, legal help, and what to do about scams. Free to use. No
+                    one pays to be listed.</p>
+                <p class="alert">In an emergency, call 911. Veterans in crisis: dial 988, then press 1.</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top:24px">
+            <div class="wrap">
+                <div class="filters" role="search">
+                    <label class="sr-only" for="q" style="position:absolute;left:-9999px">Search resources</label>
+                    <input id="q" type="search" placeholder="Search: meals, Medicare, rides, veterans..." />
+                    <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button class="chip" type="button" data-filter="start" aria-pressed="false">Start here</button>
+                    <button class="chip" type="button" data-filter="food" aria-pressed="false">Meals & food</button>
+                    <button class="chip" type="button" data-filter="rides" aria-pressed="false">Rides</button>
+                    <button class="chip" type="button" data-filter="health" aria-pressed="false">Medicare &
+                        benefits</button>
+                    <button class="chip" type="button" data-filter="memory" aria-pressed="false">Memory &
+                        caregivers</button>
+                    <button class="chip" type="button" data-filter="vets" aria-pressed="false">Veterans</button>
+                    <button class="chip" type="button" data-filter="safety" aria-pressed="false">Scams & safety</button>
+                    <button class="chip" type="button" data-filter="legal" aria-pressed="false">Legal</button>
+                </div>
+
+                <div class="res-grid" id="res-grid">
+
+                    <article class="card res" data-cat="start health memory">
+                        <span class="cat">Start here</span>
+                        <h2>Five County Area Agency on Aging</h2>
+                        <p>The local hub for older adults. Help with Medicare and benefits, in-home services case
+                            management, family caregiver support, and the long-term care ombudsman.</p>
+                        <div class="contact"><a href="tel:+14356733548">(435) 673-3548</a><a
+                                href="https://www.areaagencyonagingfivecounty.org/" target="_blank"
+                                rel="noopener noreferrer">Website</a></div>
+                        <p class="where">1070 W. 1600 S., Building B, St. George</p>
+                    </article>
+
+                    <article class="card res" data-cat="start">
+                        <span class="cat">Start here</span>
+                        <h2>Utah 211</h2>
+                        <p>A free, confidential helpline that connects you to local help with housing, food, utilities,
+                            health care and more. A good first call when you are not sure where to start.</p>
+                        <div class="contact"><a href="tel:211">Dial 211</a><a href="tel:+18888269790">(888) 826-9790</a><a
+                                href="https://211utah.org/" target="_blank" rel="noopener noreferrer">Website</a></div>
+                        <p class="where">Text your zip code to (801) 845-2211. Calls daily 8:30 a.m. to 4:45 p.m.</p>
+                    </article>
+
+                    <article class="card res" data-cat="food">
+                        <span class="cat">Meals & food</span>
+                        <h2>St. George Senior Citizens Center</h2>
+                        <p>Lunch, activities, and company for adults 60+. This is also where you sign up for Meals on
+                            Wheels in St. George.</p>
+                        <div class="contact"><a href="tel:+14356345743">(435) 634-5743</a><a
+                                href="https://www.areaagencyonagingfivecounty.org/senior-citizen-centers"
+                                target="_blank" rel="noopener noreferrer">Website</a></div>
+                        <p class="where">245 N. 200 W., St. George</p>
+                    </article>
+
+                    <article class="card res" data-cat="food">
+                        <span class="cat">Meals & food</span>
+                        <h2>Hurricane Senior Citizens Center</h2>
+                        <p>Meals, activities, and Meals on Wheels sign-up for the Hurricane area.</p>
+                        <div class="contact"><a href="tel:+14356352089">(435) 635-2089</a><a
+                                href="https://coa.washco.utah.gov/hurricane/" target="_blank"
+                                rel="noopener noreferrer">Website</a></div>
+                        <p class="where">95 N. 300 W., Hurricane</p>
+                    </article>
+
+                    <article class="card res" data-cat="food">
+                        <span class="cat">Meals & food</span>
+                        <h2>Meals on Wheels</h2>
+                        <p>Home-delivered meals for adults 60+ who can't drive or leave home without help. Suggested
+                            donation of $3 per meal. No one is turned away. Sign up through your local senior center.
+                        </p>
+                        <div class="contact"><a href="tel:+14356345743">St. George (435) 634-5743</a><a
+                                href="tel:+14356352089">Hurricane (435) 635-2089</a></div>
+                    </article>
+
+                    <article class="card res" data-cat="food">
+                        <span class="cat">Meals & food</span>
+                        <h2>Utah Food Bank pantry finder</h2>
+                        <p>Find a food pantry near you. The St. George warehouse supplies dozens of local pantries,
+                            including a pantry in Hurricane.</p>
+                        <div class="contact"><a href="https://www.utahfoodbank.org/find-a-pantry/" target="_blank"
+                                rel="noopener noreferrer">Find a pantry</a><a href="tel:+14356569122">(435)
+                                656-9122</a></div>
+                        <p class="where">Southern Distribution Center, 4416 River Rd., St. George</p>
+                    </article>
+
+                    <article class="card res" data-cat="rides">
+                        <span class="cat">Rides</span>
+                        <h2>SunTran Paratransit</h2>
+                        <p>Door-to-door rides for people with a qualifying disability who can't get to a bus stop. $2
+                            per one-way trip. Service within ¾ mile of a SunTran route. Call to apply for ADA
+                            certification.</p>
+                        <div class="contact"><a href="tel:+14356274010">(435) 627-4010</a><a
+                                href="https://sgcityutah.gov/services/suntran_bus_system/ada_and_equal_access.php"
+                                target="_blank" rel="noopener noreferrer">Website</a></div>
+                    </article>
+
+                    <article class="card res" data-cat="health safety">
+                        <span class="cat">Medicare & benefits</span>
+                        <h2>Utah Senior Medicare Patrol</h2>
+                        <p>Free help spotting and reporting Medicare fraud, billing errors, and Medicare card scams.</p>
+                        <div class="contact"><a href="tel:+18005417735">(800) 541-7735</a><a
+                                href="https://smpresource.org/locator/utah/" target="_blank"
+                                rel="noopener noreferrer">Website</a></div>
+                    </article>
+
+                    <article class="card res" data-cat="memory">
+                        <span class="cat">Memory & caregivers</span>
+                        <h2>Alzheimer's Association 24/7 Helpline</h2>
+                        <p>Talk to a dementia specialist any time, day or night. They can also connect you to caregiver
+                            support groups in Southern Utah.</p>
+                        <div class="contact"><a href="tel:+18002723900">(800) 272-3900</a><a
+                                href="https://www.alz.org/utah/support" target="_blank"
+                                rel="noopener noreferrer">Utah support groups</a></div>
+                    </article>
+
+                    <article class="card res" data-cat="vets health">
+                        <span class="cat">Veterans</span>
+                        <h2>St. George VA Clinic</h2>
+                        <p>VA primary care and outpatient services for enrolled veterans.</p>
+                        <div class="contact"><a href="tel:+14356347608">(435) 634-7608</a><a
+                                href="https://www.va.gov/salt-lake-city-health-care/locations/st-george-va-clinic/"
+                                target="_blank" rel="noopener noreferrer">Website</a></div>
+                        <p class="where">585 E. Riverside Dr., Suite 300, St. George</p>
+                    </article>
+
+                    <article class="card res" data-cat="vets memory">
+                        <span class="cat">Veterans</span>
+                        <h2>Saint George Vet Center</h2>
+                        <p>Free counseling for veterans and their families, including grief support and help with
+                            PTSD.</p>
+                        <div class="contact"><a href="tel:+14356734494">(435) 673-4494</a><a
+                                href="https://www.va.gov/saint-george-vet-center/" target="_blank"
+                                rel="noopener noreferrer">Website</a></div>
+                        <p class="where">1664 S. Dixie Dr., Suite C-102, St. George</p>
+                    </article>
+
+                    <article class="card res" data-cat="vets">
+                        <span class="cat">Veterans</span>
+                        <h2>Southern Utah Veterans Home</h2>
+                        <p>A state veterans nursing home offering long-term and skilled nursing care for veterans.</p>
+                        <div class="contact"><a href="tel:+14356345220">(435) 634-5220</a><a
+                                href="https://veterans.utah.gov/venue/southern-utah-veterans-home/" target="_blank"
+                                rel="noopener noreferrer">Website</a></div>
+                        <p class="where">160 N. 200 E., Ivins</p>
+                    </article>
+
+                    <article class="card res" data-cat="safety">
+                        <span class="cat">Scams & safety</span>
+                        <h2>Utah Adult Protective Services</h2>
+                        <p>Report suspected abuse, neglect, or financial exploitation of a vulnerable adult. Phone
+                            reports Monday to Friday, 8 a.m. to 5 p.m. Online reports any time.</p>
+                        <div class="contact"><a href="tel:+18003717897">(800) 371-7897</a><a
+                                href="https://daas.utah.gov/adult-protective-services" target="_blank"
+                                rel="noopener noreferrer">Report online</a></div>
+                    </article>
+
+                    <article class="card res" data-cat="legal">
+                        <span class="cat">Legal</span>
+                        <h2>Utah Legal Services</h2>
+                        <p>Free civil legal help for people who qualify, including estate planning and senior legal
+                            issues.</p>
+                        <div class="contact"><a href="tel:+18013288891">Apply (801) 328-8891</a><a
+                                href="tel:+14356281604">St. George (435) 628-1604</a><a
+                                href="https://www.utahlegalservices.org/" target="_blank"
+                                rel="noopener noreferrer">Website</a></div>
+                        <p class="where">229 E. St. George Blvd., Suite 103, St. George</p>
+                    </article>
+
+                    <article class="card res" data-cat="safety start">
+                        <span class="cat">Scams & safety</span>
+                        <h2>Medical alerts and home technology</h2>
+                        <p>Not sure which medical alert or home device fits? My free guide explains the options in
+                            plain language, with no product to sell you.</p>
+                        <div class="contact"><a href="resources/RDC-Aging-in-Place-Technology-Medical-Alert-Guide.pdf"
+                                target="_blank" rel="noopener noreferrer">Free guide (PDF)</a></div>
+                    </article>
+
+                </div>
+                <p class="empty" id="empty">No matches. Try a different word, or <a
+                        href="https://koalendar.com/e/red-desert-check-in" target="_blank"
+                        rel="noopener noreferrer">book a free call</a> and I will help you find it.</p>
+
+                <div class="card suggest">
+                    <div>
+                        <h3>Know a resource that should be here?</h3>
+                        <p>Send it my way. I check every suggestion before adding it, so families can trust what they
+                            find here.</p>
+                    </div>
+                    <a class="btn btn-secondary"
+                        href="mailto:reddesertcheckin@gmail.com?subject=Community%20Board%20suggestion">Suggest a
+                        resource</a>
+                </div>
+
+                <div class="card suggest" style="margin-top:18px">
+                    <div>
+                        <p class="eyebrow" style="margin-bottom:6px">Coming soon</p>
+                        <h3>Classes for families</h3>
+                        <p>Family CPR and dementia education classes are on the way. Email me to hear when the first
+                            dates are set.</p>
+                    </div>
+                    <a class="btn btn-secondary"
+                        href="mailto:reddesertcheckin@gmail.com?subject=Classes%20list">Get on the list</a>
+                </div>
+
+                <p class="fineprint">Last checked October 2026. Hours and programs change, so please call ahead. Red
+                    Desert Check-In is not affiliated with these organizations and does not receive referral fees.</p>
+            </div>
+        </section>
+
+        <section class="section alt cta-band">
+            <div class="wrap">
+                <p class="eyebrow">Want someone local to help?</p>
+                <h2>Book a free 15-minute call.</h2>
+                <p class="lead">Tell me what is going on and I will help you figure out which of these fits, or whether
+                    an in-person visit makes sense.</p>
+                <div class="actions">
+                    <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
+                        rel="noopener noreferrer">Book a Free Call</a>
+                    <a class="btn btn-secondary" href="index.html#services">See Services</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+                <p>&copy; 2026 Red Desert Check-In · Southern Utah · <a href="index.html"
+                        style="display:inline">Home</a></p>
+                <p>Non-medical educational support only. Not emergency response. Not a replacement for 911.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('menu-toggle'), nav = document.getElementById('mobile-nav');
+            toggle.addEventListener('click', function () {
+                var open = !nav.classList.contains('is-open');
+                nav.classList.toggle('is-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.textContent = open ? 'Close' : 'Menu';
+            });
+
+            var q = document.getElementById('q'), chips = document.querySelectorAll('.chip'),
+                cards = document.querySelectorAll('.res'), empty = document.getElementById('empty'), active = 'all';
+            function apply() {
+                var term = q.value.trim().toLowerCase(), shown = 0;
+                cards.forEach(function (c) {
+                    var okCat = active === 'all' || c.dataset.cat.split(' ').indexOf(active) > -1;
+                    var okText = !term || c.textContent.toLowerCase().indexOf(term) > -1;
+                    c.style.display = okCat && okText ? '' : 'none';
+                    if (okCat && okText) shown++;
+                });
+                empty.style.display = shown ? 'none' : 'block';
+            }
+            chips.forEach(function (ch) {
+                ch.addEventListener('click', function () {
+                    active = ch.dataset.filter;
+                    chips.forEach(function (o) { o.setAttribute('aria-pressed', String(o === ch)); });
+                    apply();
+                });
+            });
+            q.addEventListener('input', apply);
+        }());
+    </script>
+</body>
+
+</html>
