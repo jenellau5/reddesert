@@ -1392,3 +1392,47 @@ p {
         flex: 1;
     }
 }
+
+/* ---- Legal pages ---- */
+.legal {
+    width: min(780px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: clamp(36px, 6vw, 72px) 0 72px;
+}
+
+.legal h1 {
+    margin-bottom: .2em;
+}
+
+.legal .effective {
+    color: var(--ink-soft);
+    font-size: .95rem;
+    margin-bottom: 28px;
+}
+
+.legal h2 {
+    font-size: 1.35rem;
+    margin: 32px 0 10px;
+}
+
+.legal p,
+.legal li {
+    color: var(--ink);
+    line-height: 1.7;
+}
+
+.legal ul {
+    padding-left: 1.2rem;
+    margin: 0 0 1em;
+}
+
+.legal li {
+    margin-bottom: 6px;
+}
+
+.legal .callout {
+    background: var(--bg-alt);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin: 20px 0;
+}
