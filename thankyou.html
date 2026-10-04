@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Received | Red Desert Check-In</title>
+    <meta name="description" content="Your Red Desert Check-In request was received. Here is what happens next." />
+    <meta name="robots" content="noindex" />
+    <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300..600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>(function () { var m = window.matchMedia('(prefers-color-scheme: dark)'); document.documentElement.setAttribute('data-theme', m.matches ? 'dark' : 'light'); }());</script>
+    <style>
+        .thanks-page {
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--ink);
+        }
+
+        .thanks-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem clamp(1.25rem, 5vw, 3rem);
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        .thanks-header img {
+            width: 190px;
+            height: auto;
+        }
+
+        .thanks-header a {
+            color: var(--ink-muted);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body class="thanks-page">
+    <header class="thanks-header"><a href="index.html"><img src="images/logoheader.png"
+                alt="Red Desert Check-In" /></a><a href="index.html">Back to RDC</a></header>
+    <main class="thanks-shell">
+        <p class="eyebrow">Request received</p>
+        <h1>Thank you. I have your request.</h1>
+        <div class="thanks-intro">
+            <img src="images/jenell.webp" alt="Jenell, founder of Red Desert Check-In" width="140" height="140" />
+            <div>
+                <p><strong>I will confirm within 24 hours.</strong> Your time is not locked in until you hear from me.
+                    If anything changes before then, just reply to the confirmation email.</p>
+                <p>I'm Jenell. I'm a certified Senior Home Safety Specialist (SHSS), EMD and CPR certified, with about
+                    10 years in medical alert response.</p>
+            </div>
+        </div>
+
+        <section class="thanks-card" aria-labelledby="expect-heading">
+            <h2 id="expect-heading">What to expect</h2>
+            <ol class="next-steps">
+                <li><strong>Confirmation within 24 hours.</strong> I will confirm the time and ask any questions I need
+                    before the visit.</li>
+                <li><strong>A reminder the day before.</strong> So nobody is caught off guard.</li>
+                <li><strong>The visit.</strong> I arrive on time, introduce myself, and keep things relaxed. Nothing is
+                    sold and nothing is repaired.</li>
+                <li><strong>Your update.</strong> Check-ins get a written update after the visit. Home safety
+                    assessments get prioritized written findings within 3 days.</li>
+            </ol>
+        </section>
+
+        <section class="thanks-card" aria-labelledby="share-heading">
+            <h2 id="share-heading">A note to share with your loved one</h2>
+            <p>Visits go best when your loved one knows who is coming and why. Feel free to send or read them this:</p>
+            <p class="share-note" id="share-note">Jenell from Red Desert Check-In is coming by to visit. Jenell is local, friendly, and here to help us make sure things at home are going well. Nothing will be sold, and nothing will be changed without asking you first. Jenell will say hello, look around with you, and let me know how things are. If you have any questions, call me.</p>
+            <div class="thanks-actions"><button class="btn btn-primary" type="button" id="copy-note">Copy the
+                    note</button><a class="btn btn-outline" href="index.html">Back to the homepage</a></div>
+        </section>
+
+        <p class="small-note" style="margin-top:2rem">Questions before then? Email <a
+                href="mailto:reddesertcheckin@gmail.com">reddesertcheckin@gmail.com</a>.</p>
+        <p class="small-note">Non-medical educational support only. Not emergency response. Not a replacement for 911.
+        </p>
+    </main>
+    <script>
+        document.getElementById('copy-note').addEventListener('click', function () {
+            var btn = this, text = document.getElementById('share-note').textContent;
+            navigator.clipboard.writeText(text).then(function () {
+                btn.textContent = 'Copied';
+                setTimeout(function () { btn.textContent = 'Copy the note'; }, 2000);
+            }).catch(function () { btn.textContent = 'Select and copy the note above'; });
+        });
+    </script>
+</body>
+
+</html>
