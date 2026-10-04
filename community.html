@@ -492,6 +492,9 @@
                 });
             });
             q.addEventListener('input', apply);
+            var h = (location.hash || '').replace('#', '');
+            var start = h && document.querySelector('.chip[data-filter="' + h + '"]');
+            if (start) { start.click(); document.querySelector('.filters').scrollIntoView(); }
         }());
     </script>
 </body>
