@@ -1,362 +1,349 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Red Desert Check-In | Aging-in-Place Guidance, Home Safety & Local Check-Ins in Southern Utah</title>
+    <title>Red Desert Check-In | Home Safety Assessments & Local Check-Ins in Southern Utah</title>
     <meta name="description"
         content="Non-medical home safety assessments and local check-ins for older adults in St. George, Santa Clara, Washington, and Hurricane, Utah. Book a free 15-minute call." />
     <link rel="canonical" href="https://reddesertcheckin.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://reddesertcheckin.com/" />
-    <meta property="og:title" content="Red Desert Check-In | Southern Utah Aging-in-Place Guidance" />
+    <meta property="og:title" content="Red Desert Check-In | Southern Utah Home Safety & Check-Ins" />
     <meta property="og:description"
-        content="Not sure what an aging parent or loved one needs? Start with the free Care Confidence Assessment, then get practical local resources and next steps." />
+        content="A trusted local set of eyes on your parent's home. Check-ins and home safety assessments in St. George, Santa Clara, Washington, and Hurricane." />
     <meta property="og:image" content="https://reddesertcheckin.com/images/logoall.png" />
     <meta property="og:site_name" content="Red Desert Check-In" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=zodiak@600,700&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300..600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="home.css" />
     <link rel="preload" as="image" href="images/checkin-door.webp" />
-    <script>(function () { var m = window.matchMedia('(prefers-color-scheme: dark)'); document.documentElement.setAttribute('data-theme', m.matches ? 'dark' : 'light'); }());</script>
 </head>
 
 <body>
-    <header class="site-header" id="top">
-        <a class="brand" href="#top" aria-label="Red Desert Check-In home"><img src="images/logoheader.png"
-                alt="Red Desert Check-In" class="brand-logo" width="220" height="66" loading="eager" /></a>
-        <nav class="nav" aria-label="Main navigation">
-            <a href="#services">Services</a>
-            <a href="#next">How It Works</a>
-            <a href="#resources">Resources</a>
-            <a href="#start">Free Tools</a>
-            <a href="#about">About</a>
-        </nav>
-        <div class="header-right"><a class="header-cta" href="https://koalendar.com/e/red-desert-check-in"
-                target="_blank" rel="noopener noreferrer">Book a Free Call</a><button
-                class="hamburger" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
-                aria-controls="mobile-menu"><span></span><span></span><span></span></button></div>
-    </header>
-    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-        <div class="mobile-menu-inner"><button class="mobile-menu-close" id="menu-close"
-                aria-label="Close menu">&times;</button>
-            <nav aria-label="Mobile navigation">
-                <a href="#services" class="mm-link">Services</a>
-                <a href="#next" class="mm-link">How It Works</a>
-                <a href="#resources" class="mm-link">Resources</a>
-                <a href="#start" class="mm-link">Free Tools</a>
-                <a href="#about" class="mm-link">About</a>
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="#top" aria-label="Red Desert Check-In home"><img src="images/logoheader.png"
+                    alt="Red Desert Check-In" width="220" height="66" /></a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="#services">Services</a>
+                <a href="#how">How It Works</a>
+                <a href="#resources">Resources</a>
+                <a href="#about">About</a>
             </nav>
-            <a class="btn btn-primary mm-cta" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                rel="noopener noreferrer">Book a Free 15-Min Call</a><a class="mm-consult" href="confidence.html">Take
-                the Free Care Confidence Assessment</a>
+            <a class="btn btn-primary header-cta" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
+                rel="noopener noreferrer">Book a Free Call</a>
+            <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
         </div>
-    </div>
-    <main>
-        <section class="hero" aria-labelledby="hero-heading">
-            <div class="hero-content">
-                <p class="eyebrow">Southern Utah aging-in-place guidance</p>
-                <h1 id="hero-heading">Worried about an aging parent or loved one, but not sure what they actually need?
-                </h1>
-                <p class="hero-desc">Red Desert Check-In helps families figure out what is actually needed, what can
-                    wait, and what to do next, from free planning tools to local in-person support.</p>
-                <p class="hero-credential"><strong>SHSS certified</strong> · EMD and CPR certified · About 10 years in
-                    medical alert response</p>
-                <div class="hero-actions"><a class="btn btn-primary" href="#services">See Services</a><a
-                        class="btn btn-ghost" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                        rel="noopener noreferrer">Book a Free 15-Min Call</a></div>
-                <p class="small-note">Serving St. George, Santa Clara, Washington, and Hurricane. Non-medical.</p>
-            </div>
-            <div class="hero-image"><img src="images/checkin-door.webp"
-                    alt="Red Desert Check-In local support in Southern Utah" width="900" height="700" loading="eager"
-                    fetchpriority="high" /></div>
-        </section>
+        <nav class="wrap mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+            <a href="#services">Services</a>
+            <a href="#how">How It Works</a>
+            <a href="#resources">Resources</a>
+            <a href="#about">About</a>
+            <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
+                rel="noopener noreferrer">Book a Free 15-Min Call</a>
+        </nav>
+    </header>
 
-        <section id="services" class="section section-intro" aria-labelledby="services-heading">
-            <div class="container-narrow">
-                <p class="eyebrow">In-person services</p>
-                <h2 id="services-heading">When a free tool is not enough, RDC can go in person.</h2>
-                <p>RDC is designed for the in-between stage: someone is still mostly independent, but the family needs a
-                    clearer picture, a safer plan, or a reliable local update.</p>
-            </div>
-        </section>
-
-        <section id="checkins" class="service-family" aria-labelledby="checkins-title">
-            <div class="container">
-                <div class="family-card">
-                    <div class="family-card-header">
-                        <div class="family-card-meta">
-                            <p class="family-number" aria-hidden="true">01</p>
-                            <div>
-                                <p class="eyebrow">Local Check-Ins</p>
-                                <h2 class="family-title" id="checkins-title">A trusted local set of eyes when family
-                                    cannot be there.</h2>
-                                <p class="service-header-note">Best for families who want an in-person update without
-                                    hiring full-time care.</p>
-                            </div>
-                        </div>
-                        <div class="family-card-image"><img src="images/elderlyvisit1.png"
-                                alt="A Red Desert Check-In visit with an older adult" width="420" height="280"
-                                loading="lazy" /></div>
+    <main id="top">
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div>
+                    <p class="eyebrow">Home safety and check-ins in Southern Utah</p>
+                    <h1>Worried about an aging parent at home?</h1>
+                    <p class="lead">I'm Jenell. I visit your loved one in person, look at the home with trained eyes,
+                        and send you a clear written update. You know what is going on, even when you cannot be
+                        there.</p>
+                    <div class="actions">
+                        <a class="btn btn-primary" href="#services">See Services</a>
+                        <a class="btn btn-secondary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
+                            rel="noopener noreferrer">Book a Free 15-Min Call</a>
                     </div>
-                    <div class="safety-offer-bar checkin-offer-bar">
-                        <div><span class="safety-offer-label">Check-In</span><span
-                                class="safety-offer-time">About 45 to 60 minutes + written update</span></div><span
-                            class="safety-offer-price">$70</span>
-                    </div>
-                    <p class="family-summary">For an older adult living independently, someone recently home from the
-                        hospital, or a family who simply wants a reliable local check-in. RDC visits in person, checks
-                        the things you agreed on beforehand, and sends a clear update afterward.</p>
-                    <div class="service-cta"><a class="btn btn-primary" href="https://koalendar.com/e/rdc-check-in"
-                            target="_blank" rel="noopener noreferrer">Book a Check-In</a></div>
-                    <p class="not-sure">Not sure? <a href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                            rel="noopener noreferrer">Book a free 15-min call</a></p>
+                    <ul class="trust" aria-label="Credentials">
+                        <li>SHSS certified</li>
+                        <li>EMD and CPR certified</li>
+                        <li>About 10 years in medical alert response</li>
+                    </ul>
+                    <p class="area-note">Serving St. George, Santa Clara, Washington, and Hurricane. Non-medical.</p>
                 </div>
+                <div class="hero-photo"><img src="images/checkin-door.webp"
+                        alt="Arriving at the front door of a home for a check-in visit" width="900" height="700"
+                        fetchpriority="high" /></div>
             </div>
         </section>
 
-        <section id="safety" class="service-family family-alt" aria-labelledby="safety-title">
-            <div class="container">
-                <div class="family-card safety-feature">
-                    <div class="family-card-header">
-                        <div class="family-card-meta">
-                            <p class="family-number" aria-hidden="true">02</p>
-                            <div>
-                                <p class="eyebrow">Professional Home Safety Assessment</p>
-                                <h2 class="family-title" id="safety-title">An independent look at the whole home before
-                                    deciding what needs to change.</h2>
-                                <p class="service-header-note">Best when the family sees a fall, mobility, bathroom,
-                                    entry, lighting or emergency-readiness concern and wants a trained second set of
-                                    eyes.</p>
-                            </div>
-                        </div>
-                        <div class="family-card-image"><img src="images/life-chapters.png"
-                                alt="Home safety and aging-in-place planning" width="420" height="280" loading="lazy" />
-                        </div>
-                    </div>
-                    <div class="safety-offer-bar">
-                        <div><span class="safety-offer-label">Home Safety Assessment</span><span
-                                class="safety-offer-time">About 60 to 90 minutes + written findings</span></div>
-                        <span class="safety-offer-price">$175</span>
-                    </div>
-                    <p class="family-summary">A structured room-by-room review of common fall, accessibility, lighting,
-                        bathroom, entry and emergency-readiness concerns, with prioritized written recommendations
-                        afterward.</p>
-                    <div class="mini-links"><a class="btn btn-outline" href="homesafety.html">Do the Free DIY
-                            Checkup</a><a class="btn btn-primary" href="https://koalendar.com/e/rdc-assessment"
-                            target="_blank" rel="noopener noreferrer">Book an Assessment</a></div>
-                    <p class="not-sure">Not sure? <a href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                            rel="noopener noreferrer">Book a free 15-min call</a></p>
-                    <p class="small-note" style="margin-top:1rem">RDC is independent: it does not perform repairs or
-                        sell remodeling work. Referrals are made only when outside expertise is needed.</p>
+        <section id="services" class="section alt">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">Services</p>
+                    <h2>Local help, in person.</h2>
+                    <p class="lead">For the stage when someone is still mostly independent, but the family wants a
+                        clearer picture, a safer home, or a reliable local update.</p>
                 </div>
-            </div>
-        </section>
 
-        <section id="more-services" class="section" aria-labelledby="more-services-heading">
-            <div class="container">
-                <p class="eyebrow">More ways to help</p>
-                <h2 id="more-services-heading">Ongoing support and help after a hospital stay.</h2>
-                <div class="path-grid">
-                    <article class="path-card">
+                <div class="service-grid">
+                    <article class="card service featured">
+                        <p class="eyebrow">Start here</p>
+                        <h3>Home Safety Assessment</h3>
+                        <p class="price">$175</p>
+                        <p class="meta">About 60 to 90 minutes + written findings within 3 days</p>
+                        <p class="desc">A room-by-room look at falls, bathrooms, stairs, lighting, entries and emergency
+                            readiness. You get a prioritized list of what to fix first. I do not sell repairs, so the
+                            advice stays independent.</p>
+                        <div class="actions">
+                            <a class="btn btn-primary" href="https://koalendar.com/e/rdc-assessment" target="_blank"
+                                rel="noopener noreferrer">Book an Assessment</a>
+                            <a class="text-link" href="homesafety.html">Or try the free DIY checkup</a>
+                        </div>
+                        <p class="not-sure">Not sure? <a href="https://koalendar.com/e/red-desert-check-in"
+                                target="_blank" rel="noopener noreferrer">Book a free 15-min call</a></p>
+                    </article>
+
+                    <article class="card service">
+                        <p class="eyebrow">One visit</p>
+                        <h3>Check-In</h3>
+                        <p class="price">$70</p>
+                        <p class="meta">About 45 to 60 minutes + written update</p>
+                        <p class="desc">A friendly in-person visit. I check the things we agreed on ahead of time and
+                            send you a clear update afterward. Good for peace of mind, travel, or after a hospital
+                            stay.</p>
+                        <div class="actions">
+                            <a class="btn btn-primary" href="https://koalendar.com/e/rdc-check-in" target="_blank"
+                                rel="noopener noreferrer">Book a Check-In</a>
+                        </div>
+                        <p class="not-sure">Not sure? <a href="https://koalendar.com/e/red-desert-check-in"
+                                target="_blank" rel="noopener noreferrer">Book a free 15-min call</a></p>
+                    </article>
+
+                    <article class="card service">
                         <p class="eyebrow">Regular visits</p>
                         <h3>Check-In Plans</h3>
-                        <p class="price-line"><strong>$120/mo</strong> every other week<br><strong>$220/mo</strong>
-                            weekly</p>
-                        <p>The same familiar face on a steady schedule, with a written update after every visit. Cancel
-                            anytime.</p>
-                        <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                            rel="noopener noreferrer">Book a Free Call to Start</a>
+                        <p class="price">$120<small>/mo every other week</small></p>
+                        <p class="price">$220<small>/mo weekly</small></p>
+                        <p class="desc">The same familiar face on a steady schedule, with a written update after every
+                            visit. Month to month, cancel anytime.</p>
+                        <div class="actions">
+                            <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in"
+                                target="_blank" rel="noopener noreferrer">Book a Free Call to Start</a>
+                        </div>
                     </article>
-                    <article class="path-card">
+
+                    <article class="card service">
                         <p class="eyebrow">Just got home</p>
                         <h3>Home from the Hospital</h3>
-                        <p class="price-line"><strong>$275</strong></p>
-                        <p>A home safety assessment plus 2 check-ins in the first 2 weeks home, when falls and missed
-                            details are most likely.</p>
-                        <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                            rel="noopener noreferrer">Book a Free Call to Plan It</a>
+                        <p class="price">$275</p>
+                        <p class="meta">Home safety assessment + 2 check-ins in the first 2 weeks</p>
+                        <p class="desc">The first weeks home are when falls and missed details are most likely. I make
+                            sure the home is ready and check back twice while things settle.</p>
+                        <div class="actions">
+                            <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in"
+                                target="_blank" rel="noopener noreferrer">Book a Free Call to Plan It</a>
+                        </div>
                     </article>
-                    <aside class="no-surprises" aria-labelledby="no-surprises-heading">
-                        <h3 id="no-surprises-heading">No surprises</h3>
-                        <ul>
-                            <li>Covers St. George, Santa Clara, Washington, and Hurricane. Outside those areas: $15
-                                travel fee, confirmed before booking.</li>
-                            <li>Venmo, card, or cash. First-time clients pay after the visit.</li>
-                            <li>Free cancel or reschedule up to 24 hours before.</li>
-                            <li>Plans are month to month.</li>
-                            <li>Written findings within 3 days.</li>
-                            <li>No sales pitch, no repairs, no referral fees.</li>
-                        </ul>
-                    </aside>
+                </div>
+
+                <div class="card no-surprises">
+                    <h3>No surprises</h3>
+                    <ul class="check-list">
+                        <li>Covers St. George, Santa Clara, Washington, and Hurricane. Outside those areas: $15 travel
+                            fee, confirmed before booking.</li>
+                        <li>Venmo, card, or cash. First-time clients pay after the visit.</li>
+                        <li>Free cancel or reschedule up to 24 hours before.</li>
+                        <li>Plans are month to month.</li>
+                        <li>Written findings within 3 days.</li>
+                        <li>No sales pitch, no repairs, no referral fees.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section id="next" class="section section-intro" aria-labelledby="next-heading">
-            <div class="container-narrow">
-                <p class="eyebrow">What happens next</p>
-                <h2 id="next-heading">Simple from the first click.</h2>
-                <ol class="next-steps">
-                    <li><strong>Pick a time.</strong> Choose a visit or a free 15-minute call.</li>
-                    <li><strong>I confirm within 24 hours.</strong> You hear from me directly, not a call center.</li>
-                    <li><strong>You get my photo and visit details.</strong> Easy to share with your loved one so
-                        they know who is coming.</li>
-                    <li><strong>Reminder the day before.</strong> No guessing about when I will be there.</li>
+        <section id="how" class="section">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">How it works</p>
+                    <h2>Simple from the first click.</h2>
+                </div>
+                <ol class="steps">
+                    <li>
+                        <h3>Pick a time</h3>
+                        <p>Choose a visit or a free 15-minute call.</p>
+                    </li>
+                    <li>
+                        <h3>I confirm within 24 hours</h3>
+                        <p>You hear from me directly, not a call center.</p>
+                    </li>
+                    <li>
+                        <h3>You get my photo and visit details</h3>
+                        <p>Easy to share with your loved one so they know who is coming.</p>
+                    </li>
+                    <li>
+                        <h3>Reminder the day before</h3>
+                        <p>No guessing about when I will be there.</p>
+                    </li>
                 </ol>
             </div>
         </section>
 
-        <section id="resources" class="section" aria-labelledby="resources-heading">
-            <div class="container-narrow">
-                <p class="eyebrow">Free RDC tools & workbooks</p>
-                <h2 id="resources-heading">Practical tools for the conversations families usually put off.</h2>
-                <p class="section-lead">Use these when you need to get organized before a family conversation, a home
-                    change, or an emergency.</p>
-                <div class="resource-groups">
-                    <article class="resource-group">
-                        <h3>Home Safety Guide & Checklist</h3>
-                        <p>A printable room-by-room companion to RDC's interactive Home Safety Checkup, with notes and
-                            priority-planning space.</p><a href="resources/RDC-Home-Safety-Guide-Checklist.pdf"
-                            target="_blank" rel="noopener noreferrer">Download the free PDF</a>
-                    </article>
-                    <article class="resource-group">
-                        <h3>Family Care Binder <span class="binder-price">$29</span></h3>
-                        <p>One place for the family care plan, emergency and home access details, and a record of what
-                            "normal" looks like now, so everyone knows who does what before something happens.</p>
-                        <span class="btn btn-outline is-disabled" aria-disabled="true">Coming soon</span>
-                    </article>
+        <section id="resources" class="section alt">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">Resources</p>
+                    <h2>Not ready to book? Start here.</h2>
+                    <p class="lead">Tools to help you sort out what is going on and what might help, at your own
+                        pace.</p>
                 </div>
-                <div class="hero-actions"><a class="btn btn-primary" href="confidence.html">Get Resources Matched to My
-                        Situation</a><a class="btn btn-outline" href="homesafety.html">Do the Free Home Safety
-                        Checkup</a></div>
-                <p class="small-note">Additional matched workbooks cover technology and medical alerts, memory and
-                    changing needs, bills and accounts, important documents, scams and financial exploitation, and
-                    Southern Utah Veteran resources.</p>
-            </div>
-        </section>
-
-        <section id="start" class="section" aria-labelledby="start-heading">
-            <div class="container-narrow">
-                <p class="eyebrow">Free tools</p>
-                <h2 id="start-heading">Not ready to book? Start on your own.</h2>
-                <p class="section-lead">These free tools help you sort out what is going on and what might help, at
-                    your own pace.</p>
-                <div class="path-grid">
-                    <article class="path-card">
-                        <p class="eyebrow">Not sure what is going on?</p>
+                <div class="tool-grid">
+                    <article class="card tool">
+                        <span class="tag">Free</span>
                         <h3>Care Confidence Assessment</h3>
-                        <p>Looks at independence, emergencies, caregiver support, technology, bills, planning documents,
-                            community connection, veterans resources and home-safety concerns.</p>
-                        <a class="btn btn-outline" href="confidence.html">Take the Free Assessment</a>
+                        <p>A short guided quiz on independence, emergencies, bills, planning and support. You get
+                            next steps matched to your answers.</p>
+                        <a class="btn btn-secondary" href="confidence.html">Take the Assessment</a>
                     </article>
-                    <article class="path-card">
-                        <p class="eyebrow">Concerned about the home?</p>
+                    <article class="card tool">
+                        <span class="tag">Free</span>
                         <h3>Home Safety Checkup</h3>
-                        <p>Do a free room-by-room check yourself for common issues involving floors, stairs, lighting,
-                            bathrooms, bedrooms, fire safety and emergency access.</p>
-                        <a class="btn btn-outline" href="homesafety.html">Start the Free Checkup</a>
+                        <p>Walk the home room by room yourself and see what deserves a closer look.</p>
+                        <a class="btn btn-secondary" href="homesafety.html">Start the Checkup</a>
                     </article>
-                    <article class="path-card featured">
-                        <p class="eyebrow">Rather just talk?</p>
-                        <h3>Free 15-Min Call</h3>
-                        <p>Tell me what is going on and I will help you figure out what makes sense, even if that is
-                            not one of my services.</p>
-                        <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                            rel="noopener noreferrer">Book a Free Call</a>
+                    <article class="card tool">
+                        <span class="tag">Free PDF</span>
+                        <h3>Home Safety Guide & Checklist</h3>
+                        <p>A printable room-by-room checklist with space for notes and priorities.</p>
+                        <a class="btn btn-secondary" href="resources/RDC-Home-Safety-Guide-Checklist.pdf"
+                            target="_blank" rel="noopener noreferrer">Download</a>
+                    </article>
+                    <article class="card tool">
+                        <span class="tag paid">$29</span>
+                        <h3>Family Care Binder</h3>
+                        <p>One place for who does what, emergency and home access details, and a record of what
+                            "normal" looks like now.</p>
+                        <a class="btn btn-primary"
+                            href="https://www.etsy.com/listing/4588195810/family-care-binder-printable-aging"
+                            target="_blank" rel="noopener noreferrer">Buy on Etsy</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="section about-section" aria-labelledby="about-heading">
-            <div class="about-inner">
-                <div class="about-image"><img src="images/jenell.webp" alt="Jenell, founder of Red Desert Check-In"
-                        width="700" height="700" loading="lazy" /></div>
-                <div class="about-copy">
-                    <p class="eyebrow">About Red Desert Check-In</p>
-                    <h2 id="about-heading">Local support for the questions that fall between “everything is fine” and
-                        “we need full-time care.”</h2>
-                    <p>I'm Jenell. I've spent nearly a decade in medical alarm response-center dispatch and supervision,
-                        working in the world of medical-alert activations, older adults, worried families and
-                        time-sensitive situations.</p>
-                    <p>As a Senior Home Safety Specialist® with Aging in Place Essentials® Professional Training, I
-                        created RDC to help families notice gaps earlier, understand their options and get local support
-                        without turning every concern into medical care or caregiving.</p>
-                    <p class="credential-note"><strong>Training &amp; credentials:</strong> Senior Home Safety
-                        Specialist® (SHSS) · Aging in Place Essentials® Professional Training · Emergency Medical
-                        Dispatcher Certified · CPR Certified</p>
+        <section id="about" class="section">
+            <div class="wrap about-grid">
+                <img src="images/jenell.webp" alt="Jenell, founder of Red Desert Check-In" width="700" height="700"
+                    loading="lazy" />
+                <div>
+                    <p class="eyebrow">About</p>
+                    <h2>A local set of eyes you can trust.</h2>
+                    <p>I'm Jenell. I've spent nearly a decade in medical alarm response-center dispatch and
+                        supervision, working with older adults, worried families and time-sensitive situations.</p>
+                    <p>I started Red Desert Check-In to help families notice gaps earlier, understand their options,
+                        and get local support without turning every concern into medical care.</p>
+                    <ul class="creds">
+                        <li>Senior Home Safety Specialist® (SHSS)</li>
+                        <li>Aging in Place Essentials® Professional Training</li>
+                        <li>Emergency Medical Dispatcher certified</li>
+                        <li>CPR certified</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="section boundaries-section" aria-labelledby="boundaries-heading">
-            <div class="container-narrow">
-                <p class="eyebrow">Is RDC the right fit?</p>
-                <h2 id="boundaries-heading">RDC is for the in-between stage.</h2>
-                <p class="section-lead">RDC works best when an older adult is still mostly independent, but the family
-                    wants clearer information, a safer home plan, or a reliable local set of eyes. RDC is non-medical
-                    and does not provide hands-on personal care, medication administration, transportation, repairs, or
-                    emergency response. If the need is outside RDC's role, the goal is to point you toward the
-                    appropriate type of help.</p>
+        <section class="section alt">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">Is this the right fit?</p>
+                    <h2>Made for the in-between stage.</h2>
+                </div>
+                <div class="fit-grid">
+                    <div class="card">
+                        <h3>A good fit when</h3>
+                        <ul class="check-list">
+                            <li>Your loved one is still mostly independent</li>
+                            <li>You live far away or cannot get there often</li>
+                            <li>You want a safer home before something happens</li>
+                            <li>Someone just came home from the hospital</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Not what I do</h3>
+                        <ul class="check-list x-list">
+                            <li>Hands-on personal care or bathing</li>
+                            <li>Medication administration or medical care</li>
+                            <li>Transportation, repairs, or remodeling</li>
+                            <li>Emergency response. Call 911 for emergencies.</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="area-note">If the need is outside my role, I will point you toward the right kind of help.
+                </p>
             </div>
         </section>
 
-        <section class="section cta-section" aria-labelledby="cta-heading">
-            <div class="container-narrow">
+        <section class="section cta-band">
+            <div class="wrap">
                 <p class="eyebrow">Still not sure?</p>
-                <h2 id="cta-heading">Book a free 15-minute call.</h2>
-                <p>Tell me what is going on and we will figure out the next step together. No pressure and no sales
-                    pitch.</p>
-                <div class="cta-actions"><a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in"
-                        target="_blank" rel="noopener noreferrer">Book a Free Call</a><a class="btn btn-outline"
-                        href="confidence.html">Take the Free Assessment</a><a class="email-link"
-                        href="mailto:reddesertcheckin@gmail.com">Email RDC</a></div>
+                <h2>Book a free 15-minute call.</h2>
+                <p class="lead">Tell me what is going on and we will figure out the next step together. No pressure
+                    and no sales pitch.</p>
+                <div class="actions">
+                    <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
+                        rel="noopener noreferrer">Book a Free Call</a>
+                    <a class="btn btn-secondary" href="mailto:reddesertcheckin@gmail.com">Email Me</a>
+                </div>
             </div>
         </section>
     </main>
+
     <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-top">
-                <div class="footer-brand"><img src="images/iconrdc.png" alt="Red Desert Check-In" class="footer-logo"
-                        width="220" height="110" loading="lazy" />
-                    <p class="footer-tagline">Aging-in-place guidance + local check-ins<br>St. George &amp; Southern
-                        Utah</p>
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>Red Desert Check-In</h4>
+                    <p>Home safety and local check-ins<br>St. George &amp; Southern Utah</p>
                 </div>
-                <div class="footer-cols">
-                    <div class="footer-col">
-                        <p class="footer-col-label">Start</p><a href="confidence.html">Care Confidence Assessment</a><a
-                            href="homesafety.html">Home Safety Checkup</a><a href="#services">In-Person Services</a><a
-                            href="#resources">Resources</a>
-                    </div>
-                    <div class="footer-col">
-                        <p class="footer-col-label">Contact</p><a
-                            href="mailto:reddesertcheckin@gmail.com">reddesertcheckin@gmail.com</a><a
-                            href="https://www.instagram.com/reddesertcheckin/" target="_blank"
-                            rel="noopener noreferrer">@reddesertcheckin</a>
-                    </div>
-                    <div class="footer-col">
-                        <p class="footer-col-label">Information</p><a href="privacy.html">Privacy Policy</a><a
-                            href="terms.html">Terms of Service</a>
-                    </div>
+                <div>
+                    <h4>Services</h4>
+                    <a href="#services">Home Safety Assessment</a>
+                    <a href="#services">Check-Ins &amp; Plans</a>
+                    <a href="#services">Home from the Hospital</a>
+                </div>
+                <div>
+                    <h4>Free tools</h4>
+                    <a href="confidence.html">Care Confidence Assessment</a>
+                    <a href="homesafety.html">Home Safety Checkup</a>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <a href="mailto:reddesertcheckin@gmail.com">reddesertcheckin@gmail.com</a>
+                    <a href="https://www.instagram.com/reddesertcheckin/" target="_blank"
+                        rel="noopener noreferrer">@reddesertcheckin</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Red Desert Check-In · Southern Utah</p>
-                <p class="footer-note">Non-medical educational support only. Not emergency response. Not a replacement
-                    for 911.</p>
+                <p>Non-medical educational support only. Not emergency response. Not a replacement for 911.</p>
             </div>
         </div>
     </footer>
+
     <script>
-        const toggle = document.getElementById('menu-toggle'), close = document.getElementById('menu-close'), menu = document.getElementById('mobile-menu'), links = menu.querySelectorAll('.mm-link,.mm-cta,.mm-consult');
-        function openMenu() { menu.classList.add('is-open'); menu.setAttribute('aria-hidden', 'false'); toggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden' }
-        function closeMenu() { menu.classList.remove('is-open'); menu.setAttribute('aria-hidden', 'true'); toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '' }
-        toggle.addEventListener('click', openMenu); close.addEventListener('click', closeMenu); links.forEach(l => l.addEventListener('click', closeMenu)); menu.addEventListener('click', e => { if (e.target === menu) closeMenu() }); document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu() });
+        (function () {
+            var toggle = document.getElementById('menu-toggle'), nav = document.getElementById('mobile-nav');
+            function setOpen(open) {
+                nav.classList.toggle('is-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.textContent = open ? 'Close' : 'Menu';
+            }
+            toggle.addEventListener('click', function () { setOpen(!nav.classList.contains('is-open')); });
+            nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+        }());
     </script>
 </body>
 

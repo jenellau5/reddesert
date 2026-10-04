@@ -1121,7 +1121,7 @@
             }
 
             if (s.emergency >= 3) {
-                add("rdc-emergency", "RDC Emergency Information & Home Access Plan", "A printable workbook for emergency contacts, responder access, medication-information location, pets, power outages, evacuation and what to do when the first family plan fails.", [["See the Family Care Binder ($29, coming soon)", "index.html#resources"], ["Book a free 15-min call", "https://koalendar.com/e/red-desert-check-in"]], "Free RDC workbook");
+                add("rdc-emergency", "RDC Emergency Information & Home Access Plan", "A printable workbook for emergency contacts, responder access, medication-information location, pets, power outages, evacuation and what to do when the first family plan fails.", [["Get the Family Care Binder ($29)", "https://www.etsy.com/listing/4588195810/family-care-binder-printable-aging"], ["Book a free 15-min call", "https://koalendar.com/e/red-desert-check-in"]], "Free RDC workbook");
             }
 
             if (medAlert || hasAny(selected, ["devices"])) {
@@ -1130,13 +1130,13 @@
             }
 
             if (["mostly", "no", "unsure"].includes(answers.tomorrow_plan)) {
-                add("rdc-family-plan", "RDC Family Care Plan", "Your answers suggest it would help to decide who responds first, who can enter the home, who communicates with healthcare providers, who handles immediate needs and who keeps the family informed.", [["See the Family Care Binder ($29, coming soon)", "index.html#resources"], ["Book a free 15-min call", "https://koalendar.com/e/red-desert-check-in"]], "Matched to your answer");
+                add("rdc-family-plan", "RDC Family Care Plan", "Your answers suggest it would help to decide who responds first, who can enter the home, who communicates with healthcare providers, who handles immediate needs and who keeps the family informed.", [["Get the Family Care Binder ($29)", "https://www.etsy.com/listing/4588195810/family-care-binder-printable-aging"], ["Book a free 15-min call", "https://koalendar.com/e/red-desert-check-in"]], "Matched to your answer");
             }
 
             if (s.caregiver >= 3 || hasAny(selected, ["caregiver_resources"])) {
                 add("five-county-caregiver", "Five County caregiver support", "Five County Area Agency on Aging connects Southern Utah caregivers with education, support and in-home/community programs.", [["Caregiver & aging programs", "https://www.areaagencyonagingfivecounty.org/"]], "Public / nonprofit");
                 add("brand-love-caregiver", "Local caregiver and senior-living navigation", "The Brand Is Love provides local elder-care and senior-living guidance. Check their site directly for current caregiver events or group information.", [["The Brand Is Love", "https://thebrandislove.com/"]], "Southern Utah");
-                add("rdc-family-plan", "RDC Family Care Plan", "A practical family workbook for assigning primary and backup roles, emergency access, appointments, transportation, bills, daily-life responsibilities and the question: if something changed tomorrow, who would do what?", [["See the Family Care Binder ($29, coming soon)", "index.html#resources"], ["Book a free 15-min call", "https://koalendar.com/e/red-desert-check-in"]], "Free RDC workbook");
+                add("rdc-family-plan", "RDC Family Care Plan", "A practical family workbook for assigning primary and backup roles, emergency access, appointments, transportation, bills, daily-life responsibilities and the question: if something changed tomorrow, who would do what?", [["Get the Family Care Binder ($29)", "https://www.etsy.com/listing/4588195810/family-care-binder-printable-aging"], ["Book a free 15-min call", "https://koalendar.com/e/red-desert-check-in"]], "Free RDC workbook");
             }
 
             if (hasAny(answers.reason, ["memory"])) {
@@ -1176,7 +1176,7 @@
             }
 
             if (hasAny(answers.emergency_basics, ["smoke_co", "evacuation", "contacts", "pets"])) {
-                add("preparedness", "Emergency & disaster readiness", "Strengthen the household plan for smoke/CO alarms, evacuation, wildfire/extreme heat, power outages, responder access, contacts and pets. RDC's printable Emergency Information & Home Access Plan organizes these pieces in one place.", [["See the Family Care Binder ($29, coming soon)", "index.html#resources"], ["Book a free 15-min call", "https://koalendar.com/e/red-desert-check-in"]], "Free RDC workbook");
+                add("preparedness", "Emergency & disaster readiness", "Strengthen the household plan for smoke/CO alarms, evacuation, wildfire/extreme heat, power outages, responder access, contacts and pets. RDC's printable Emergency Information & Home Access Plan organizes these pieces in one place.", [["Get the Family Care Binder ($29)", "https://www.etsy.com/listing/4588195810/family-care-binder-printable-aging"], ["Book a free 15-min call", "https://koalendar.com/e/red-desert-check-in"]], "Free RDC workbook");
             }
 
             if (hasAny(selected, ["veteran"]) || hasAny(community, ["veteran_social"])) {
@@ -1215,7 +1215,7 @@
                 add("aps", "Report abuse, neglect or exploitation in Utah", "If there is immediate danger, call 911. Otherwise, Utah Adult Protective Services accepts online reports 24/7 and phone reports at 1-800-371-7897 during posted business hours.", [["Utah Adult Protective Services", "https://daas.utah.gov/adult-protective-services/"]], "Do not delay for RDC");
             }
 
-            add("rdc-baseline", "RDC Safe Independence Baseline", "A repeatable family snapshot for documenting what normal looks like now across daily independence, organization, home safety, emergency readiness, memory/judgment, connection and family support.", [["See the Family Care Binder ($29, coming soon)", "index.html#resources"], ["Book a free 15-min call", "https://koalendar.com/e/red-desert-check-in"]], "Free RDC workbook");
+            add("rdc-baseline", "RDC Safe Independence Baseline", "A repeatable family snapshot for documenting what normal looks like now across daily independence, organization, home safety, emergency readiness, memory/judgment, connection and family support.", [["Get the Family Care Binder ($29)", "https://www.etsy.com/listing/4588195810/family-care-binder-printable-aging"], ["Book a free 15-min call", "https://koalendar.com/e/red-desert-check-in"]], "Free RDC workbook");
             const urgent = resources.filter(r => r.id === "aps");
             const others = resources.filter(r => r.id !== "aps");
             return [...urgent, ...others].slice(0, 7);
