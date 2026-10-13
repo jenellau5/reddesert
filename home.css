@@ -1521,3 +1521,48 @@ p {
     border-color: var(--ink);
 }
 .thanks-header img { mix-blend-mode: multiply; }
+
+/* Seasonal Home Watch: full-width card with photo on the side */
+.svc-wide {
+    grid-column: 1 / -1;
+    flex-direction: row;
+}
+
+.svc-wide .svc-photo {
+    flex: 0 0 38%;
+}
+
+.svc-wide .svc-photo img {
+    height: 100%;
+    min-height: 260px;
+}
+
+.hw-extras {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 20px;
+    font-size: .9rem;
+    color: var(--ink-soft);
+}
+
+.hw-extras strong {
+    color: var(--ink);
+}
+
+@media (max-width: 820px) {
+    .svc-wide {
+        flex-direction: column;
+    }
+
+    .svc-wide .svc-photo img {
+        height: 150px;
+        min-height: 0;
+    }
+
+    .hw-extras {
+        grid-template-columns: 1fr;
+    }
+}
