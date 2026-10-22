@@ -1989,3 +1989,7 @@ p {
         white-space: normal;
     }
 }
+
+.partner-note {
+    margin-top: 14px;
+}
