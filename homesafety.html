@@ -30,8 +30,10 @@
                     alt="Red Desert Check-In" width="220" height="66" /></a>
             <nav class="nav" aria-label="Main navigation">
                 <a href="index.html#services">Services</a>
+                <a href="test-and-connect.html">Test &amp; Connect</a>
                 <a href="community.html">Community Board</a>
                 <a href="index.html#about">About</a>
+                <a href="index.html#faq">FAQ</a>
             </nav>
             <a class="btn btn-primary header-cta" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
                 rel="noopener noreferrer">Book a Free Call</a>
@@ -39,8 +41,10 @@
         </div>
         <nav class="wrap mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
             <a href="index.html#services">Services</a>
+            <a href="test-and-connect.html">Test &amp; Connect</a>
             <a href="community.html">Community Board</a>
             <a href="index.html#about">About</a>
+            <a href="index.html#faq">FAQ</a>
             <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
                 rel="noopener noreferrer">Book a Free 15-Min Call</a>
         </nav>
@@ -165,10 +169,11 @@
             var sub = !issues.length ? 'Nothing stood out from your answers. Recheck after a fall, a hospital stay, or any change in how they get around.' : pro ? 'Your answers point to more than a quick fix. Here is what to start with.' : 'Most of these are simple, low-cost changes. Start at the top.';
 
             var steps = [];
-            if (pro) steps.push({ offer: true, tag: 'Red Desert service · $175', title: 'Home Safety Assessment', text: 'I walk the home with you, room by room, and send a written list of what to fix first within 3 days. I do not sell repairs, so the advice stays independent.', cta: ['Book an assessment', LINKS.assess] });
+            if (['fall', 'multiple'].indexOf(ans.falls) > -1) steps.push({ offer: true, tag: 'Red Desert service · $249', title: 'After a Fall or Hospital Stay', text: 'A home safety assessment focused on fall hazards, a medical alert test and contact review, and two 45-minute follow-up visits. Non-medical support.', cta: ['Book a free call to plan it', LINKS.call] });
+            else if (pro) steps.push({ offer: true, tag: 'Red Desert service · $175', title: 'Home Safety Assessment', text: 'I walk the home with you, room by room, and send a written list of what to fix first within 3 days. I do not sell repairs, so the advice stays independent.', cta: ['Book an assessment', LINKS.assess] });
             else steps.push({ tag: 'Free printable', title: 'Home Safety Guide & Checklist', text: 'Print it and work through the fixes one room at a time, with space for notes.', cta: ['Download the checklist', LINKS.checklist] });
             if (ans.help && ans.help !== 'yes') steps.push({ tag: 'Community Board', title: 'Medical alerts and home technology', text: 'Local options so help is one button away, even when the phone is in another room.', cta: ['See medical alert options', 'community.html#tech'] });
-            if ((ans.access && ans.access !== 'yes') || (ans.escape && ans.escape !== 'yes')) steps.push({ binder: true, tag: 'Printable · $29', title: 'Family Care Binder', text: 'Write down who has a key, who to call, and the plan for heat, outages, and evacuation. Includes a Fridge Sheet for responders.', cta: ['Get the binder on Etsy', LINKS.binder] });
+            if ((ans.access && ans.access !== 'yes') || (ans.escape && ans.escape !== 'yes')) steps.push({ binder: true, tag: 'Printable · $17', title: 'Family Care Binder', text: 'Write down who has a key, who to call, and the plan for heat, outages, and evacuation. Includes a Fridge Sheet for responders.', cta: ['Get the binder on Etsy', LINKS.binder] });
             steps = steps.slice(0, 3);
 
             var html = '<p class="eyebrow">Your Home Safety Snapshot</p><h2>' + headline + '</h2><p class="q-help">' + sub + '</p>';

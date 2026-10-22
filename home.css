@@ -1566,3 +1566,156 @@ p {
         grid-template-columns: 1fr;
     }
 }
+
+/* ---- v5: grouped services, Test & Connect ---- */
+.svc-group {
+    font-family: var(--sans);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 36px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line-warm);
+}
+
+.section-head + .svc-group {
+    margin-top: 0;
+}
+
+@media (min-width: 1001px) {
+    .reasons {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.tc-hero .lead {
+    margin-bottom: 26px;
+}
+
+.tc-note {
+    font-size: .92rem;
+    color: var(--ink-soft);
+    margin-top: 12px;
+}
+
+.connect-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.connect h3 {
+    font-size: 1.35rem;
+    margin-bottom: .35em;
+}
+
+.connect p {
+    color: var(--ink-soft);
+    margin: 0;
+}
+
+.connect .fine {
+    margin-top: 10px;
+    font-size: .88rem;
+}
+
+.included {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 900px;
+}
+
+.price-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.price-card .big {
+    font-family: var(--serif);
+    font-size: clamp(2.6rem, 2rem + 2vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1;
+    margin: 8px 0 4px;
+}
+
+.price-card .big small {
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+}
+
+.price-card .billed {
+    font-weight: 600;
+    margin: 6px 0 2px;
+}
+
+.price-card .min {
+    font-size: .92rem;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+}
+
+.price-card .btn {
+    margin-top: auto;
+}
+
+.also-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.also-grid .card h3 {
+    font-size: 1.2rem;
+    margin-bottom: .3em;
+}
+
+.also-grid .card p {
+    color: var(--ink-soft);
+    font-size: .95rem;
+}
+
+@media (max-width: 1000px) {
+    .connect-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 820px) {
+
+    .included,
+    .price-grid,
+    .also-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .connect-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.about-grid img.cred-badge {
+    width: 130px;
+    height: auto;
+    aspect-ratio: 1031 / 889;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 18px;
+    max-width: 130px;
+}

@@ -30,8 +30,10 @@
                     alt="Red Desert Check-In" width="220" height="66" /></a>
             <nav class="nav" aria-label="Main navigation">
                 <a href="index.html#services">Services</a>
+                <a href="test-and-connect.html">Test &amp; Connect</a>
                 <a href="community.html">Community Board</a>
                 <a href="index.html#about">About</a>
+                <a href="index.html#faq">FAQ</a>
             </nav>
             <a class="btn btn-primary header-cta" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
                 rel="noopener noreferrer">Book a Free Call</a>
@@ -39,8 +41,10 @@
         </div>
         <nav class="wrap mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
             <a href="index.html#services">Services</a>
+            <a href="test-and-connect.html">Test &amp; Connect</a>
             <a href="community.html">Community Board</a>
             <a href="index.html#about">About</a>
+            <a href="index.html#faq">FAQ</a>
             <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
                 rel="noopener noreferrer">Book a Free 15-Min Call</a>
         </nav>
@@ -183,14 +187,15 @@
         function steps(s, lv) {
             var list = [];
             var add = function (p, step) { list.push([p, step]); };
-            if (has('reasons', 'hospital')) add(10, { kind: 'offer', tag: 'Red Desert service · $275', title: 'Home from the Hospital', text: 'The first two weeks home are when falls and missed details happen most. I check that the home is ready, then visit twice while things settle.', cta: ['Book a free call to plan it', LINKS.call] });
-            if (has('reasons', 'hospital')) { /* Home from the Hospital already includes an assessment */ } else if (lv.home === 2 || points('falls') >= 2) add(9, { kind: 'offer', tag: 'Red Desert service · $175', title: 'Home Safety Assessment', text: 'A room-by-room walkthrough of falls, bathrooms, stairs, lighting and entries, with a clear written list of what to fix first within 3 days.', cta: ['Book an assessment', LINKS.assess], alt: ['Or try the free DIY checkup', LINKS.diy] });
+            var recent = has('reasons', 'hospital') || has('reasons', 'fall') || points('falls') >= 2;
+            if (recent) add(10, { kind: 'offer', tag: 'Red Desert service · $249', title: 'After a Fall or Hospital Stay', text: 'A home safety assessment focused on fall hazards, a medical alert test and contact review, and two 45-minute follow-up visits while things settle. Non-medical support.', cta: ['Book a free call to plan it', LINKS.call] });
+            if (recent) { /* the recovery package already includes an assessment */ } else if (lv.home === 2) add(9, { kind: 'offer', tag: 'Red Desert service · $175', title: 'Home Safety Assessment', text: 'A room-by-room walkthrough of falls, bathrooms, stairs, lighting and entries, with a clear written list of what to fix first within 3 days.', cta: ['Book an assessment', LINKS.assess], alt: ['Or try the free DIY checkup', LINKS.diy] });
             else if (lv.home === 1) add(5, { kind: 'free', tag: 'Free tool', title: 'Do the Home Safety Checkup', text: 'Walk the home room by room yourself in about 5 minutes and see what is worth fixing first.', cta: ['Start the free checkup', LINKS.diy] });
             if (ans.money === 'yes') add(9, { kind: 'board', tag: 'Community Board', title: 'Scam and money help', text: 'Who to call about scams, Medicare fraud, or someone taking advantage, all checked and local.', cta: ['See scam and safety help', 'community.html#safety'] });
             else if (ans.money === 'some') add(5, { kind: 'board', tag: 'Community Board', title: 'Scam and money help', text: 'Free local and state help for spotting scams and Medicare fraud.', cta: ['See scam and safety help', 'community.html#safety'] });
-            if (lv.family === 2 || (lv.family === 1 && (has('reasons', 'far') || has('reasons', 'alone')))) add(8, { kind: 'offer', tag: 'Red Desert service · $70', title: 'A local Check-In', text: 'A trusted set of eyes in person, with a written update to you afterward. Regular plans start at $120 a month.', cta: ['Book a check-in', LINKS.checkin], alt: ['Ask about plans on a free call', LINKS.call] });
+            if (lv.family === 2 || ans.visits === 'rarely' || (lv.family === 1 && (has('reasons', 'far') || has('reasons', 'alone')))) add(8, { kind: 'offer', tag: 'Red Desert service · from $39 a visit', title: 'Test & Connect', text: 'A weekly visit that tests the medical alert, checks the emergency contacts, and gives your loved one something to look forward to: a walk, coffee, lunch, or a game.', cta: ['Learn about Test & Connect', 'test-and-connect.html'], alt: ['Book a one-time check-in', LINKS.checkin] });
             if (ans.callhelp && ans.callhelp !== 'yes') add(lv.emergency === 2 ? 7 : 4, { kind: 'board', tag: 'Community Board', title: 'Medical alerts and home technology', text: 'Local options so help is one button away, even when the phone is in another room.', cta: ['See medical alert options', 'community.html#tech'] });
-            if (ans.plan === 'no' || (ans.access && ans.access !== 'yes')) add(ans.plan === 'no' ? 7 : 5, { kind: 'binder', tag: 'Printable · $29', title: 'Family Care Binder', text: 'Decide who does what, write down how to get into the home, and keep emergency info in one place. Includes a Fridge Sheet.', cta: ['Get the binder on Etsy', LINKS.binder] });
+            if (ans.plan === 'no' || (ans.access && ans.access !== 'yes')) add(ans.plan === 'no' ? 7 : 5, { kind: 'binder', tag: 'Printable · $17', title: 'Family Care Binder', text: 'Decide who does what, write down how to get into the home, and keep emergency info in one place. Includes a Fridge Sheet.', cta: ['Get the binder on Etsy', LINKS.binder] });
             if (has('reasons', 'memory') || lv.daily === 2) add(7, { kind: 'board', tag: 'Community Board', title: 'Memory support and support groups', text: 'A 24/7 dementia helpline and local support groups that meet in St. George.', cta: ['See memory support', 'community.html#memory'] });
             if (ans.load === 'stretched') add(7, { kind: 'board', tag: 'Community Board', title: 'Support for the caregiver', text: 'Local caregiver groups, free weekly gatherings, and help sorting out senior living options.', cta: ['See caregiver support', 'community.html#care'] });
             if (lv.daily >= 1 && !has('reasons', 'memory')) add(3, { kind: 'board', tag: 'Community Board', title: 'Meals, rides and everyday help', text: 'Meals on Wheels, senior centers, rides, and the local Area Agency on Aging.', cta: ['See everyday help', 'community.html#start'] });
@@ -198,7 +203,7 @@
             list.sort(function (a, b) { return b[0] - a[0]; });
             var seen = {}, out = [];
             list.forEach(function (x) { if (!seen[x[1].title] && out.length < 3) { seen[x[1].title] = 1; out.push(x[1]); } });
-            if (!out.length) out.push({ kind: 'binder', tag: 'Printable · $29', title: 'Keep it that way with a plan', text: 'Things look steady. The Family Care Binder helps you write down what normal looks like now and who does what, so you are ready if something changes.', cta: ['Get the binder on Etsy', LINKS.binder] });
+            if (!out.length) out.push({ kind: 'binder', tag: 'Printable · $17', title: 'Keep it that way with a plan', text: 'Things look steady. The Family Care Binder helps you write down what normal looks like now and who does what, so you are ready if something changes.', cta: ['Get the binder on Etsy', LINKS.binder] });
             return out;
         }
 
