@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+    <link rel="manifest" href="/site.webmanifest?v=2" />
+    <title>Request a Free Call | Red Desert Check-In</title>
+    <meta name="description"
+        content="Request a free 15-minute call with Red Desert Check-In. Tell me what you need and when works, and I will call you back within 24 hours." />
+    <link rel="canonical" href="https://reddesertcheckin.com/request.html" />
+    <link href="https://api.fontshare.com/v2/css?f[]=zodiak@600,700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="home.css" />
+    <style>
+        .req-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+            gap: 32px;
+            align-items: start;
+        }
+
+        .req-form {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: clamp(22px, 4vw, 36px);
+            display: grid;
+            gap: 20px;
+        }
+
+        .req-form .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .req-form label,
+        .req-form legend {
+            font-size: .95rem;
+            font-weight: 600;
+        }
+
+        .req-form label.field {
+            display: grid;
+            gap: 6px;
+        }
+
+        .req-form .opt {
+            font-weight: 400;
+            color: var(--ink-soft);
+        }
+
+        .req-form input[type=text],
+        .req-form input[type=tel],
+        .req-form input[type=email],
+        .req-form input[type=date],
+        .req-form select,
+        .req-form textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid var(--line-warm);
+            border-radius: 10px;
+            font: 400 1rem var(--sans);
+            color: var(--ink);
+            background: #fff;
+        }
+
+        .req-form textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .req-form input:focus,
+        .req-form select:focus,
+        .req-form textarea:focus {
+            outline: 2px solid var(--red);
+            outline-offset: 1px;
+            border-color: var(--red);
+        }
+
+        .req-form fieldset {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .req-form legend {
+            margin-bottom: 8px;
+        }
+
+        .choices {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .choices label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border: 1.5px solid var(--line-warm);
+            border-radius: 999px;
+            background: #fff;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .choices input {
+            accent-color: var(--red);
+            width: 18px;
+            height: 18px;
+            margin: 0;
+        }
+
+        .choices label:has(input:checked) {
+            border-color: var(--red);
+            background: var(--bg-alt);
+        }
+
+        .hint {
+            font-size: .88rem;
+            color: var(--ink-soft);
+            margin: 4px 0 0;
+            font-weight: 400;
+        }
+
+        .req-honey {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .req-side {
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+            padding: clamp(22px, 4vw, 30px);
+        }
+
+        .req-side h2 {
+            font-size: 1.4rem;
+            margin-top: 0;
+        }
+
+        .req-side ol {
+            padding-left: 1.2rem;
+            margin: 0 0 18px;
+            display: grid;
+            gap: 10px;
+        }
+
+        .req-side .small-note {
+            font-size: .9rem;
+            color: var(--ink-soft);
+            margin: 0;
+        }
+
+        @media (max-width: 860px) {
+            .req-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .req-form .row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="index.html" aria-label="Red Desert Check-In home"><img src="images/logoheader.png"
+                    alt="Red Desert Check-In" width="220" height="66" /></a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html#services">Services</a>
+                <a href="test-and-connect.html">Test &amp; Connect</a>
+                <a href="community.html">Community Board</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#faq">FAQ</a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+        </div>
+        <nav class="wrap mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+            <a href="index.html#services">Services</a>
+            <a href="test-and-connect.html">Test &amp; Connect</a>
+            <a href="community.html">Community Board</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#faq">FAQ</a>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="section">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">Free 15-minute call</p>
+                    <h1>Request a free call.</h1>
+                    <p class="lead">Tell me a little about what is going on and when is good for you. I will call you
+                        back within 24 hours to talk it through. No pressure and no sales pitch.</p>
+                </div>
+
+                <div class="req-grid">
+                    <form class="req-form" id="req-form" action="https://formsubmit.co/reddesertcheckin@gmail.com"
+                        method="POST">
+                        <input type="hidden" name="_subject" id="req-subject" value="New free call request" />
+                        <input type="hidden" name="_template" value="table" />
+                        <input type="hidden" name="_captcha" value="false" />
+                        <input type="hidden" name="_next" value="https://reddesertcheckin.com/thankyou.html" />
+                        <input type="hidden" name="_autoresponse"
+                            value="Thank you for reaching out to Red Desert Check-In. I have your request and will call you within 24 hours to talk it through. If anything is urgent or someone may be hurt, call 911. - Jenell" />
+                        <input type="text" name="_honey" class="req-honey" tabindex="-1" autocomplete="off"
+                            aria-hidden="true" />
+
+                        <div class="row">
+                            <label class="field">Your name
+                                <input type="text" name="Name" required maxlength="80" autocomplete="name" />
+                            </label>
+                            <label class="field">Phone number
+                                <input type="tel" name="Phone" required maxlength="25" autocomplete="tel"
+                                    inputmode="tel" />
+                            </label>
+                        </div>
+
+                        <label class="field">Email <span class="opt">(optional, for a confirmation)</span>
+                            <input type="email" name="email" maxlength="254" autocomplete="email" />
+                        </label>
+
+                        <fieldset>
+                            <legend>Who is this for?</legend>
+                            <div class="choices">
+                                <label><input type="radio" name="For" value="Myself" required /> Myself</label>
+                                <label><input type="radio" name="For" value="A parent or loved one" /> A parent or
+                                    loved one</label>
+                                <label><input type="radio" name="For" value="A client I work with" /> A client I work
+                                    with</label>
+                            </div>
+                        </fieldset>
+
+                        <div class="row">
+                            <label class="field">Which service are you interested in?
+                                <select name="Service" id="req-service" required>
+                                    <option value="Not sure yet">Not sure yet, I just want to talk</option>
+                                    <option value="Home Safety Assessment" data-key="assessment">Home Safety Assessment
+                                    </option>
+                                    <option value="Home Safety Re-Check" data-key="recheck">Home Safety Re-Check
+                                    </option>
+                                    <option value="Test & Connect membership" data-key="testconnect">Test &amp; Connect
+                                        membership</option>
+                                    <option value="Check-In (one visit)" data-key="checkin">Check-In (one visit)
+                                    </option>
+                                    <option value="After a Fall or Hospital Stay" data-key="recovery">After a Fall or
+                                        Hospital Stay</option>
+                                    <option value="Seasonal Home Watch" data-key="homewatch">Seasonal Home Watch
+                                    </option>
+                                </select>
+                            </label>
+                            <label class="field">City
+                                <select name="City" required>
+                                    <option value="">Choose one</option>
+                                    <option>St. George</option>
+                                    <option>Santa Clara</option>
+                                    <option>Washington</option>
+                                    <option>Hurricane</option>
+                                    <option>Somewhere else</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <label class="field">Preferred day for the call
+                            <input type="date" name="Preferred day" id="req-date" required />
+                            <span class="hint">Pick the day that works best. If it is flexible, say so in the notes
+                                below.</span>
+                        </label>
+
+                        <fieldset>
+                            <legend>Best time to call <span class="opt">(choose any)</span></legend>
+                            <div class="choices" id="req-times">
+                                <label><input type="checkbox" name="Best time" value="Morning (9 to 12)" />
+                                    Morning</label>
+                                <label><input type="checkbox" name="Best time" value="Afternoon (12 to 4)" />
+                                    Afternoon</label>
+                                <label><input type="checkbox" name="Best time" value="Evening (4 to 7)" />
+                                    Evening</label>
+                            </div>
+                            <p class="hint" id="req-times-msg" role="status"></p>
+                        </fieldset>
+
+                        <label class="field">Anything I should know? <span class="opt">(optional)</span>
+                            <textarea name="Notes" maxlength="1500"
+                                placeholder="For example: Mom lives alone in Washington and I am out of state."></textarea>
+                            <span class="hint">No need to share medical details here. We can talk about anything like
+                                that on the call.</span>
+                        </label>
+
+                        <div class="actions">
+                            <button class="btn btn-primary" type="submit" id="req-btn">Request My Free Call</button>
+                        </div>
+                        <p class="hint">By sending this, you agree to be contacted about your request. A request is not
+                            a confirmed appointment. <a href="privacy.html">Privacy Policy</a></p>
+                    </form>
+
+                    <aside class="req-side" aria-labelledby="next-heading">
+                        <h2 id="next-heading">What happens next</h2>
+                        <ol>
+                            <li><strong>I call you within 24 hours</strong> at the time you picked, or as close as I
+                                can.</li>
+                            <li><strong>We talk for about 15 minutes</strong> about what is going on and what might
+                                help, even if that is not one of my services.</li>
+                            <li><strong>If a visit makes sense,</strong> we set the day and time together on the call.
+                            </li>
+                        </ol>
+                        <p class="small-note">Rather email? <a
+                                href="mailto:reddesertcheckin@gmail.com">reddesertcheckin@gmail.com</a></p>
+                        <p class="small-note" style="margin-top:12px"><strong>Not for emergencies.</strong> If someone
+                            may be hurt or in danger, call 911.</p>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Red Desert Check-In · Southern Utah · <a href="privacy.html">Privacy</a> · <a
+                        href="terms.html">Terms</a></p>
+                <p>Non-medical educational support only. Not emergency response. Not a replacement for 911.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('menu-toggle'), nav = document.getElementById('mobile-nav');
+            function setOpen(open) {
+                nav.classList.toggle('is-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.textContent = open ? 'Close' : 'Menu';
+            }
+            toggle.addEventListener('click', function () { setOpen(!nav.classList.contains('is-open')); });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+        }());
+
+        (function () {
+            var form = document.getElementById('req-form');
+            var service = document.getElementById('req-service');
+            var date = document.getElementById('req-date');
+
+            // Preselect the service from ?service=assessment etc.
+            var key = new URLSearchParams(location.search).get('service');
+            if (key) {
+                var match = service.querySelector('option[data-key="' + key + '"]');
+                if (match) service.value = match.value;
+            }
+
+            // Earliest pickable day is tomorrow.
+            var t = new Date();
+            t.setDate(t.getDate() + 1);
+            date.min = t.getFullYear() + '-' + String(t.getMonth() + 1).padStart(2, '0') + '-' + String(t.getDate()).padStart(2, '0');
+
+            form.addEventListener('submit', function (e) {
+                var times = form.querySelectorAll('#req-times input:checked');
+                var msg = document.getElementById('req-times-msg');
+                if (!times.length) {
+                    e.preventDefault();
+                    msg.textContent = 'Please choose at least one time of day.';
+                    msg.style.color = 'var(--red)';
+                    return;
+                }
+                msg.textContent = '';
+                var name = form.querySelector('[name="Name"]').value.trim();
+                document.getElementById('req-subject').value = 'Free call request: ' + name + ' (' + service.value + ')';
+                var btn = document.getElementById('req-btn');
+                btn.disabled = true;
+                btn.textContent = 'Sending...';
+            });
+
+            // Re-enable the button if they come back with the browser's Back button.
+            window.addEventListener('pageshow', function () {
+                var btn = document.getElementById('req-btn');
+                btn.disabled = false;
+                btn.textContent = 'Request My Free Call';
+            });
+        }());
+    </script>
+</body>
+
+</html>

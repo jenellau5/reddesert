@@ -40,8 +40,7 @@
                 <a href="index.html#about">About</a>
                 <a href="index.html#faq">FAQ</a>
             </nav>
-            <a class="btn btn-primary header-cta" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                rel="noopener noreferrer">Book a Free Call</a>
+            <a class="btn btn-primary header-cta" href="request.html">Request a Free Call</a>
             <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
         </div>
         <nav class="wrap mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
@@ -50,8 +49,7 @@
             <a href="community.html">Community Board</a>
             <a href="index.html#about">About</a>
             <a href="index.html#faq">FAQ</a>
-            <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                rel="noopener noreferrer">Book a Free 15-Min Call</a>
+            <a class="btn btn-primary" href="request.html">Request a Free 15-Min Call</a>
         </nav>
     </header>
 
@@ -105,8 +103,8 @@
         }());
 
         var LINKS = {
-            assess: 'https://koalendar.com/e/rdc-assessment',
-            call: 'https://koalendar.com/e/red-desert-check-in',
+            assess: 'request.html?service=assessment',
+            call: 'request.html',
             binder: 'https://www.etsy.com/listing/4588195810/family-care-binder-printable-aging',
             checklist: 'resources/RDC-Home-Safety-Guide-Checklist.pdf'
         };
@@ -174,8 +172,8 @@
             var sub = !issues.length ? 'Nothing stood out from your answers. Recheck after a fall, a hospital stay, or any change in how they get around.' : pro ? 'Your answers point to more than a quick fix. Here is what to start with.' : 'Most of these are simple, low-cost changes. Start at the top.';
 
             var steps = [];
-            if (['fall', 'multiple'].indexOf(ans.falls) > -1) steps.push({ offer: true, tag: 'Red Desert service · $265', title: 'After a Fall or Hospital Stay', text: 'A home safety assessment focused on fall hazards, a medical alert test and contact review, and two 45-minute follow-up visits. Non-medical support.', cta: ['Book a free call to plan it', LINKS.call] });
-            else if (pro) steps.push({ offer: true, tag: 'Red Desert service · $175', title: 'Home Safety Assessment', text: 'I walk the home with you, room by room, using a 240-point checklist, and you get a report of what to fix first the same day. I do not sell repairs, so the advice stays independent.', cta: ['Book an assessment', LINKS.assess] });
+            if (['fall', 'multiple'].indexOf(ans.falls) > -1) steps.push({ offer: true, tag: 'Red Desert service · $265', title: 'After a Fall or Hospital Stay', text: 'A home safety assessment focused on fall hazards, a medical alert test and contact review, and two 45-minute follow-up visits. Non-medical support.', cta: ['Request a free call to plan it', LINKS.call] });
+            else if (pro) steps.push({ offer: true, tag: 'Red Desert service · $175', title: 'Home Safety Assessment', text: 'I walk the home with you, room by room, using a 240-point checklist, and you get a report of what to fix first the same day. I do not sell repairs, so the advice stays independent.', cta: ['Request an assessment', LINKS.assess] });
             else steps.push({ tag: 'Free printable', title: 'Home Safety Guide & Checklist', text: 'Print it and work through the fixes one room at a time, with space for notes.', cta: ['Download the checklist', LINKS.checklist] });
             if (ans.help && ans.help !== 'yes') steps.push({ tag: 'Community Board', title: 'Medical alerts and home technology', text: 'Local options so help is one button away, even when the phone is in another room.', cta: ['See medical alert options', 'community.html#tech'] });
             if ((ans.access && ans.access !== 'yes') || (ans.escape && ans.escape !== 'yes')) steps.push({ binder: true, tag: 'Printable · $17', title: 'Family Care Binder', text: 'Write down who has a key, who to call, and the plan for heat, outages, and evacuation. Includes a Fridge Sheet for responders.', cta: ['Get the binder on Etsy', LINKS.binder] });
@@ -191,7 +189,7 @@
             html += '<h3>Your next step' + (steps.length > 1 ? 's' : '') + '</h3><div class="next-steps-list">' + steps.map(function (st) {
                 return '<div class="step-card ' + (st.offer ? 'offer' : '') + '"><span class="tag' + (st.offer || st.binder ? ' paid' : '') + '">' + st.tag + '</span><h3>' + st.title + '</h3><p>' + st.text + '</p><div class="actions"><a class="btn ' + (st.offer ? 'btn-primary' : 'btn-secondary') + '" href="' + st.cta[1] + '"' + ext(st.cta[1]) + '>' + st.cta[0] + '</a></div></div>';
             }).join('') + '</div>';
-            html += '<p class="not-sure">Questions about your results? <a href="' + LINKS.call + '" target="_blank" rel="noopener noreferrer">Book a free 15-minute call</a>.</p>';
+            html += '<p class="not-sure">Questions about your results? <a href="' + LINKS.call + '" target="_blank" rel="noopener noreferrer">Request a free 15-minute call</a>.</p>';
             html += '<div class="actions" style="margin-top:22px"><button class="btn btn-secondary" type="button" id="restart">Start over</button></div>';
 
             var r = el('results'); r.innerHTML = html; r.classList.remove('hidden');

@@ -40,8 +40,7 @@
                 <a href="index.html#about">About</a>
                 <a href="index.html#faq">FAQ</a>
             </nav>
-            <a class="btn btn-primary header-cta" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                rel="noopener noreferrer">Book a Free Call</a>
+            <a class="btn btn-primary header-cta" href="request.html">Request a Free Call</a>
             <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
         </div>
         <nav class="wrap mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
@@ -50,8 +49,7 @@
             <a href="community.html">Community Board</a>
             <a href="index.html#about">About</a>
             <a href="index.html#faq">FAQ</a>
-            <a class="btn btn-primary" href="https://koalendar.com/e/red-desert-check-in" target="_blank"
-                rel="noopener noreferrer">Book a Free 15-Min Call</a>
+            <a class="btn btn-primary" href="request.html">Request a Free 15-Min Call</a>
         </nav>
     </header>
 
@@ -105,9 +103,9 @@
         }());
 
         var LINKS = {
-            assess: 'https://koalendar.com/e/rdc-assessment',
-            checkin: 'https://koalendar.com/e/rdc-check-in',
-            call: 'https://koalendar.com/e/red-desert-check-in',
+            assess: 'request.html?service=assessment',
+            checkin: 'request.html?service=checkin',
+            call: 'request.html',
             binder: 'https://www.etsy.com/listing/4588195810/family-care-binder-printable-aging',
             diy: 'homesafety.html'
         };
@@ -193,12 +191,12 @@
             var list = [];
             var add = function (p, step) { list.push([p, step]); };
             var recent = has('reasons', 'hospital') || has('reasons', 'fall') || points('falls') >= 2;
-            if (recent) add(10, { kind: 'offer', tag: 'Red Desert service · $265', title: 'After a Fall or Hospital Stay', text: 'A home safety assessment focused on fall hazards, a medical alert test and contact review, and two 45-minute follow-up visits while things settle. Non-medical support.', cta: ['Book a free call to plan it', LINKS.call] });
-            if (recent) { /* the recovery package already includes an assessment */ } else if (lv.home === 2) add(9, { kind: 'offer', tag: 'Red Desert service · $175', title: 'Home Safety Assessment', text: 'A room-by-room walkthrough of falls, bathrooms, stairs, lighting and entries, with a 240-point checklist and a clear report of what to fix first, the same day.', cta: ['Book an assessment', LINKS.assess], alt: ['Or try the free DIY checkup', LINKS.diy] });
+            if (recent) add(10, { kind: 'offer', tag: 'Red Desert service · $265', title: 'After a Fall or Hospital Stay', text: 'A home safety assessment focused on fall hazards, a medical alert test and contact review, and two 45-minute follow-up visits while things settle. Non-medical support.', cta: ['Request a free call to plan it', LINKS.call] });
+            if (recent) { /* the recovery package already includes an assessment */ } else if (lv.home === 2) add(9, { kind: 'offer', tag: 'Red Desert service · $175', title: 'Home Safety Assessment', text: 'A room-by-room walkthrough of falls, bathrooms, stairs, lighting and entries, with a 240-point checklist and a clear report of what to fix first, the same day.', cta: ['Request an assessment', LINKS.assess], alt: ['Or try the free DIY checkup', LINKS.diy] });
             else if (lv.home === 1) add(5, { kind: 'free', tag: 'Free tool', title: 'Do the Home Safety Checkup', text: 'Walk the home room by room yourself in about 5 minutes and see what is worth fixing first.', cta: ['Start the free checkup', LINKS.diy] });
             if (ans.money === 'yes') add(9, { kind: 'board', tag: 'Community Board', title: 'Scam and money help', text: 'Who to call about scams, Medicare fraud, or someone taking advantage, all checked and local.', cta: ['See scam and safety help', 'community.html#safety'] });
             else if (ans.money === 'some') add(5, { kind: 'board', tag: 'Community Board', title: 'Scam and money help', text: 'Free local and state help for spotting scams and Medicare fraud.', cta: ['See scam and safety help', 'community.html#safety'] });
-            if (lv.family === 2 || ans.visits === 'rarely' || (lv.family === 1 && (has('reasons', 'far') || has('reasons', 'alone')))) add(8, { kind: 'offer', tag: 'Red Desert service · from $49 a month', title: 'Test & Connect', text: 'A regular 30-minute visit, monthly, every 2 weeks, or weekly, with friendly conversation, a general well-being check, and a test of their medical alert button. A working button matters. So does having someone stop by.', cta: ['Learn about Test & Connect', 'test-and-connect.html'], alt: ['Book a one-time check-in', LINKS.checkin] });
+            if (lv.family === 2 || ans.visits === 'rarely' || (lv.family === 1 && (has('reasons', 'far') || has('reasons', 'alone')))) add(8, { kind: 'offer', tag: 'Red Desert service · from $49 a month', title: 'Test & Connect', text: 'A regular 30-minute visit, monthly, every 2 weeks, or weekly, with friendly conversation, a general well-being check, and a test of their medical alert button. A working button matters. So does having someone stop by.', cta: ['Learn about Test & Connect', 'test-and-connect.html'], alt: ['Request a one-time check-in', LINKS.checkin] });
             if (ans.callhelp && ans.callhelp !== 'yes') add(lv.emergency === 2 ? 7 : 4, { kind: 'board', tag: 'Community Board', title: 'Medical alerts and home technology', text: 'Local options so help is one button away, even when the phone is in another room.', cta: ['See medical alert options', 'community.html#tech'] });
             if (ans.plan === 'no' || (ans.access && ans.access !== 'yes')) add(ans.plan === 'no' ? 7 : 5, { kind: 'binder', tag: 'Printable · $17', title: 'Family Care Binder', text: 'Decide who does what, write down how to get into the home, and keep emergency info in one place. Includes a Fridge Sheet.', cta: ['Get the binder on Etsy', LINKS.binder] });
             if (has('reasons', 'memory') || lv.daily === 2) add(7, { kind: 'board', tag: 'Community Board', title: 'Memory support and support groups', text: 'A 24/7 dementia helpline and local support groups that meet in St. George.', cta: ['See memory support', 'community.html#memory'] });
@@ -235,7 +233,7 @@
             html += '<h3>Your next steps</h3><div class="next-steps-list">' + nextSteps.map(function (st) {
                 return '<div class="step-card ' + (st.kind === 'offer' ? 'offer' : '') + '"><span class="tag' + (st.kind === 'offer' || st.kind === 'binder' ? ' paid' : '') + '">' + st.tag + '</span><h3>' + st.title + '</h3><p>' + st.text + '</p><div class="actions"><a class="btn ' + (st.kind === 'offer' ? 'btn-primary' : 'btn-secondary') + '" href="' + st.cta[1] + '"' + ext(st.cta[1]) + '>' + st.cta[0] + '</a>' + (st.alt ? '<a class="text-link" href="' + st.alt[1] + '"' + ext(st.alt[1]) + '>' + st.alt[0] + '</a>' : '') + '</div></div>';
             }).join('') + '</div>';
-            html += '<p class="not-sure">Not sure what fits? <a href="' + LINKS.call + '" target="_blank" rel="noopener noreferrer">Book a free 15-minute call</a> and we will sort it out together.</p>';
+            html += '<p class="not-sure">Not sure what fits? <a href="' + LINKS.call + '" target="_blank" rel="noopener noreferrer">Request a free 15-minute call</a> and we will sort it out together.</p>';
             html += '<div class="email-box"><h3>Want this emailed to you?</h3><p class="q-help">Handy for sharing with family. Your email is only used to send your results unless you check the box below. <a href="privacy.html" target="_blank">Privacy Policy</a></p>' +
                 '<form id="email-form"><div class="row"><label>First name<input type="text" id="e-name" maxlength="60" autocomplete="given-name"></label><label>Email<input type="email" id="e-email" required maxlength="254" autocomplete="email"></label></div>' +
                 '<label class="consent"><input type="checkbox" id="e-consent"> Send me occasional tips and updates from Red Desert Check-In.</label>' +
@@ -251,7 +249,7 @@
                 results: { home: pills[lv.home][1], independence: pills[lv.daily][1], emergency: pills[lv.emergency][1], tech: pills[lv.safety][1], caregiver: pills[lv.family][1] },
                 priorities: nextSteps.map(function (st) { return { title: st.title, detail: st.text }; }),
                 nextSteps: nextSteps.map(function (st) { return st.title + ': ' + st.cta[0] + ' ' + (st.cta[1].indexOf('http') === 0 ? st.cta[1] : 'https://reddesertcheckin.com/' + st.cta[1]); }).join('\n'),
-                rdcRecommendation: 'Questions? Book a free 15-minute call: ' + LINKS.call,
+                rdcRecommendation: 'Questions? Request a free 15-minute call: ' + LINKS.call,
                 marketingConsent: false
             };
             el('email-form').addEventListener('submit', sendEmail);
