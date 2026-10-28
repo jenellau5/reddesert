@@ -1784,6 +1784,24 @@ p {
     margin-bottom: 0;
 }
 
+.price-card .per-visit {
+    margin: 4px 0 0;
+    padding: 2px 12px;
+    border-radius: 999px;
+    background: var(--bg-alt);
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.plan-includes {
+    margin-top: 28px;
+}
+
+.plan-includes h3 {
+    margin: 0 0 4px;
+}
+
 .price-card.recommended {
     border: 2px solid var(--red);
     position: relative;
